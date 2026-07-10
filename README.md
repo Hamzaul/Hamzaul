@@ -1,5 +1,3 @@
-## Hi there 👋
-
 <h1 align="center">Hi 👋, I'm HAMZAUL RAHMAN</h1>
 <h3 align="center">passionate about data analytics, machine learning, and solving real-world problems.</h3>
 
