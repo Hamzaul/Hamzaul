@@ -1,7 +1,6 @@
 <h1 align="center">Hi 👋, I'm HAMZAUL RAHMAN</h1>
 <h3 align="center">passionate about data analytics, machine learning, and solving real-world problems.</h3>
-<img align="right" alt="coding" width="400" src="<img width="680" height="428" alt="image" src="https://github.com/user-attachments/assets/4afecfd2-99ba-4237-8927-700b8b798236" />
-">
+<img width="680" height="428" alt="image" src="https://github.com/user-attachments/assets/4afecfd2-99ba-4237-8927-700b8b798236">
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=hamzaul&label=Profile%20views&color=0e75b6&style=flat" alt="hamzaul" /> </p>
 
