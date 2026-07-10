@@ -1,6 +1,6 @@
 <h1 align="center">Hi 👋, I'm HAMZAUL RAHMAN</h1>
 <h3 align="center">passionate about data analytics, machine learning, and solving real-world problems.</h3>
-
+<img align="right" alt="coding" width="400" src="https://pin.it/5UtiRQobB">
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=hamzaul&label=Profile%20views&color=0e75b6&style=flat" alt="hamzaul" /> </p>
 
 - 🌱 I’m currently learning **Power BI**
