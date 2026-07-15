@@ -714,26 +714,6 @@ Ship the first production-quality BI case study
 
 <!-- ═══════════════════════ 06 — INTERACTIVE GAME ═══════════════════════ -->
 
-<h2 align="center">
-<img src="https://img.shields.io/badge/06-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;PIT STRATEGY SIMULATOR
-</h2>
-
-<br/>
-
-<div align="center">
-<img src="assets/game-thumbnail.svg" alt="Pit Strategy Simulator" width="80%" />
-
-<br/><br/>
-
-<a href="https://hamzaul.github.io/pit-strategy"><img src="https://img.shields.io/badge/%E2%96%B8_PLAY_NOW-E8121C?style=for-the-badge&logo=gamejolt&logoColor=white" /></a>
-<a href="https://github.com/Hamzaul/pit-strategy"><img src="https://img.shields.io/badge/%E2%96%B8_SOURCE_CODE-12151C?style=for-the-badge&logo=github&logoColor=C6A15B" /></a>
-
-</div>
-
-<br/>
-<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
-<br/>
-
 <!-- ═══════════════════════ 07 — GITHUB ACTIVITY ═══════════════════════ -->
 
 <h2 align="center">
