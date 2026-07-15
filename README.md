@@ -8,7 +8,9 @@
 
 <br/>
 
+<a href="https://drive.google.com/your-resume-link"><img src="https://img.shields.io/badge/%E2%96%B8_RESUME-12151C?style=for-the-badge&logo=readdotcv&logoColor=E8121C" /></a>&nbsp;
 <a href="https://linkedin.com/in/HamzaulRahman"><img src="https://img.shields.io/badge/%E2%96%B8_LINKEDIN-12151C?style=for-the-badge&logo=linkedin&logoColor=2FD3E0" /></a>&nbsp;
+<a href="https://hamzaul.github.io/portfolio"><img src="https://img.shields.io/badge/%E2%96%B8_PORTFOLIO-12151C?style=for-the-badge&logo=googlechrome&logoColor=C6A15B" /></a>&nbsp;
 <a href="mailto:hamzaulrahman436@gmail.com"><img src="https://img.shields.io/badge/%E2%96%B8_EMAIL-12151C?style=for-the-badge&logo=gmail&logoColor=E8121C" /></a>&nbsp;
 <a href="https://hamzaul.github.io/pit-strategy"><img src="https://img.shields.io/badge/%E2%96%B8_PLAY_GAME-12151C?style=for-the-badge&logo=gamejolt&logoColor=C6A15B" /></a>
 
@@ -26,7 +28,7 @@
 <div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
 <br/>
 
-<!-- ═══════════════════════ SECTION 01 — DRIVER PROFILE ═══════════════════════ -->
+<!-- ═══════════════════════ 01 — DRIVER PROFILE ═══════════════════════ -->
 
 <h2 align="center">
 <img src="https://img.shields.io/badge/01-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;DRIVER PROFILE
@@ -35,124 +37,38 @@
 <br/>
 
 ```python
-class HamzaulRahman:
-    """
-    Race Engineer · Data Analyst · BI Developer
-    ─────────────────────────────────────────────
-    Every metric has a story. Every dashboard has a purpose.
-    I build systems that turn raw telemetry into race-winning decisions.
-    """
+class Hamzaul:
+    role        = "Business Intelligence Engineer (aspiring)"
+    education   = "B.Tech · AI & Data Science"
 
-    def __init__(self):
-        # ── Identity ──────────────────────────────────────────
-        self.name           = "Hamzaul Rahman"
-        self.role           = "Aspiring Business Intelligence Engineer"
-        self.education      = "B.Tech · AI & Data Science — CGC University"
-        self.location       = "India"
+    building = [
+        "Power BI Dashboards",
+        "Data Analytics Projects",
+    ]
 
-        # ── Technical Arsenal ─────────────────────────────────
-        self.languages      = ["Python", "SQL", "Java", "C", "DAX"]
-        self.analytics      = ["Power BI", "Excel", "XLOOKUP", "Pivot Tables"]
-        self.data_science   = ["Pandas", "NumPy", "Matplotlib", "Seaborn"]
-        self.databases      = ["MySQL", "MongoDB"]
-        self.tools          = ["Git", "GitHub", "VS Code", "Figma"]
-        self.ai_ml          = ["Linear Regression", "Generative AI", "Responsible AI"]
+    learning = [
+        "SQL",
+        "Machine Learning",
+        "Statistics",
+    ]
 
-        # ── Current Focus ─────────────────────────────────────
-        self.building       = "Advanced Power BI dashboards with production-grade DAX"
-        self.learning       = ["SQL Optimization", "ML Fundamentals", "Statistical Inference"]
-        self.exploring      = "Data storytelling frameworks that drive executive decisions"
+    interests = [
+        "Formula One",
+        "UI/UX",
+        "Data Storytelling",
+    ]
 
-        # ── Career Trajectory ─────────────────────────────────
-        self.career_goals   = [
-            "Business Intelligence Engineer",
-            "Senior Data Analyst",
-            "Power BI Developer"
-        ]
-
-        # ── Interests ───────────────────────────────────────
-        self.interests      = ["Formula One", "Data Visualization", "Race Strategy", "UI/UX"]
-
-        # ── Philosophy ──────────────────────────────────────
-        self.principle      = "A dashboard should answer a question before displaying data."
-
-    def current_season(self) -> str:
-        return "2025 — Building the analytics foundation for the next decade."
-
-    def race_strategy(self) -> dict:
-        return {
-            "short_term": "Master DAX + SQL at production level",
-            "mid_term":   "Ship 3 end-to-end BI case studies",
-            "long_term":  "Lead a BI team at a data-driven organization",
-            "philosophy": "Compound small improvements. Every lap matters."
-        }
+    philosophy = "Every dashboard should answer a business question before it displays data."
 ```
 
 <br/>
 <div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
 <br/>
 
-<!-- ═══════════════════════ SECTION 02 — DEVELOPER PHILOSOPHY ═══════════════════════ -->
+<!-- ═══════════════════════ 02 — LIVE GITHUB TELEMETRY DASHBOARD ═══════════════════════ -->
 
 <h2 align="center">
-<img src="https://img.shields.io/badge/02-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;DEVELOPER PHILOSOPHY
-</h2>
-
-<br/>
-
-<table align="center">
-<tr>
-<td width="33%" align="center">
-
-**① CLARITY OVER COMPLEXITY**
-
-A dashboard should answer a question before displaying data.
-
-</td>
-<td width="33%" align="center">
-
-**② REDUCE UNCERTAINTY**
-
-Good analytics doesn't create more charts — it eliminates doubt.
-
-</td>
-<td width="33%" align="center">
-
-**③ DECISIONS, NOT DATA**
-
-Every visualization must support an action. If it doesn't — delete it.
-
-</td>
-</tr>
-</table>
-
-<table align="center">
-<tr>
-<td width="50%" align="center">
-
-**④ COMPOUND IMPROVEMENTS**
-
-You don't win a championship in one race. Small daily improvements compound.
-
-</td>
-<td width="50%" align="center">
-
-**⑤ ENGINEER TRUST**
-
-A beautiful dashboard that shows wrong numbers is more dangerous than no dashboard at all.
-
-</td>
-</tr>
-</table>
-
-<br/>
-<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
-<br/>
-
-<!-- ═══════════════════════ SECTION 03 — LIVE TELEMETRY DASHBOARD ═══════════════════════ -->
-
-<h2 align="center">
-<img src="https://img.shields.io/badge/03-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;LIVE TELEMETRY DASHBOARD
+<img src="https://img.shields.io/badge/02-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;LIVE GITHUB TELEMETRY DASHBOARD
 </h2>
 
 <br/>
@@ -160,7 +76,7 @@ A beautiful dashboard that shows wrong numbers is more dangerous than no dashboa
 <div align="center">
 <sub>
 <img src="https://img.shields.io/badge/%E2%97%8F-E8121C?style=flat-square&labelColor=E8121C" height="8" />&nbsp;
-<b>LIVE</b>&nbsp;&nbsp;·&nbsp;&nbsp;Auto-refreshed via GitHub Actions&nbsp;&nbsp;·&nbsp;&nbsp;Commits, streaks, and language mix are real-time
+<b>LIVE</b>&nbsp;&nbsp;·&nbsp;&nbsp;Auto-refreshed via GitHub Actions&nbsp;&nbsp;·&nbsp;&nbsp;Commits, streaks, languages, and activity are all in one place below
 </sub>
 </div>
 
@@ -174,23 +90,27 @@ A beautiful dashboard that shows wrong numbers is more dangerous than no dashboa
 <div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
 <br/>
 
-<!-- ═══════════════════════ SECTION 04 — RACE LOG (PROJECTS) ═══════════════════════ -->
+<!-- ═══════════════════════ 03 — FEATURED PROJECTS ═══════════════════════ -->
 
 <h2 align="center">
-<img src="https://img.shields.io/badge/04-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;RACE LOG — PROJECTS
+<img src="https://img.shields.io/badge/03-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;FEATURED PROJECTS
 </h2>
 
 <br/>
-<div align="center"><sub>Each project is a race. The data below is the result sheet.</sub></div>
+<div align="center"><sub>The three that best show how I turn data into a decision.</sub></div>
 <br/>
 
-<!-- ── P1 ── -->
+<!-- ── Featured 1 ── -->
 <table>
 <tr><td>
 
-<h3>🏎️&nbsp; P1 — PhonePe Transaction Analysis</h3>
+<h3>🏎️&nbsp; PhonePe Transaction Analysis</h3>
 
-Power BI dashboard analyzing 300K+ transactions worth ₹3.47 billion across 108K users. Drill-through pages break value down by service category. Loans surfaced as the highest-value segment — a finding that would redirect marketing spend.
+<!-- Add a real screenshot at assets/projects/phonepe.png, then uncomment:
+<img src="assets/projects/phonepe.png" alt="PhonePe dashboard screenshot" width="100%" />
+-->
+
+Power BI dashboard analyzing 300K+ transactions worth ₹3.47 billion across 108K users. Drill-through pages break value down by service category.
 
 <p>
 <img src="https://img.shields.io/badge/Power_BI-12151C?style=flat-square&logo=powerbi&logoColor=E8121C" />
@@ -198,12 +118,7 @@ Power BI dashboard analyzing 300K+ transactions worth ₹3.47 billion across 108
 <img src="https://img.shields.io/badge/Data_Modeling-12151C?style=flat-square&logoColor=2FD3E0" />
 </p>
 
-| Metric | Value |
-|---|---|
-| Difficulty | ████████░░ Advanced |
-| Status | ✅ Complete |
-| Impact | Identified highest-value segment for targeted strategy |
-| Records | 300,000+ transactions |
+**Business impact:** Loans surfaced as the highest-value segment — a finding that would redirect marketing spend.
 
 <a href="https://github.com/Hamzaul/Power_Bi_PhonePay_Analysis_Dashboard"><img src="https://img.shields.io/badge/%E2%96%B8_VIEW_REPOSITORY-12151C?style=for-the-badge&logoColor=E8121C&logo=github" /></a>
 
@@ -211,13 +126,17 @@ Power BI dashboard analyzing 300K+ transactions worth ₹3.47 billion across 108
 </table>
 <br/>
 
-<!-- ── P2 ── -->
+<!-- ── Featured 2 ── -->
 <table>
 <tr><td>
 
-<h3>🏎️&nbsp; P2 — Car Models Analysis</h3>
+<h3>🏎️&nbsp; Car Models Analysis</h3>
 
-Cross-filtering dashboard comparing price, mileage, horsepower, and engine specs across brands, transmissions, and fuel types. Users can drill into any combination to compare competitive positioning.
+<!-- Add a real screenshot at assets/projects/car-models.png, then uncomment:
+<img src="assets/projects/car-models.png" alt="Car models dashboard screenshot" width="100%" />
+-->
+
+Cross-filtering dashboard comparing price, mileage, horsepower, and engine specs across brands, transmissions, and fuel types.
 
 <p>
 <img src="https://img.shields.io/badge/Power_BI-12151C?style=flat-square&logo=powerbi&logoColor=E8121C" />
@@ -225,11 +144,7 @@ Cross-filtering dashboard comparing price, mileage, horsepower, and engine specs
 <img src="https://img.shields.io/badge/Data_Visualization-12151C?style=flat-square&logoColor=C6A15B" />
 </p>
 
-| Metric | Value |
-|---|---|
-| Difficulty | ██████░░░░ Intermediate |
-| Status | ✅ Complete |
-| Impact | Multi-dimensional comparison across 4 key vehicle metrics |
+**Business impact:** Multi-dimensional comparison across 4 key vehicle metrics, letting users find competitive positioning instantly.
 
 <a href="https://github.com/Hamzaul/Power_Bi_Car_Models"><img src="https://img.shields.io/badge/%E2%96%B8_VIEW_REPOSITORY-12151C?style=for-the-badge&logoColor=E8121C&logo=github" /></a>
 
@@ -237,186 +152,114 @@ Cross-filtering dashboard comparing price, mileage, horsepower, and engine specs
 </table>
 <br/>
 
-<!-- ── P3 ── -->
+<!-- ── Featured 3 ── -->
 <table>
 <tr><td>
 
-<h3>🏎️&nbsp; P3 — Student Performance Analysis</h3>
+<h3>🏎️&nbsp; Student Performance Analysis</h3>
 
-Exploratory data analysis on 100 student records — automated grading, descriptive statistics, and correlation heatmaps across three subjects. Statistical methods reveal which factors most influence academic outcomes.
+<!-- Add a real screenshot at assets/projects/student-performance.png, then uncomment:
+<img src="assets/projects/student-performance.png" alt="Student performance analysis screenshot" width="100%" />
+-->
+
+Exploratory data analysis on 100 student records — automated grading, descriptive statistics, and correlation heatmaps across three subjects.
 
 <p>
 <img src="https://img.shields.io/badge/Python-12151C?style=flat-square&logo=python&logoColor=E8121C" />
 <img src="https://img.shields.io/badge/Pandas-12151C?style=flat-square&logo=pandas&logoColor=2FD3E0" />
 <img src="https://img.shields.io/badge/Seaborn-12151C?style=flat-square&logoColor=C6A15B" />
-<img src="https://img.shields.io/badge/Matplotlib-12151C?style=flat-square&logoColor=848B9C" />
 </p>
 
-| Metric | Value |
-|---|---|
-| Difficulty | ██████░░░░ Intermediate |
-| Status | ✅ Complete |
-| Impact | Correlation analysis surfacing key academic performance drivers |
-| Records | 100 students × 3 subjects |
+**Business impact:** Correlation analysis surfaced which factors most influence academic outcomes.
 
 <a href="https://github.com/Hamzaul/Student_Performance_Analysis"><img src="https://img.shields.io/badge/%E2%96%B8_VIEW_REPOSITORY-12151C?style=for-the-badge&logoColor=E8121C&logo=github" /></a>
 
 </td></tr>
 </table>
+
 <br/>
 
-<!-- ── P4 ── -->
-<table>
-<tr><td>
-
-<h3>🔐&nbsp; P4 — Authentication System</h3>
-
-Secure user authentication application with registration, login, and session management. Python backend with responsive JavaScript frontend — demonstrates modern auth workflows and access control principles.
-
-<p>
-<img src="https://img.shields.io/badge/Python-12151C?style=flat-square&logo=python&logoColor=E8121C" />
-<img src="https://img.shields.io/badge/JavaScript-12151C?style=flat-square&logo=javascript&logoColor=C6A15B" />
-<img src="https://img.shields.io/badge/HTML-12151C?style=flat-square&logo=html5&logoColor=2FD3E0" />
-<img src="https://img.shields.io/badge/CSS-12151C?style=flat-square&logo=css3&logoColor=848B9C" />
-</p>
-
-| Metric | Value |
-|---|---|
-| Difficulty | ██████░░░░ Intermediate |
-| Status | ✅ Complete |
-| Impact | Production-ready auth flow with session management |
-
-<a href="https://github.com/Hamzaul/Authentication"><img src="https://img.shields.io/badge/%E2%96%B8_VIEW_REPOSITORY-12151C?style=for-the-badge&logoColor=E8121C&logo=github" /></a>
-
-</td></tr>
-</table>
+<h3 align="center">Other Projects</h3>
 <br/>
 
-<!-- ── P5 ── -->
-<table>
-<tr><td>
+<div align="center">
 
-<h3>🎂&nbsp; P5 — Birthday Celebration Website</h3>
+| Project | What it is | Repo |
+|---|---|---|
+| 🔐 Authentication System | Registration, login, and session management with a Python backend | [View](https://github.com/Hamzaul/Authentication) |
+| 🎂 Birthday Celebration Website | Animated, interactive front-end demo — [live](https://birthday-gules-tau.vercel.app/) | [View](https://github.com/Hamzaul/Birthday) |
+| 🚦 Traffic Control System | Simulated automated signal management to optimize vehicle flow | [View](https://github.com/Hamzaul/Traffic-control-system) |
 
-Interactive birthday celebration website with animated visuals, smooth transitions, and responsive UI. Demonstrates modern front-end animation techniques while creating a memorable user experience.
-
-<p>
-<img src="https://img.shields.io/badge/HTML-12151C?style=flat-square&logo=html5&logoColor=E8121C" />
-<img src="https://img.shields.io/badge/CSS-12151C?style=flat-square&logo=css3&logoColor=2FD3E0" />
-<img src="https://img.shields.io/badge/JavaScript-12151C?style=flat-square&logo=javascript&logoColor=C6A15B" />
-</p>
-
-| Metric | Value |
-|---|---|
-| Difficulty | ████░░░░░░ Beginner |
-| Status | 🟢 Live |
-| Impact | Animated interactive experience with smooth transitions |
-
-<a href="https://birthday-gules-tau.vercel.app/"><img src="https://img.shields.io/badge/%E2%96%B8_LIVE_DEMO-12151C?style=for-the-badge&logoColor=2FD3E0&logo=vercel" /></a>
-<a href="https://github.com/Hamzaul/Birthday"><img src="https://img.shields.io/badge/%E2%96%B8_REPOSITORY-12151C?style=for-the-badge&logoColor=E8121C&logo=github" /></a>
-
-</td></tr>
-</table>
-<br/>
-
-<!-- ── P6 ── -->
-<table>
-<tr><td>
-
-<h3>🚦&nbsp; P6 — Traffic Control System</h3>
-
-Intelligent traffic control system simulating automated signal management to optimize vehicle flow. Demonstrates practical traffic management logic through an interactive interface with real-time automation.
-
-<p>
-<img src="https://img.shields.io/badge/Python-12151C?style=flat-square&logo=python&logoColor=E8121C" />
-<img src="https://img.shields.io/badge/JavaScript-12151C?style=flat-square&logo=javascript&logoColor=C6A15B" />
-<img src="https://img.shields.io/badge/Automation-12151C?style=flat-square&logoColor=2FD3E0" />
-</p>
-
-| Metric | Value |
-|---|---|
-| Difficulty | ██████░░░░ Intermediate |
-| Status | ✅ Complete |
-| Impact | Real-time signal optimization reducing simulated congestion |
-
-<a href="https://github.com/Hamzaul/Traffic-control-system"><img src="https://img.shields.io/badge/%E2%96%B8_VIEW_REPOSITORY-12151C?style=for-the-badge&logoColor=E8121C&logo=github" /></a>
-
-</td></tr>
-</table>
+</div>
 
 <br/>
 <div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
 <br/>
 
-<!-- ═══════════════════════ SECTION 05 — ENGINEERING GARAGE ═══════════════════════ -->
+<!-- ═══════════════════════ 04 — TECH STACK ═══════════════════════ -->
 
 <h2 align="center">
-<img src="https://img.shields.io/badge/05-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;ENGINEERING GARAGE
+<img src="https://img.shields.io/badge/04-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;TECH STACK
 </h2>
 
 <br/>
-<div align="center"><sub>Every tool has a purpose. Nothing is here for decoration.</sub></div>
+<div align="center"><sub>Shown once, here — demonstrated everywhere else through the projects and the live dashboard above.</sub></div>
 <br/>
 
 <div align="center">
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-E8121C?style=flat-square&labelColor=E8121C" height="10" />&nbsp;&nbsp;TELEMETRY&nbsp;&nbsp;·&nbsp;&nbsp;Core Languages</h4>
+<h4><img src="https://img.shields.io/badge/%E2%96%B8-E8121C?style=flat-square&labelColor=E8121C" height="10" />&nbsp;&nbsp;Programming</h4>
 <p>
 <img src="https://img.shields.io/badge/Python-0D1117?style=for-the-badge&logo=python&logoColor=E8121C" />&nbsp;
 <img src="https://img.shields.io/badge/SQL-0D1117?style=for-the-badge&logo=mysql&logoColor=E8121C" />&nbsp;
-<img src="https://img.shields.io/badge/DAX-0D1117?style=for-the-badge&logoColor=E8121C" />&nbsp;
 <img src="https://img.shields.io/badge/Java-0D1117?style=for-the-badge&logo=openjdk&logoColor=E8121C" />&nbsp;
 <img src="https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=E8121C" />
 </p>
 <br/>
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-C6A15B?style=flat-square&labelColor=C6A15B" height="10" />&nbsp;&nbsp;ANALYTICS&nbsp;&nbsp;·&nbsp;&nbsp;BI & Reporting</h4>
+<h4><img src="https://img.shields.io/badge/%E2%96%B8-C6A15B?style=flat-square&labelColor=C6A15B" height="10" />&nbsp;&nbsp;Analytics</h4>
 <p>
 <img src="https://img.shields.io/badge/Power_BI-0D1117?style=for-the-badge&logo=powerbi&logoColor=C6A15B" />&nbsp;
+<img src="https://img.shields.io/badge/DAX-0D1117?style=for-the-badge&logoColor=C6A15B" />&nbsp;
 <img src="https://img.shields.io/badge/Excel-0D1117?style=for-the-badge&logo=microsoftexcel&logoColor=C6A15B" />&nbsp;
-<img src="https://img.shields.io/badge/XLOOKUP-0D1117?style=for-the-badge&logoColor=C6A15B" />&nbsp;
 <img src="https://img.shields.io/badge/Pivot_Tables-0D1117?style=for-the-badge&logoColor=C6A15B" />
 </p>
 <br/>
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-2FD3E0?style=flat-square&labelColor=2FD3E0" height="10" />&nbsp;&nbsp;ENGINE&nbsp;&nbsp;·&nbsp;&nbsp;Data Science</h4>
+<h4><img src="https://img.shields.io/badge/%E2%96%B8-2FD3E0?style=flat-square&labelColor=2FD3E0" height="10" />&nbsp;&nbsp;Data Science</h4>
 <p>
 <img src="https://img.shields.io/badge/Pandas-0D1117?style=for-the-badge&logo=pandas&logoColor=2FD3E0" />&nbsp;
-<img src="https://img.shields.io/badge/NumPy-0D1117?style=for-the-badge&logo=numpy&logoColor=2FD3E0" />&nbsp;
-<img src="https://img.shields.io/badge/Matplotlib-0D1117?style=for-the-badge&logoColor=2FD3E0" />&nbsp;
-<img src="https://img.shields.io/badge/Seaborn-0D1117?style=for-the-badge&logoColor=2FD3E0" />
+<img src="https://img.shields.io/badge/NumPy-0D1117?style=for-the-badge&logo=numpy&logoColor=2FD3E0" />
 </p>
 <br/>
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-E8121C?style=flat-square&labelColor=E8121C" height="10" />&nbsp;&nbsp;PIT CREW&nbsp;&nbsp;·&nbsp;&nbsp;Databases</h4>
+<h4><img src="https://img.shields.io/badge/%E2%96%B8-848B9C?style=flat-square&labelColor=848B9C" height="10" />&nbsp;&nbsp;Visualization</h4>
+<p>
+<img src="https://img.shields.io/badge/Matplotlib-0D1117?style=for-the-badge&logoColor=848B9C" />&nbsp;
+<img src="https://img.shields.io/badge/Seaborn-0D1117?style=for-the-badge&logoColor=848B9C" />
+</p>
+<br/>
+
+<h4><img src="https://img.shields.io/badge/%E2%96%B8-E8121C?style=flat-square&labelColor=E8121C" height="10" />&nbsp;&nbsp;Databases</h4>
 <p>
 <img src="https://img.shields.io/badge/MySQL-0D1117?style=for-the-badge&logo=mysql&logoColor=E8121C" />&nbsp;
 <img src="https://img.shields.io/badge/MongoDB-0D1117?style=for-the-badge&logo=mongodb&logoColor=E8121C" />
 </p>
 <br/>
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-C6A15B?style=flat-square&labelColor=C6A15B" height="10" />&nbsp;&nbsp;DEVELOPMENT&nbsp;&nbsp;·&nbsp;&nbsp;Tools & Workflow</h4>
+<h4><img src="https://img.shields.io/badge/%E2%96%B8-C6A15B?style=flat-square&labelColor=C6A15B" height="10" />&nbsp;&nbsp;Development</h4>
 <p>
 <img src="https://img.shields.io/badge/Git-0D1117?style=for-the-badge&logo=git&logoColor=C6A15B" />&nbsp;
 <img src="https://img.shields.io/badge/GitHub-0D1117?style=for-the-badge&logo=github&logoColor=C6A15B" />&nbsp;
-<img src="https://img.shields.io/badge/VS_Code-0D1117?style=for-the-badge&logo=visualstudiocode&logoColor=C6A15B" />&nbsp;
-<img src="https://img.shields.io/badge/Figma-0D1117?style=for-the-badge&logo=figma&logoColor=C6A15B" />
+<img src="https://img.shields.io/badge/VS_Code-0D1117?style=for-the-badge&logo=visualstudiocode&logoColor=C6A15B" />
 </p>
 <br/>
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-2FD3E0?style=flat-square&labelColor=2FD3E0" height="10" />&nbsp;&nbsp;RACE CONTROL&nbsp;&nbsp;·&nbsp;&nbsp;AI & Machine Learning</h4>
+<h4><img src="https://img.shields.io/badge/%E2%96%B8-2FD3E0?style=flat-square&labelColor=2FD3E0" height="10" />&nbsp;&nbsp;Currently Learning</h4>
 <p>
-<img src="https://img.shields.io/badge/Linear_Regression-0D1117?style=for-the-badge&logoColor=2FD3E0" />&nbsp;
-<img src="https://img.shields.io/badge/Generative_AI-0D1117?style=for-the-badge&logoColor=2FD3E0" />&nbsp;
-<img src="https://img.shields.io/badge/Responsible_AI-0D1117?style=for-the-badge&logoColor=2FD3E0" />
-</p>
-<br/>
-
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-E8121C?style=flat-square&labelColor=E8121C" height="10" />&nbsp;&nbsp;WEB&nbsp;&nbsp;·&nbsp;&nbsp;Frontend</h4>
-<p>
-<img src="https://img.shields.io/badge/HTML5-0D1117?style=for-the-badge&logo=html5&logoColor=E8121C" />&nbsp;
-<img src="https://img.shields.io/badge/CSS3-0D1117?style=for-the-badge&logo=css3&logoColor=E8121C" />&nbsp;
-<img src="https://img.shields.io/badge/JavaScript-0D1117?style=for-the-badge&logo=javascript&logoColor=E8121C" />
+<img src="https://img.shields.io/badge/SQL_Optimization-0D1117?style=for-the-badge&logoColor=2FD3E0" />&nbsp;
+<img src="https://img.shields.io/badge/Machine_Learning-0D1117?style=for-the-badge&logoColor=2FD3E0" />&nbsp;
+<img src="https://img.shields.io/badge/Statistics-0D1117?style=for-the-badge&logoColor=2FD3E0" />
 </p>
 
 </div>
@@ -425,98 +268,42 @@ Intelligent traffic control system simulating automated signal management to opt
 <div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
 <br/>
 
-<!-- ═══════════════════════ SECTION 06 — RACE STRATEGY (ROADMAP) ═══════════════════════ -->
+<!-- ═══════════════════════ 05 — CURRENT MISSION ═══════════════════════ -->
 
 <h2 align="center">
-<img src="https://img.shields.io/badge/06-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;RACE STRATEGY — ROADMAP
+<img src="https://img.shields.io/badge/05-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;CURRENT MISSION
 </h2>
 
 <br/>
 
 <div align="center">
+<table>
+<tr><td width="480">
 
-| OBJECTIVE | PROGRESS | STATUS | TARGET |
-|---|:---:|:---:|:---:|
-| **Power BI · Advanced DAX** | 🟥🟥🟥🟥⬛⬛⬛⬛⬛⬛ 40% | ![](https://img.shields.io/badge/IN_PROGRESS-E8121C?style=flat-square&labelColor=12151C) | Q3 2025 |
-| **Machine Learning Fundamentals** | 🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛ 30% | ![](https://img.shields.io/badge/IN_PROGRESS-2FD3E0?style=flat-square&labelColor=12151C) | Q4 2025 |
-| **Statistics for Analytics** | 🟦🟦🟦⬛⬛⬛⬛⬛⬛⬛ 30% | ![](https://img.shields.io/badge/IN_PROGRESS-2FD3E0?style=flat-square&labelColor=12151C) | Q3 2025 |
-| **Data Storytelling** | 🟨🟨⬛⬛⬛⬛⬛⬛⬛⬛ 20% | ![](https://img.shields.io/badge/ONGOING-C6A15B?style=flat-square&labelColor=12151C) | Q4 2025 |
-| **SQL Optimization** | 🟨🟨⬛⬛⬛⬛⬛⬛⬛⬛ 20% | ![](https://img.shields.io/badge/ONGOING-C6A15B?style=flat-square&labelColor=12151C) | Q3 2025 |
-| **End-to-End BI Case Studies** | 🟥⬛⬛⬛⬛⬛⬛⬛⬛⬛ 10% | ![](https://img.shields.io/badge/PLANNED-848B9C?style=flat-square&labelColor=12151C) | Q1 2026 |
+**CURRENT BUILD**
+Advanced Power BI dashboards with production-grade DAX measures
 
+**Status**
+🟥🟥🟥🟥⬛⬛⬛⬛⬛⬛ 40%
 
-</div>
+**Learning**
+SQL Optimization · Machine Learning Fundamentals · Statistical Inference
 
-<br/>
-<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
-<br/>
+**Next Goal**
+Ship the first production-quality BI case study
 
-<!-- ═══════════════════════ SECTION 07 — CURRENT MISSION ═══════════════════════ -->
-
-<h2 align="center">
-<img src="https://img.shields.io/badge/07-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;CURRENT MISSION
-</h2>
-
-<br/>
-
-<table align="center">
-<tr>
-<td width="50%" valign="top">
-
-**🔧 BUILDING**
-
-Advanced Power BI dashboards with production-grade DAX measures, drill-through pages, and row-level security.
-
-</td>
-<td width="50%" valign="top">
-
-**📡 LEARNING**
-
-Statistical inference, hypothesis testing, and ML fundamentals — building the math behind the visualizations.
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-**🔍 EXPLORING**
-
-Data storytelling frameworks that translate analytical findings into executive-level narratives.
-
-</td>
-<td width="50%" valign="top">
-
-**⚡ IMPROVING**
-
-SQL query optimization, index strategies, and writing queries that scale to millions of rows.
-
-</td>
-</tr>
+</td></tr>
 </table>
-
-<br/>
-
-<div align="center">
-
-**🏁 2026 GOALS**
-
-| # | Objective |
-|---|---|
-| 01 | Ship 3 production-quality BI case studies with documented business impact |
-| 02 | Achieve intermediate ML proficiency — regression, classification, clustering |
-| 03 | Launch a portfolio website that functions as a live analytics product |
-| 04 | Contribute to 2+ open-source data/analytics projects |
-
 </div>
 
 <br/>
 <div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
 <br/>
 
-<!-- ═══════════════════════ SECTION 08 — INTERACTIVE GAME ═══════════════════════ -->
+<!-- ═══════════════════════ 06 — INTERACTIVE GAME ═══════════════════════ -->
 
 <h2 align="center">
-<img src="https://img.shields.io/badge/08-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;PIT STRATEGY SIMULATOR
+<img src="https://img.shields.io/badge/06-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;PIT STRATEGY SIMULATOR
 </h2>
 
 <br/>
@@ -526,18 +313,8 @@ SQL query optimization, index strategies, and writing queries that scale to mill
 
 <br/><br/>
 
-**You're the race strategist. The data is your telemetry. Make the call.**
-
-An F1 pit strategy game where you decide when to pit, which tyre compound to choose, and how to respond to weather changes — all based on live data panels. Wrong call? You lose positions. Right call? You win the race.
-
-<br/>
-
 <a href="https://hamzaul.github.io/pit-strategy"><img src="https://img.shields.io/badge/%E2%96%B8_PLAY_NOW-E8121C?style=for-the-badge&logo=gamejolt&logoColor=white" /></a>
 <a href="https://github.com/Hamzaul/pit-strategy"><img src="https://img.shields.io/badge/%E2%96%B8_SOURCE_CODE-12151C?style=for-the-badge&logo=github&logoColor=C6A15B" /></a>
-
-<br/><br/>
-
-<sub>Built with HTML · CSS · JavaScript &nbsp;|&nbsp; Hosted on GitHub Pages &nbsp;|&nbsp; No dependencies</sub>
 
 </div>
 
@@ -545,38 +322,30 @@ An F1 pit strategy game where you decide when to pit, which tyre compound to cho
 <div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
 <br/>
 
-<!-- ═══════════════════════ SECTION 09 — GITHUB TELEMETRY ═══════════════════════ -->
+<!-- ═══════════════════════ 07 — GITHUB ACTIVITY ═══════════════════════ -->
 
 <h2 align="center">
-<img src="https://img.shields.io/badge/09-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;GITHUB TELEMETRY
+<img src="https://img.shields.io/badge/07-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;GITHUB ACTIVITY
 </h2>
 
 <br/>
-<div align="center"><sub>Commit history, streaks, and language mix are covered in the live dashboard above.<br/>Below: supplementary activity data.</sub></div>
-<br/>
 
 <div align="center">
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Hamzaul/Hamzaul/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Hamzaul/Hamzaul/output/github-snake.svg" />
   <img alt="Snake animation" src="https://raw.githubusercontent.com/Hamzaul/Hamzaul/output/github-snake-dark.svg" width="100%" />
 </picture>
-
-<br/><br/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Hamzaul&bg_color=0D1117&color=848B9C&line=E8121C&point=C6A15B&area=true&area_color=E8121C&hide_border=true&custom_title=Commit%20Frequency%20%E2%80%94%20Last%2031%20Days" width="95%" alt="activity graph" />
-
 </div>
 
 <br/>
 <div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
 <br/>
 
-<!-- ═══════════════════════ SECTION 10 — CONNECT ═══════════════════════ -->
+<!-- ═══════════════════════ 08 — CONNECT ═══════════════════════ -->
 
 <h2 align="center">
-<img src="https://img.shields.io/badge/10-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;CONNECT
+<img src="https://img.shields.io/badge/08-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;CONNECT
 </h2>
 
 <br/>
