@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pit Strategy Simulator</title>
+<meta name="description" content="An F1 pit strategy game — choose tyre compounds, react to weather, and race 5 AI rivals to the checkered flag." />
+<meta property="og:title" content="Pit Strategy Simulator" />
+<meta property="og:description" content="You're the race strategist. The data is your telemetry. Make the call." />
+<meta property="og:image" content="assets/social-preview.svg" />
+<link rel="icon" type="image/svg+xml" href="assets/social-preview.svg" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="top">
+    <h1>PIT STRATEGY <span>SIMULATOR</span></h1>
+    <p>YOU ARE THE RACE STRATEGIST · MAKE THE CALL</p>
+  </header>
+
+  <!-- HUD -->
+  <section class="panel">
+    <p class="panel-title">LIVE TELEMETRY</p>
+    <div class="hud-grid">
+      <div class="hud-cell">
+        <div class="label">LAP</div>
+        <div class="value" id="hud-lap">0 / 50</div>
+      </div>
+      <div class="hud-cell">
+        <div class="label">POSITION</div>
+        <div class="value" id="hud-position">P4</div>
+      </div>
+      <div class="hud-cell">
+        <div class="label">GAP TO LEADER</div>
+        <div class="value" id="hud-gap">—</div>
+      </div>
+      <div class="hud-cell">
+        <div class="label">PIT STOPS</div>
+        <div class="value" id="hud-pitstops">0</div>
+      </div>
+
+      <div class="hud-cell" style="grid-column: span 2;">
+        <div class="label">TYRE</div>
+        <div class="tyre-row">
+          <div class="tyre-badge" id="hud-tyre-badge">M</div>
+          <div style="flex:1;">
+            <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-dim); margin-bottom:4px;">
+              <span id="hud-tyre-name">MEDIUM</span>
+              <span id="hud-wear-pct">0%</span>
+            </div>
+            <div class="wear-bar-track"><div class="wear-bar" id="hud-wear-bar"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hud-cell" style="grid-column: span 2;">
+        <div class="label">WEATHER</div>
+        <div class="value" id="hud-weather" style="font-size:14px;">0% rain risk</div>
+      </div>
+
+      <div class="hud-cell" style="grid-column: span 4;">
+        <div class="label">RIVAL INTEL</div>
+        <div class="value" id="hud-rival-window" style="font-size:13px;">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Actions -->
+  <div class="actions">
+    <button class="btn btn-primary" id="btn-pit">🔧 PIT NOW</button>
+    <button class="btn" id="btn-stay">🏎️ STAY OUT</button>
+  </div>
+
+  <!-- Standings -->
+  <section class="panel">
+    <p class="panel-title">STANDINGS</p>
+    <table class="standings">
+      <thead>
+        <tr><th>POS</th><th>DRIVER</th><th>TYRE</th><th>GAP</th></tr>
+      </thead>
+      <tbody id="standings-body"></tbody>
+    </table>
+  </section>
+
+  <!-- Race Log -->
+  <section class="panel">
+    <p class="panel-title">RACE CONTROL LOG</p>
+    <div class="log-box" id="race-log"></div>
+  </section>
+
+  <footer class="foot">
+    Built with HTML · CSS · JavaScript &nbsp;|&nbsp; No dependencies &nbsp;|&nbsp; High score saved locally
+  </footer>
+
+</div>
+
+<!-- Compound selection modal -->
+<div class="modal-overlay hidden" id="compound-modal">
+  <div class="modal">
+    <h3>SELECT COMPOUND</h3>
+    <p class="sub">Choose your tyres for the next stint.</p>
+    <p id="wet-hint" class="hidden">🌧 Track is wet — slicks will cost you badly.</p>
+    <div class="compound-grid">
+      <button class="compound-btn" data-compound="soft" style="color:#E8121C;">SOFT<br/><small style="font-weight:400;">fast · short life</small></button>
+      <button class="compound-btn" data-compound="medium" style="color:#C6A15B;">MEDIUM<br/><small style="font-weight:400;">balanced</small></button>
+      <button class="compound-btn" data-compound="hard" style="color:#848B9C;">HARD<br/><small style="font-weight:400;">slow · long life</small></button>
+      <button class="compound-btn" data-compound="wet" style="color:#2FD3E0;">WET<br/><small style="font-weight:400;">for rain only</small></button>
+    </div>
+    <button class="link-btn" id="compound-cancel">CANCEL</button>
+  </div>
+</div>
+
+<!-- Results overlay -->
+<div class="modal-overlay hidden" id="results-overlay">
+  <div class="modal results-panel">
+    <p class="panel-title" style="justify-content:center;">🏁 CHECKERED FLAG</p>
+    <div class="position" id="results-position">P—</div>
+    <div class="points" id="results-points">0 PTS</div>
+    <div class="badge" id="results-badge"></div>
+    <div class="highscore" id="results-highscore">BEST: —</div>
+    <br/>
+    <button class="btn btn-primary" id="btn-play-again" style="width:100%;">▸ RACE AGAIN</button>
+  </div>
+</div>
+
+<script src="js/strategy.js"></script>
+<script src="js/weather.js"></script>
+<script src="js/rivals.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1117"/>
+      <stop offset="100%" style="stop-color:#12151C"/>
+    </linearGradient>
+    <linearGradient id="redGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#E8121C;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#E8121C;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#E8121C;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="300" rx="12" fill="url(#bgGrad)"/>
+  <rect x="1" y="1" width="898" height="298" rx="12" fill="none" stroke="#1E2228" stroke-width="1"/>
+  <rect x="0" y="0" width="900" height="3" rx="1.5" fill="#E8121C"/>
+  <rect x="0" y="140" width="900" height="20" fill="url(#redGlow)"/>
+
+  <line x1="0" y1="75" x2="900" y2="75" stroke="#1E2228" stroke-width="0.5"/>
+  <line x1="0" y1="150" x2="900" y2="150" stroke="#1E2228" stroke-width="0.5"/>
+  <line x1="0" y1="225" x2="900" y2="225" stroke="#1E2228" stroke-width="0.5"/>
+  <line x1="225" y1="0" x2="225" y2="300" stroke="#1E2228" stroke-width="0.5"/>
+  <line x1="450" y1="0" x2="450" y2="300" stroke="#1E2228" stroke-width="0.5"/>
+  <line x1="675" y1="0" x2="675" y2="300" stroke="#1E2228" stroke-width="0.5"/>
+
+  <text x="450" y="110" font-family="'JetBrains Mono','Fira Code',monospace" font-size="28" fill="#FFFFFF" text-anchor="middle" font-weight="700">PIT STRATEGY SIMULATOR</text>
+  <text x="450" y="145" font-family="'JetBrains Mono','Fira Code',monospace" font-size="13" fill="#848B9C" text-anchor="middle">YOU ARE THE RACE STRATEGIST &#183; MAKE THE CALL</text>
+
+  <circle cx="340" cy="200" r="16" fill="none" stroke="#E8121C" stroke-width="3"/>
+  <text x="340" y="205" font-family="'JetBrains Mono',monospace" font-size="10" fill="#E8121C" text-anchor="middle">S</text>
+
+  <circle cx="410" cy="200" r="16" fill="none" stroke="#C6A15B" stroke-width="3"/>
+  <text x="410" y="205" font-family="'JetBrains Mono',monospace" font-size="10" fill="#C6A15B" text-anchor="middle">M</text>
+
+  <circle cx="480" cy="200" r="16" fill="none" stroke="#848B9C" stroke-width="3"/>
+  <text x="480" y="205" font-family="'JetBrains Mono',monospace" font-size="10" fill="#848B9C" text-anchor="middle">H</text>
+
+  <circle cx="550" cy="200" r="16" fill="none" stroke="#2FD3E0" stroke-width="3"/>
+  <text x="550" y="205" font-family="'JetBrains Mono',monospace" font-size="10" fill="#2FD3E0" text-anchor="middle">W</text>
+
+  <rect x="370" y="240" width="160" height="34" rx="6" fill="#E8121C"/>
+  <text x="450" y="262" font-family="'JetBrains Mono',monospace" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="700">&#9656; PLAY NOW</text>
+
+  <path d="M 20 20 L 20 40" stroke="#E8121C" stroke-width="2"/>
+  <path d="M 20 20 L 40 20" stroke="#E8121C" stroke-width="2"/>
+  <path d="M 880 20 L 880 40" stroke="#E8121C" stroke-width="2"/>
+  <path d="M 880 20 L 860 20" stroke="#E8121C" stroke-width="2"/>
+  <path d="M 20 280 L 20 260" stroke="#C6A15B" stroke-width="2"/>
+  <path d="M 20 280 L 40 280" stroke="#C6A15B" stroke-width="2"/>
+  <path d="M 880 280 L 880 260" stroke="#C6A15B" stroke-width="2"/>
+  <path d="M 880 280 L 860 280" stroke="#C6A15B" stroke-width="2"/>
+</svg>
