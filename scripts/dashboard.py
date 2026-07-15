@@ -1,41 +1,13 @@
-"""
-F1 TELEMETRY — GitHub contribution dashboard, personalized as a portfolio piece.
-
-Renders a single SVG styled like a race-car telemetry cluster: carbon-fibre
-panels, a radial gauge for season progress, sector-heat contribution map,
-tyre-compound language bars, a skills "garage", career highlights as race
-results, and tiered podium achievements.
-
-Live data (commits, streaks, languages, followers) comes from the GitHub
-GraphQL API for PROFILE["github_username"]. Static content (name, skills,
-project highlights) comes from the PROFILE dict below — edit that block to
-update the portfolio without touching any drawing code.
-
-Usage: GH_TOKEN=... python scripts/dashboard.py
-Output: assets/f1-dashboard.svg
-"""
-
 import os
 import math
 import datetime
 import sys
-
 import requests
 
-# --------------------------------------------------------------------------
-# Config
-# --------------------------------------------------------------------------
-
-# --------------------------------------------------------------------------
-# Profile — edit this block to update the portfolio content. Nothing else
-# in the file needs to change when your name, skills, or projects change.
-# --------------------------------------------------------------------------
 
 PROFILE = {
     "name": "Hamzaul Rahman",
     "tagline": "Aspiring Data Analyst — Power BI · Python · EDA",
-    # GitHub handle used to pull LIVE stats below (commits, streaks, languages).
-    # Pulled from the hyperlink behind "GitHub" on the resume, not the link text.
     "github_username": "Hamzaul",
     "goal": 3000,  # season commit target shown on the gauge
 

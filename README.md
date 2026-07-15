@@ -1,41 +1,262 @@
-<h1 align="center">Hi 👋, I'm HAMZAUL RAHMAN</h1>
-<h3 align="center">passionate about data analytics, machine learning, and solving real-world problems.</h3>
+<div align="center">
+  <img src="assets/hero-banner.svg" alt="Hamzaul Rahman" width="100%" />
+</div>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=hamzaul&label=Profile%20views&color=0e75b6&style=flat" alt="hamzaul"> </p>
+<div align="center">
 
-- 🌱 I’m currently learning **Power BI**
+<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=16&pause=1200&color=848B9C&center=true&vCenter=true&width=560&lines=Turning+raw+data+into+a+decision+worth+acting+on;Currently+deep+in+Power+BI+%2B+DAX;Next+up%3A+SQL+optimization+and+ML+fundamentals" alt="typing animation" />
 
-- 📫 How to reach me **hamzaulrahman436@gmail.com**
+<br/><br/>
 
-- ⚡ Fun fact **Coding is about Having Fun**
+<a href="#"><img src="https://img.shields.io/badge/RESUME-12151C?style=for-the-badge&logo=readdotcv&logoColor=E8121C" /></a>
+<a href="https://linkedin.com/in/HamzaulRahman"><img src="https://img.shields.io/badge/LINKEDIN-12151C?style=for-the-badge&logo=linkedin&logoColor=2FD3E0" /></a>
+<a href="#"><img src="https://img.shields.io/badge/PORTFOLIO-12151C?style=for-the-badge&logo=googlechrome&logoColor=C6A15B" /></a>
+<a href="mailto:hamzaulrahman436@gmail.com"><img src="https://img.shields.io/badge/EMAIL-12151C?style=for-the-badge&logo=gmail&logoColor=E8121C" /></a>
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/hamzaul rahman" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="hamzaul rahman" height="30" width="40" /></a>
-<a href="https://kaggle.com/hamzaulrahman" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/kaggle.svg" alt="hamzaulrahman" height="30" width="40" /></a>
-<a href="https://instagram.com/_hamzaul_" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="_hamzaul_" height="30" width="40" /></a>
-<a href="https://www.hackerrank.com/@_2501103006" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="@_2501103006" height="30" width="40" /></a>
-<a href="https://www.leetcode.com/u6sme0wz24" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="u6sme0wz24" height="30" width="40" /></a>
-</p>
+<br/><br/>
+<img src="https://komarev.com/ghpvc/?username=Hamzaul&label=Profile%20Views&color=242832&style=flat-square" alt="profile views" />
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/> </a> </p>
+</div>
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=hamzaul&show_icons=true&locale=en&layout=compact" alt="hamzaul" /></p>
+<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=hamzaul&show_icons=true&locale=en" alt="hamzaul" /></p>
+## Who I Am
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=hamzaul&" alt="hamzaul" /></p><!--
-**Hamzaul/Hamzaul** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+```python
+class Hamzaul:
+    def __init__(self):
+        self.role = "Aspiring Data Analyst"
+        self.education = "B.Tech • Artificial Intelligence & Data Science — CGC University"
+        self.toolbox = ["Power BI", "Python", "SQL"]
+        self.believes    = "a dashboard should answer one question clearly"
 
-Here are some ideas to get you started:
+    def current_focus(self):
+        return "DAX, statistics, and cleaner data storytelling"
+```
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
+
+## What I Build — Live
+
+Every dashboard below is a claim. This one is proof — it pulls straight from GitHub's API on a schedule, so the commits, streaks, and language mix you're looking at are current, not a screenshot from six months ago.
+
+<div align="center">
+  <img src="assets/f1-dashboard.svg" alt="Hamzaul's F1 telemetry dashboard" width="100%" />
+</div>
+
+<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
+
+## Projects
+
+<table>
+<tr>
+
+<td width="50%" valign="top">
+
+#### 🏎️ P1 — PhonePe Transaction Analysis
+
+Power BI dashboard analyzing 300K+ transactions worth ₹3.47bn across 108K users. Drill-through pages break value down by service; loans surfaced as the highest-value segment.
+
+`Power BI` `DAX`
+
+**Difficulty:** Advanced &nbsp;|&nbsp; **Status:** ✅ Complete
+
+[View Repository →](https://github.com/Hamzaul/Power_Bi_PhonePay_Analysis_Dashboard)
+
+</td>
+
+<td width="50%" valign="top">
+
+#### 🏎️ P2 — Car Models Analysis
+
+Cross-filtering dashboard comparing price, mileage, horsepower, and engine specs across brands, transmissions, and fuel types.
+
+`Power BI`
+
+**Difficulty:** Intermediate &nbsp;|&nbsp; **Status:** ✅ Complete
+
+[View Repository →](https://github.com/Hamzaul/Power_Bi_Car_Models)
+
+</td>
+
+</tr>
+<tr>
+
+<td width="50%" valign="top">
+
+#### 🏎️ P3 — Student Performance Analysis
+
+EDA on 100 student records — grading, descriptive statistics, and correlation heatmaps across three subjects.
+
+`Python` `Pandas` `Seaborn`
+
+**Difficulty:** Intermediate &nbsp;|&nbsp; **Status:** ✅ Complete
+
+[View Repository →](https://github.com/Hamzaul/Student_Performance_Analysis)
+
+</td>
+
+<td width="50%" valign="top">
+
+#### 🔐 P4 — Authentication System
+
+A secure user authentication application featuring user registration, login, and session management. Built with a Python backend and a responsive JavaScript-powered frontend, the project demonstrates modern authentication workflows and secure access control principles.
+
+`Python` `JavaScript` `HTML` `CSS`
+
+**Difficulty:** Intermediate &nbsp;|&nbsp; **Status:** ✅ Complete
+
+[View Repository →](https://github.com/Hamzaul/Authentication)
+
+</td>
+
+</tr>
+<tr>
+
+<td width="50%" valign="top">
+
+#### 🎂 P5 — Birthday Celebration Website
+
+An interactive birthday celebration website featuring animated visuals, smooth transitions, and a responsive user interface. Built to create a memorable user experience while demonstrating modern front-end design and animation techniques.
+
+`HTML` `CSS` `JavaScript`
+
+**Difficulty:** Beginner &nbsp;|&nbsp; **Status:** ✅ Live
+
+<a href="https://birthday-gules-tau.vercel.app/">🌐 Live Demo</a> &nbsp;|&nbsp;
+<a href="https://github.com/Hamzaul/Birthday">📂 Repository</a>
+
+</td>
+
+<td width="50%" valign="top">
+
+#### 🚦 P6 — Traffic Control System
+
+An intelligent traffic control system that simulates automated signal management to optimize vehicle flow and reduce traffic congestion. The project demonstrates practical implementation of traffic management logic through an interactive interface and automation concepts.
+
+`Python` `JavaScript` `Traffic Management` `Automation`
+
+**Difficulty:** Intermediate &nbsp;|&nbsp; **Status:** ✅ Complete
+
+[View Repository →](https://github.com/Hamzaul/Traffic-control-system)
+
+</td>
+
+</tr>
+</table>
+
+<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
+
+## Skills
+
+<table>
+<tr>
+
+<td width="33%" valign="top">
+
+**Programming**
+
+<img src="https://img.shields.io/badge/Python-090B0F?style=flat-square&logo=python&logoColor=E8121C" /><br/>
+<img src="https://img.shields.io/badge/Java-090B0F?style=flat-square&logo=java&logoColor=2FD3E0" /><br/>
+<img src="https://img.shields.io/badge/SQL-090B0F?style=flat-square&logo=mysql&logoColor=C6A15B" /><br/>
+<img src="https://img.shields.io/badge/C-090B0F?style=flat-square&logoColor=E8121C" />
+
+</td>
+
+<td width="33%" valign="top">
+
+**Analytics**
+
+<img src="https://img.shields.io/badge/Power_BI-090B0F?style=flat-square&logo=powerbi&logoColor=E8121C" /><br/>
+<img src="https://img.shields.io/badge/DAX-090B0F?style=flat-square&logoColor=2FD3E0" /><br/>
+<img src="https://img.shields.io/badge/Excel-090B0F?style=flat-square&logo=microsoftexcel&logoColor=C6A15B" /><br/>
+<img src="https://img.shields.io/badge/XLOOKUP-090B0F?style=flat-square&logoColor=E8121C" />
+
+</td>
+
+<td width="33%" valign="top">
+
+**Visualization**
+
+<img src="https://img.shields.io/badge/Matplotlib-090B0F?style=flat-square&logoColor=2FD3E0" /><br/>
+<img src="https://img.shields.io/badge/Seaborn-090B0F?style=flat-square&logoColor=C6A15B" />
+
+</td>
+
+</tr>
+<tr>
+
+<td width="33%" valign="top">
+
+**Databases**
+
+<img src="https://img.shields.io/badge/MySQL-090B0F?style=flat-square&logo=mysql&logoColor=E8121C" /><br/>
+<img src="https://img.shields.io/badge/MongoDB-090B0F?style=flat-square&logo=mongodb&logoColor=2FD3E0" />
+
+</td>
+
+<td width="33%" valign="top">
+
+**Tools**
+
+<img src="https://img.shields.io/badge/Git-090B0F?style=flat-square&logo=git&logoColor=C6A15B" /><br/>
+<img src="https://img.shields.io/badge/GitHub-090B0F?style=flat-square&logo=github&logoColor=E8121C" /><br/>
+<img src="https://img.shields.io/badge/VS_Code-090B0F?style=flat-square&logo=visualstudiocode&logoColor=2FD3E0" /><br/>
+<img src="https://img.shields.io/badge/Figma-090B0F?style=flat-square&logo=figma&logoColor=C6A15B" />
+
+</td>
+
+<td width="33%" valign="top">
+
+**AI**
+
+<img src="https://img.shields.io/badge/Linear_Regression-090B0F?style=flat-square&logoColor=E8121C" /><br/>
+<img src="https://img.shields.io/badge/Generative_AI-090B0F?style=flat-square&logoColor=2FD3E0" /><br/>
+<img src="https://img.shields.io/badge/Responsible_AI-090B0F?style=flat-square&logoColor=C6A15B" />
+
+</td>
+
+</tr>
+</table>
+
+<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
+
+## Roadmap
+
+```text
+[ POWER BI · ADVANCED DAX        ]  ▰▰▰▰▱  IN PROGRESS
+[ MACHINE LEARNING FUNDAMENTALS  ]  ▰▰▰▱▱  IN PROGRESS
+[ STATISTICS FOR ANALYTICS       ]  ▰▰▰▱▱  IN PROGRESS
+[ DATA STORYTELLING              ]  ▰▰▱▱▱  ONGOING
+[ SQL OPTIMIZATION               ]  ▰▰▱▱▱  ONGOING
+```
+
+<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
+
+## GitHub Journey
+
+Commit history, streaks, and language mix are already covered in the dashboard above — repeating those numbers here would just be noise.
+
+<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
+
+## Let's Connect
+
+<div align="center">
+
+<a href="https://linkedin.com/in/HamzaulRahman"><img src="https://img.shields.io/badge/LinkedIn-12151C?style=for-the-badge&logo=linkedin&logoColor=2FD3E0" /></a>
+<a href="https://github.com/Hamzaul"><img src="https://img.shields.io/badge/GitHub-12151C?style=for-the-badge&logo=github&logoColor=E8121C" /></a>
+<a href="https://kaggle.com/hamzaulrahman"><img src="https://img.shields.io/badge/Kaggle-12151C?style=for-the-badge&logo=kaggle&logoColor=C6A15B" /></a>
+<a href="https://leetcode.com/u6sme0wz24"><img src="https://img.shields.io/badge/LeetCode-12151C?style=for-the-badge&logo=leetcode&logoColor=2FD3E0" /></a>
+<a href="https://www.hackerrank.com/@_2501103006"><img src="https://img.shields.io/badge/HackerRank-12151C?style=for-the-badge&logo=hackerrank&logoColor=E8121C" /></a>
+<a href="mailto:hamzaulrahman436@gmail.com"><img src="https://img.shields.io/badge/Email-12151C?style=for-the-badge&logo=gmail&logoColor=C6A15B" /></a>
+<a href="#"><img src="https://img.shields.io/badge/Portfolio-12151C?style=for-the-badge&logo=googlechrome&logoColor=2FD3E0" /></a>
+
+</div>
+
+<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
+
+<div align="center">
+
+<sub>Turning data into decisions, one dashboard at a time.</sub>
+
+</div>
