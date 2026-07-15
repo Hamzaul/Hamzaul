@@ -255,7 +255,6 @@ Exploratory data analysis on 100 student records — automated grading, descript
 <br/>
 <div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
 <br/>
-
 <!-- ═══════════════════════ 04 — TECH STACK ═══════════════════════ -->
 
 <h2 align="center">
