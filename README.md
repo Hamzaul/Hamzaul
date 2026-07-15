@@ -470,63 +470,211 @@ class HamzaulRahman:
 <div align="center"><sub>Shown once, here — demonstrated everywhere else through the projects and the live dashboard above.</sub></div>
 <br/>
 
-<div align="center">
+---
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-E8121C?style=flat-square&labelColor=E8121C" height="10" />&nbsp;&nbsp;Programming</h4>
-<p>
-<img src="https://img.shields.io/badge/Python-0D1117?style=for-the-badge&logo=python&logoColor=E8121C" />&nbsp;
-<img src="https://img.shields.io/badge/SQL-0D1117?style=for-the-badge&logo=mysql&logoColor=E8121C" />&nbsp;
-<img src="https://img.shields.io/badge/Java-0D1117?style=for-the-badge&logo=openjdk&logoColor=E8121C" />&nbsp;
-<img src="https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=E8121C" />
-</p>
 <br/>
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-C6A15B?style=flat-square&labelColor=C6A15B" height="10" />&nbsp;&nbsp;Analytics</h4>
-<p>
-<img src="https://img.shields.io/badge/Power_BI-0D1117?style=for-the-badge&logo=powerbi&logoColor=C6A15B" />&nbsp;
-<img src="https://img.shields.io/badge/DAX-0D1117?style=for-the-badge&logoColor=C6A15B" />&nbsp;
-<img src="https://img.shields.io/badge/Excel-0D1117?style=for-the-badge&logo=microsoftexcel&logoColor=C6A15B" />&nbsp;
-<img src="https://img.shields.io/badge/Pivot_Tables-0D1117?style=for-the-badge&logoColor=C6A15B" />
-</p>
+<!-- ══════════════════════════════════════════════════════ -->
+<!--                  ROW 1  ·  Programming & Web Dev      -->
+<!-- ══════════════════════════════════════════════════════ -->
+
+<table align="center" width="92%">
+<tr>
+
+<!-- Programming -->
+<td width="50%" align="center" valign="top">
+
 <br/>
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-2FD3E0?style=flat-square&labelColor=2FD3E0" height="10" />&nbsp;&nbsp;Data Science</h4>
-<p>
-<img src="https://img.shields.io/badge/Pandas-0D1117?style=for-the-badge&logo=pandas&logoColor=2FD3E0" />&nbsp;
-<img src="https://img.shields.io/badge/NumPy-0D1117?style=for-the-badge&logo=numpy&logoColor=2FD3E0" />
-</p>
+**`{ }` &nbsp; Programming**
+
 <br/>
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-848B9C?style=flat-square&labelColor=848B9C" height="10" />&nbsp;&nbsp;Visualization</h4>
-<p>
-<img src="https://img.shields.io/badge/Matplotlib-0D1117?style=for-the-badge&logoColor=848B9C" />&nbsp;
-<img src="https://img.shields.io/badge/Seaborn-0D1117?style=for-the-badge&logoColor=848B9C" />
-</p>
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=FFD43B" />
+&nbsp;
+<img src="https://img.shields.io/badge/SQL-E8121C?style=for-the-badge&logo=mysql&logoColor=fff" />
+&nbsp;
+<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=fff" />
+&nbsp;
+<img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=fff" />
+
+<br/><br/>
+
+</td>
+
+<!-- Web Development -->
+<td width="50%" align="center" valign="top">
+
 <br/>
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-E8121C?style=flat-square&labelColor=E8121C" height="10" />&nbsp;&nbsp;Databases</h4>
-<p>
-<img src="https://img.shields.io/badge/MySQL-0D1117?style=for-the-badge&logo=mysql&logoColor=E8121C" />&nbsp;
-<img src="https://img.shields.io/badge/MongoDB-0D1117?style=for-the-badge&logo=mongodb&logoColor=E8121C" />
-</p>
+**`🌐` &nbsp; Web Development**
+
 <br/>
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-C6A15B?style=flat-square&labelColor=C6A15B" height="10" />&nbsp;&nbsp;Development</h4>
-<p>
-<img src="https://img.shields.io/badge/Git-0D1117?style=for-the-badge&logo=git&logoColor=C6A15B" />&nbsp;
-<img src="https://img.shields.io/badge/GitHub-0D1117?style=for-the-badge&logo=github&logoColor=C6A15B" />&nbsp;
-<img src="https://img.shields.io/badge/VS_Code-0D1117?style=for-the-badge&logo=visualstudiocode&logoColor=C6A15B" />
-</p>
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=fff" />
+&nbsp;
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=fff" />
+&nbsp;
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
+
+<br/><br/>
+
+</td>
+</tr>
+</table>
+
 <br/>
 
-<h4><img src="https://img.shields.io/badge/%E2%96%B8-2FD3E0?style=flat-square&labelColor=2FD3E0" height="10" />&nbsp;&nbsp;Currently Learning</h4>
-<p>
-<img src="https://img.shields.io/badge/SQL_Optimization-0D1117?style=for-the-badge&logoColor=2FD3E0" />&nbsp;
-<img src="https://img.shields.io/badge/Machine_Learning-0D1117?style=for-the-badge&logoColor=2FD3E0" />&nbsp;
-<img src="https://img.shields.io/badge/Statistics-0D1117?style=for-the-badge&logoColor=2FD3E0" />
-</p>
+<!-- ══════════════════════════════════════════════════════ -->
+<!--                ROW 2  ·  Analytics & Data Science     -->
+<!-- ══════════════════════════════════════════════════════ -->
 
-</div>
+<table align="center" width="92%">
+<tr>
+
+<!-- Analytics -->
+<td width="50%" align="center" valign="top">
+
+<br/>
+
+**`📊` &nbsp; Analytics**
+
+<br/>
+
+<img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=000" />
+&nbsp;
+<img src="https://img.shields.io/badge/DAX-CC2927?style=for-the-badge&logoColor=fff" />
+&nbsp;
+<img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=fff" />
+&nbsp;
+<img src="https://img.shields.io/badge/Pivot_Tables-0078D4?style=for-the-badge&logoColor=fff" />
+
+<br/><br/>
+
+</td>
+
+<!-- Data Science -->
+<td width="50%" align="center" valign="top">
+
+<br/>
+
+**`🔬` &nbsp; Data Science**
+
+<br/>
+
+<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=fff" />
+&nbsp;
+<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=4DABCF" />
+&nbsp;
+<img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=fff" />
+
+<br/><br/>
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!--              ROW 3  ·  Visualization & Databases      -->
+<!-- ══════════════════════════════════════════════════════ -->
+
+<table align="center" width="92%">
+<tr>
+
+<!-- Visualization -->
+<td width="50%" align="center" valign="top">
+
+<br/>
+
+**`📈` &nbsp; Visualization**
+
+<br/>
+
+<img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logoColor=fff" />
+&nbsp;
+<img src="https://img.shields.io/badge/Seaborn-44A8B3?style=for-the-badge&logoColor=fff" />
+&nbsp;
+<img src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=fff" />
+
+<br/><br/>
+
+</td>
+
+<!-- Databases -->
+<td width="50%" align="center" valign="top">
+
+<br/>
+
+**`🗄️` &nbsp; Databases**
+
+<br/>
+
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=fff" />
+&nbsp;
+<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=fff" />
+
+<br/><br/>
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!--              ROW 4  ·  Development & Learning         -->
+<!-- ══════════════════════════════════════════════════════ -->
+
+<table align="center" width="92%">
+<tr>
+
+<!-- Development -->
+<td width="50%" align="center" valign="top">
+
+<br/>
+
+**`🛠️` &nbsp; Development**
+
+<br/>
+
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=fff" />
+&nbsp;
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=fff" />
+&nbsp;
+<img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=fff" />
+
+<br/><br/>
+
+</td>
+
+<!-- Currently Learning -->
+<td width="50%" align="center" valign="top">
+
+<br/>
+
+**`🚀` &nbsp; Currently Learning**
+
+<br/>
+
+<img src="https://img.shields.io/badge/SQL_Optimization-12151C?style=for-the-badge&logo=mysql&logoColor=2FD3E0" />
+&nbsp;
+<img src="https://img.shields.io/badge/Machine_Learning-12151C?style=for-the-badge&logo=tensorflow&logoColor=FF6F00" />
+&nbsp;
+<img src="https://img.shields.io/badge/Statistics-12151C?style=for-the-badge&logo=r&logoColor=276DC3" />
+&nbsp;
+<img src="https://img.shields.io/badge/Deep_Learning-12151C?style=for-the-badge&logo=pytorch&logoColor=EE4C2C" />
+
+<br/><br/>
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+---
 
 <br/>
 <div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
