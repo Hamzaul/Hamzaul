@@ -8,11 +8,9 @@
 
 <br/>
 
-<a href="https://drive.google.com/your-resume-link"><img src="https://img.shields.io/badge/%E2%96%B8_RESUME-12151C?style=for-the-badge&logo=readdotcv&logoColor=E8121C" /></a>&nbsp;
-<a href="https://linkedin.com/in/HamzaulRahman"><img src="https://img.shields.io/badge/%E2%96%B8_LINKEDIN-12151C?style=for-the-badge&logo=linkedin&logoColor=2FD3E0" /></a>&nbsp;
+<a href="https://www.linkedin.com/in/hamzaul-rahman-40107b306/"><img src="https://img.shields.io/badge/%E2%96%B8_LINKEDIN-12151C?style=for-the-badge&logo=linkedin&logoColor=2FD3E0" /></a>&nbsp;
 <a href="https://hamzaul.github.io/portfolio"><img src="https://img.shields.io/badge/%E2%96%B8_PORTFOLIO-12151C?style=for-the-badge&logo=googlechrome&logoColor=C6A15B" /></a>&nbsp;
 <a href="mailto:hamzaulrahman436@gmail.com"><img src="https://img.shields.io/badge/%E2%96%B8_EMAIL-12151C?style=for-the-badge&logo=gmail&logoColor=E8121C" /></a>&nbsp;
-<a href="https://hamzaul.github.io/pit-strategy"><img src="https://img.shields.io/badge/%E2%96%B8_PLAY_GAME-12151C?style=for-the-badge&logo=gamejolt&logoColor=C6A15B" /></a>
 
 <br/><br/>
 
@@ -37,28 +35,90 @@
 <br/>
 
 ```python
-class Hamzaul:
-    role        = "Business Intelligence Engineer (aspiring)"
-    education   = "B.Tech · AI & Data Science"
+class HamzaulRahman:
 
-    building = [
-        "Power BI Dashboards",
-        "Data Analytics Projects",
+    name = "Hamzaul Rahman"
+
+    role = (
+        "Aspiring Data Analyst | AI & Data Science Student"
+    )
+
+    education = (
+        "B.Tech in Artificial Intelligence & Data Science "
+        "@ CGC University"
+    )
+
+    location = "India"
+
+    available_for = (
+        "Data Analytics Internships | Power BI Projects | "
+        "Python Development | Open Source Collaboration"
+    )
+
+    currently_learning = [
+        "Advanced Power BI & DAX",
+        "SQL Optimization",
+        "Machine Learning Fundamentals",
+        "Statistics for Data Analytics"
     ]
 
-    learning = [
-        "SQL",
-        "Machine Learning",
-        "Statistics",
+    projects = [
+
+        (
+            "PhonePe Transaction Analysis  ->  "
+            "Interactive Power BI dashboard analyzing "
+            "300K+ transactions with business insights "
+            "through KPI cards, drill-through pages, and "
+            "dynamic visualizations."
+        ),
+
+        (
+            "Student Performance Analysis  ->  "
+            "Python-based exploratory data analysis project "
+            "using Pandas, NumPy, Matplotlib, and Seaborn "
+            "to uncover academic performance trends."
+        ),
+
+        (
+            "Traffic Control System  ->  "
+            "Traffic management simulation demonstrating "
+            "automated signal control logic using "
+            "Python and JavaScript."
+        ),
+
+        (
+            "Authentication System  ->  "
+            "Secure user authentication application "
+            "implementing registration, login, and "
+            "session management."
+        ),
+
+        (
+            "Birthday Celebration Website  ->  "
+            "Creative front-end project featuring animations, "
+            "responsive layouts, and interactive UI."
+        ),
     ]
 
     interests = [
-        "Formula One",
-        "UI/UX",
-        "Data Storytelling",
+        "Business Intelligence",
+        "Data Visualization",
+        "Data Analytics",
+        "Machine Learning",
+        "Problem Solving",
+        "Dashboard Design",
+        "Real-world Data Solutions"
     ]
 
-    philosophy = "Every dashboard should answer a business question before it displays data."
+    fun_fact = (
+        "When I'm not building dashboards or solving "
+        "coding problems, you'll probably find me "
+        "writing poetry or exploring creative ideas."
+    )
+
+    motto = (
+        "Turning raw data into decisions worth acting on."
+    )
 ```
 
 <br/>
