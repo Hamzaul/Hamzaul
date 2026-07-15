@@ -151,110 +151,315 @@ class HamzaulRahman:
 <br/>
 
 <!-- ═══════════════════════ 03 — FEATURED PROJECTS ═══════════════════════ -->
-
 <h2 align="center">
 <img src="https://img.shields.io/badge/03-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;FEATURED PROJECTS
 </h2>
 
 <br/>
-<div align="center"><sub>The three that best show how I turn data into a decision.</sub></div>
+<div align="center"><sub>Six projects that show how I turn data into decisions and ideas into interfaces.</sub></div>
 <br/>
 
-<!-- ── Featured 1 ── -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--                        ROW 1                                  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
 <table>
-<tr><td>
+<tr>
 
-<h3>🏎️&nbsp; PhonePe Transaction Analysis</h3>
+<!-- ── Project 1 ── -->
+<td width="50%" valign="top">
 
-<!-- Add a real screenshot at assets/projects/phonepe.png, then uncomment:
-<img src="assets/projects/phonepe.png" alt="PhonePe dashboard screenshot" width="100%" />
--->
+<h3 align="center">🏎️&nbsp; PhonePe Transaction Analysis</h3>
 
-Power BI dashboard analyzing 300K+ transactions worth ₹3.47 billion across 108K users. Drill-through pages break value down by service category.
-
-<p>
-<img src="https://img.shields.io/badge/Power_BI-12151C?style=flat-square&logo=powerbi&logoColor=E8121C" />
-<img src="https://img.shields.io/badge/DAX-12151C?style=flat-square&logoColor=C6A15B" />
-<img src="https://img.shields.io/badge/Data_Modeling-12151C?style=flat-square&logoColor=2FD3E0" />
-</p>
-
-**Business impact:** Loans surfaced as the highest-value segment — a finding that would redirect marketing spend.
-
-<a href="https://github.com/Hamzaul/Power_Bi_PhonePay_Analysis_Dashboard"><img src="https://img.shields.io/badge/%E2%96%B8_VIEW_REPOSITORY-12151C?style=for-the-badge&logoColor=E8121C&logo=github" /></a>
-
-</td></tr>
-</table>
-<br/>
-
-<!-- ── Featured 2 ── -->
-<table>
-<tr><td>
-
-<h3>🏎️&nbsp; Car Models Analysis</h3>
-
-<!-- Add a real screenshot at assets/projects/car-models.png, then uncomment:
-<img src="assets/projects/car-models.png" alt="Car models dashboard screenshot" width="100%" />
--->
-
-Cross-filtering dashboard comparing price, mileage, horsepower, and engine specs across brands, transmissions, and fuel types.
-
-<p>
-<img src="https://img.shields.io/badge/Power_BI-12151C?style=flat-square&logo=powerbi&logoColor=E8121C" />
-<img src="https://img.shields.io/badge/Cross_Filtering-12151C?style=flat-square&logoColor=2FD3E0" />
-<img src="https://img.shields.io/badge/Data_Visualization-12151C?style=flat-square&logoColor=C6A15B" />
-</p>
-
-**Business impact:** Multi-dimensional comparison across 4 key vehicle metrics, letting users find competitive positioning instantly.
-
-<a href="https://github.com/Hamzaul/Power_Bi_Car_Models"><img src="https://img.shields.io/badge/%E2%96%B8_VIEW_REPOSITORY-12151C?style=for-the-badge&logoColor=E8121C&logo=github" /></a>
-
-</td></tr>
-</table>
-<br/>
-
-<!-- ── Featured 3 ── -->
-<table>
-<tr><td>
-
-<h3>🏎️&nbsp; Student Performance Analysis</h3>
-
-<!-- Add a real screenshot at assets/projects/student-performance.png, then uncomment:
-<img src="assets/projects/student-performance.png" alt="Student performance analysis screenshot" width="100%" />
--->
-
-Exploratory data analysis on 100 student records — automated grading, descriptive statistics, and correlation heatmaps across three subjects.
-
-<p>
-<img src="https://img.shields.io/badge/Python-12151C?style=flat-square&logo=python&logoColor=E8121C" />
-<img src="https://img.shields.io/badge/Pandas-12151C?style=flat-square&logo=pandas&logoColor=2FD3E0" />
-<img src="https://img.shields.io/badge/Seaborn-12151C?style=flat-square&logoColor=C6A15B" />
-</p>
-
-**Business impact:** Correlation analysis surfaced which factors most influence academic outcomes.
-
-<a href="https://github.com/Hamzaul/Student_Performance_Analysis"><img src="https://img.shields.io/badge/%E2%96%B8_VIEW_REPOSITORY-12151C?style=for-the-badge&logoColor=E8121C&logo=github" /></a>
-
-</td></tr>
-</table>
-
-<br/>
-
-<h3 align="center">Other Projects</h3>
 <br/>
 
 <div align="center">
-
-| Project | What it is | Repo |
-|---|---|---|
-| 🔐 Authentication System | Registration, login, and session management with a Python backend | [View](https://github.com/Hamzaul/Authentication) |
-| 🎂 Birthday Celebration Website | Animated, interactive front-end demo — [live](https://birthday-gules-tau.vercel.app/) | [View](https://github.com/Hamzaul/Birthday) |
-| 🚦 Traffic Control System | Simulated automated signal management to optimize vehicle flow | [View](https://github.com/Hamzaul/Traffic-control-system) |
-
+<a href="https://github.com/Hamzaul/Power_Bi_PhonePay_Analysis_Dashboard">
+<img src="https://img.shields.io/badge/⬡_Power_BI_Dashboard-12151C?style=for-the-badge" />
+</a>
 </div>
+
+<br/>
+
+<p align="center">
+<em>Power BI dashboard analyzing <strong>300K+ transactions</strong> worth <strong>₹3.47 billion</strong> across 108K users with drill-through pages by service category.</em>
+</p>
+
+<br/>
+
+<div align="center">
+<img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=000" />
+<img src="https://img.shields.io/badge/DAX-CC2927?style=for-the-badge&logoColor=fff" />
+<img src="https://img.shields.io/badge/Data_Modeling-0078D4?style=for-the-badge&logoColor=fff" />
+</div>
+
+<br/>
+
+> 💡 **Impact:** Loans surfaced as the highest-value segment — a finding that would redirect marketing spend.
+
+<br/>
+
+<div align="center">
+<a href="https://github.com/Hamzaul/Power_Bi_PhonePay_Analysis_Dashboard">
+<img src="https://img.shields.io/badge/▸_VIEW_REPO-E8121C?style=for-the-badge&logo=github&logoColor=fff" />
+</a>
+</div>
+
+<br/>
+
+</td>
+
+<!-- ── Project 2 ── -->
+<td width="50%" valign="top">
+
+<h3 align="center">🏎️&nbsp; Car Models Analysis</h3>
+
+<br/>
+
+<div align="center">
+<a href="https://github.com/Hamzaul/Power_Bi_Car_Models">
+<img src="https://img.shields.io/badge/⬡_Power_BI_Dashboard-12151C?style=for-the-badge" />
+</a>
+</div>
+
+<br/>
+
+<p align="center">
+<em>Cross-filtering dashboard comparing <strong>price, mileage, horsepower & engine specs</strong> across brands, transmissions, and fuel types.</em>
+</p>
+
+<br/>
+
+<div align="center">
+<img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=000" />
+<img src="https://img.shields.io/badge/Cross_Filtering-00BCB4?style=for-the-badge&logoColor=fff" />
+<img src="https://img.shields.io/badge/Data_Viz-7B68EE?style=for-the-badge&logoColor=fff" />
+</div>
+
+<br/>
+
+> 💡 **Impact:** Multi-dimensional comparison across 4 key vehicle metrics for instant competitive positioning.
+
+<br/>
+
+<div align="center">
+<a href="https://github.com/Hamzaul/Power_Bi_Car_Models">
+<img src="https://img.shields.io/badge/▸_VIEW_REPO-E8121C?style=for-the-badge&logo=github&logoColor=fff" />
+</a>
+</div>
+
+<br/>
+
+</td>
+
+</tr>
+</table>
+
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--                        ROW 2                                  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<table>
+<tr>
+
+<!-- ── Project 3 ── -->
+<td width="50%" valign="top">
+
+<h3 align="center">📊&nbsp; Student Performance Analysis</h3>
+
+<br/>
+
+<div align="center">
+<a href="https://github.com/Hamzaul/Student_Performance_Analysis">
+<img src="https://img.shields.io/badge/⬡_Python_EDA-12151C?style=for-the-badge" />
+</a>
+</div>
+
+<br/>
+
+<p align="center">
+<em>Exploratory analysis on <strong>100 student records</strong> — automated grading, descriptive statistics & correlation heatmaps across three subjects.</em>
+</p>
+
+<br/>
+
+<div align="center">
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=fff" />
+<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=fff" />
+<img src="https://img.shields.io/badge/Seaborn-44A8B3?style=for-the-badge&logoColor=fff" />
+</div>
+
+<br/>
+
+> 💡 **Impact:** Correlation analysis surfaced which factors most influence academic outcomes.
+
+<br/>
+
+<div align="center">
+<a href="https://github.com/Hamzaul/Student_Performance_Analysis">
+<img src="https://img.shields.io/badge/▸_VIEW_REPO-E8121C?style=for-the-badge&logo=github&logoColor=fff" />
+</a>
+</div>
+
+<br/>
+
+</td>
+
+<!-- ── Project 4 ── -->
+<td width="50%" valign="top">
+
+<h3 align="center">🔐&nbsp; Authentication System</h3>
+
+<br/>
+
+<div align="center">
+<a href="https://github.com/Hamzaul/Authentication">
+<img src="https://img.shields.io/badge/⬡_Python_Backend-12151C?style=for-the-badge" />
+</a>
+</div>
+
+<br/>
+
+<p align="center">
+<em>Full-featured <strong>registration, login & session management</strong> system with a Python backend — secure, clean, and modular.</em>
+</p>
+
+<br/>
+
+<div align="center">
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=fff" />
+<img src="https://img.shields.io/badge/Authentication-FF6F00?style=for-the-badge&logoColor=fff" />
+<img src="https://img.shields.io/badge/Session_Mgmt-6A1B9A?style=for-the-badge&logoColor=fff" />
+</div>
+
+<br/>
+
+> 💡 **Impact:** Production-ready auth flow demonstrating secure credential handling and session lifecycle.
+
+<br/>
+
+<div align="center">
+<a href="https://github.com/Hamzaul/Authentication">
+<img src="https://img.shields.io/badge/▸_VIEW_REPO-E8121C?style=for-the-badge&logo=github&logoColor=fff" />
+</a>
+</div>
+
+<br/>
+
+</td>
+
+</tr>
+</table>
+
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--                        ROW 3                                  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<table>
+<tr>
+
+<!-- ── Project 5 ── -->
+<td width="50%" valign="top">
+
+<h3 align="center">🎂&nbsp; Birthday Celebration Website</h3>
+
+<br/>
+
+<div align="center">
+<a href="https://birthday-gules-tau.vercel.app/">
+<img src="https://img.shields.io/badge/⬡_Live_Demo-12151C?style=for-the-badge" />
+</a>
+</div>
+
+<br/>
+
+<p align="center">
+<em>Animated, interactive <strong>front-end celebration page</strong> with smooth transitions, confetti effects & responsive design — deployed on Vercel.</em>
+</p>
+
+<br/>
+
+<div align="center">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=fff" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=fff" />
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
+</div>
+
+<br/>
+
+> 💡 **Impact:** Polished UI/UX craft showcasing animation chops and deployment workflow.
+
+<br/>
+
+<div align="center">
+<a href="https://github.com/Hamzaul/Birthday">
+<img src="https://img.shields.io/badge/▸_VIEW_REPO-E8121C?style=for-the-badge&logo=github&logoColor=fff" />
+</a>
+&nbsp;
+<a href="https://birthday-gules-tau.vercel.app/">
+<img src="https://img.shields.io/badge/▸_LIVE_SITE-00C853?style=for-the-badge&logo=vercel&logoColor=fff" />
+</a>
+</div>
+
+<br/>
+
+</td>
+
+<!-- ── Project 6 ── -->
+<td width="50%" valign="top">
+
+<h3 align="center">🚦&nbsp; Traffic Control System</h3>
+
+<br/>
+
+<div align="center">
+<a href="https://github.com/Hamzaul/Traffic-control-system">
+<img src="https://img.shields.io/badge/⬡_Simulation-12151C?style=for-the-badge" />
+</a>
+</div>
+
+<br/>
+
+<p align="center">
+<em>Simulated <strong>automated signal management</strong> system designed to optimize vehicle flow at intersections with intelligent timing logic.</em>
+</p>
+
+<br/>
+
+<div align="center">
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=fff" />
+<img src="https://img.shields.io/badge/Simulation-E65100?style=for-the-badge&logoColor=fff" />
+<img src="https://img.shields.io/badge/Algorithms-1B5E20?style=for-the-badge&logoColor=fff" />
+</div>
+
+<br/>
+
+> 💡 **Impact:** Algorithmic approach to real-world traffic optimization, reducing simulated wait times.
+
+<br/>
+
+<div align="center">
+<a href="https://github.com/Hamzaul/Traffic-control-system">
+<img src="https://img.shields.io/badge/▸_VIEW_REPO-E8121C?style=for-the-badge&logo=github&logoColor=fff" />
+</a>
+</div>
+
+<br/>
+
+</td>
+
+</tr>
+</table>
 
 <br/>
 <div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
 <br/>
+
+
 <!-- ═══════════════════════ 04 — TECH STACK ═══════════════════════ -->
 
 <h2 align="center">
