@@ -743,13 +743,10 @@ Ship the first production-quality BI case study
 <br/>
 
 <div align="center">
-<a href="https://linkedin.com/in/HamzaulRahman"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=2FD3E0" /></a>
+<a href="https://www.linkedin.com/in/hamzaul-rahman-40107b306/"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=2FD3E0" /></a>
 <a href="https://github.com/Hamzaul"><img src="https://img.shields.io/badge/GitHub-0D1117?style=for-the-badge&logo=github&logoColor=E8121C" /></a>
-<a href="https://kaggle.com/hamzaulrahman"><img src="https://img.shields.io/badge/Kaggle-0D1117?style=for-the-badge&logo=kaggle&logoColor=C6A15B" /></a>
-<a href="https://leetcode.com/u6sme0wz24"><img src="https://img.shields.io/badge/LeetCode-0D1117?style=for-the-badge&logo=leetcode&logoColor=2FD3E0" /></a>
 <a href="https://www.hackerrank.com/@_2501103006"><img src="https://img.shields.io/badge/HackerRank-0D1117?style=for-the-badge&logo=hackerrank&logoColor=E8121C" /></a>
 <a href="mailto:hamzaulrahman436@gmail.com"><img src="https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=C6A15B" /></a>
-<a href="https://hamzaul.github.io/portfolio"><img src="https://img.shields.io/badge/Portfolio-0D1117?style=for-the-badge&logo=googlechrome&logoColor=2FD3E0" /></a>
 </div>
 
 <br/>
