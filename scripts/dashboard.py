@@ -3,7 +3,14 @@ import math
 import datetime
 import sys
 import requests
+from pathlib import Path
+from dotenv import load_dotenv
 
+env_path = Path(__file__).resolve().parents[1] / ".env"
+load_dotenv(env_path)
+print("Looking for .env at:", env_path)
+print("Exists:", env_path.exists())
+print("GH_TOKEN:", os.getenv("GH_TOKEN"))
 
 PROFILE = {
     "name": "Hamzaul Rahman",
