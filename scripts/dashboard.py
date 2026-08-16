@@ -6,11 +6,7 @@ import requests
 from pathlib import Path
 from dotenv import load_dotenv
 
-env_path = Path(__file__).resolve().parents[1] / ".env"
-load_dotenv(env_path)
-print("Looking for .env at:", env_path)
-print("Exists:", env_path.exists())
-print("GH_TOKEN:", os.getenv("GH_TOKEN"))
+load_dotenv()
 
 PROFILE = {
     "name": "Hamzaul Rahman",
@@ -63,9 +59,6 @@ TOKEN = os.environ.get("GH_TOKEN")
 GOAL = PROFILE["goal"]
 W, H = 1660, 1373
 
-if not TOKEN:
-    print("ERROR: GH_TOKEN not found in environment variables")
-    sys.exit(1)
 
 HEADERS = {
     "Authorization": f"Bearer {TOKEN}",
