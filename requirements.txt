@@ -1,6 +1,2 @@
 requests>=2.31.0
-<<<<<<< HEAD
 python-dotenv
-=======
-python-dotenv
->>>>>>> 4d264f1 (Update token)
