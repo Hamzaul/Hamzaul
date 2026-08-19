@@ -32,24 +32,57 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Generate dashboard
+      - name: Generate and push dashboard
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          python scripts/dashboard.py
-
-      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets/f1-dashboard.svg
+          for attempt in 1 2 3; do
+            echo "========================================"
+            echo "Attempt $attempt of 3"
+            echo "========================================"
 
-          if git diff --staged --quiet; then
-            echo "No dashboard changes."
-            exit 0
-          fi
+            if ! git fetch origin main; then
+              echo "Failed to fetch origin/main."
+              exit 1
+            fi
 
-          git commit -m "Update F1 Dashboard"
+            if ! git reset --hard origin/main; then
+              echo "Failed to reset to origin/main."
+              exit 1
+            fi
 
-          git push origin HEAD:main
+            echo "Generating F1 dashboard..."
+
+            if ! python scripts/dashboard.py; then
+              echo "Dashboard generation failed."
+              exit 1
+            fi
+
+            git add assets/f1-dashboard.svg
+
+            if git diff --staged --quiet; then
+              echo "No dashboard changes."
+              exit 0
+            fi
+
+            git commit -m "Update F1 Dashboard"
+
+            if git push origin HEAD:main; then
+              echo "Dashboard successfully pushed."
+              exit 0
+            fi
+
+            echo "Push failed."
+
+            if [ "$attempt" -lt 3 ]; then
+              WAIT=$((5 * attempt))
+              echo "Retrying in ${WAIT} seconds..."
+              sleep "$WAIT"
+            fi
+          done
+
+          echo "Failed to push dashboard after 3 attempts."
+          exit 1
