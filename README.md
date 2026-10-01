@@ -230,14 +230,14 @@ Simulates automated signal management to optimize vehicle flow and reduce conges
 <br/>
 
 <div align="center">
-  <a href="pit-strategy/"><img src="assets/game-thumbnail.svg" alt="Mining Expedition: pick pickaxe tiers, dodge flooded tunnels and race five rival miners to the Deep Vein" width="100%" /></a>
+  <a href="https://hamzaul.github.io/Hamzaul/pit-strategy/"><img src="assets/game-thumbnail.svg" alt="Mining Expedition: pick pickaxe tiers, dodge flooded tunnels and race five rival miners to the Deep Vein" width="100%" /></a>
 </div>
 
 <br/>
 
 Pick the right pickaxe tier, read the tunnels, and decide when to head back to the crafting table. Five rival miners are racing you down 50 blocks to the Deep Vein. Your best result is saved in your browser.
 
-**Live game:** *(add URL)* &nbsp;·&nbsp; **Source:** [`pit-strategy/`](pit-strategy/)
+**Live game:** [PLAY MINING EXPEDITION](https://hamzaul.github.io/Hamzaul/pit-strategy/) &nbsp;·&nbsp; **Source:** [`pit-strategy/`](pit-strategy/)
 
 <img src="assets/pixel-divider.svg" width="100%" alt="" />
 
