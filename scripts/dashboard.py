@@ -1,20 +1,50 @@
-import os
-import math
+"""World Activity dashboard generator (Minecraft edition).
+
+Pipeline (unchanged from the original design):
+    GitHub GraphQL API  ->  compute_stats()  ->  render()  ->  assets/world-activity.svg
+
+Run by .github/workflows/minecraft-dashboard.yml with GH_TOKEN in the environment.
+
+Local use:
+    python scripts/dashboard.py                  # real data (needs GH_TOKEN, e.g. in .env)
+    python scripts/dashboard.py --placeholder    # empty "first sync pending" world, no token
+    python scripts/dashboard.py --demo --out preview.svg   # synthetic data for design QA only
+
+Data semantics: the GitHub contribution calendar counts commits AND issues,
+pull requests and reviews. This dashboard therefore calls the number "XP"
+or "contributions" -- never "commits".
+"""
+
+import argparse
 import datetime
+import math
+import os
+import random
 import sys
-import requests
 from pathlib import Path
-from dotenv import load_dotenv
+
+import requests
+
+try:  # python-dotenv is in requirements.txt; tolerate its absence for --demo runs
+    from dotenv import load_dotenv
+except ImportError:  # pragma: no cover
+    def load_dotenv(*_a, **_k):
+        return False
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import pixelfont as px  # noqa: E402
 
 load_dotenv()
 
+OUTPUT_PATH = os.path.join("assets", "world-activity.svg")
+
 PROFILE = {
     "name": "Hamzaul Rahman",
-    "tagline": "Aspiring Data Analyst — Power BI · Python · EDA",
+    "tagline": "Aspiring Data Analyst \u2014 Power BI \u00b7 Python \u00b7 EDA",
     "github_username": "Hamzaul",
-    "goal": 3000,  # season commit target shown on the gauge
 
-    # Grouped skill tags for the GARAGE panel. Keys become category labels.
+    # Inventory: skills grouped by category (carried over unchanged from the
+    # original dashboard configuration). Colour follows the rarity palette.
     "skills": {
         "LANGUAGES": ["Python", "Java", "C"],
         "DATA ANALYTICS": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "EDA", "Regression", "Statistics"],
@@ -23,15 +53,24 @@ PROFILE = {
         "DEV TOOLS": ["Git", "GitHub"],
     },
 
-    # Top projects for the CAREER HIGHLIGHTS panel, ordered P1/P2/P3.
-    # Each needs: title, stack, one headline stat, and a short supporting detail.
+    # Personal yearly XP target, chosen by the profile owner. It is a goal
+    # shown on the XP bar, NOT a value calculated from GitHub.
+    "goal": 3000,
+
+    # Deliberately excluded: phone number and email. This SVG sits in a public
+    # README, and a hardcoded phone number there is spam-bait.
+
+    # Featured builds. Statistics here are the owner's own project figures
+    # (carried over unchanged from the original dashboard configuration).
+    # rarity: common | uncommon | rare | epic | legendary
     "highlights": [
         {
             "title": "PhonePe Transaction Analysis",
-            "stack": "Power BI · DAX",
+            "stack": "Power BI \u00b7 DAX",
             "stat_value": "300K+",
             "stat_label": "TRANSACTIONS",
-            "detail": "₹3.47bn value · 96% success rate",
+            "detail": "\u20b93.47bn value \u00b7 96% success rate",
+            "rarity": "rare",
         },
         {
             "title": "Car Models Analysis",
@@ -39,31 +78,22 @@ PROFILE = {
             "stat_value": "337 HP",
             "stat_label": "AVG HORSEPOWER",
             "detail": "~$58K avg price, cross-brand comparison",
+            "rarity": "uncommon",
         },
         {
             "title": "Student Performance Analysis",
-            "stack": "Python · Pandas · Seaborn",
+            "stack": "Python \u00b7 Pandas \u00b7 Seaborn",
             "stat_value": "74.8",
             "stat_label": "AVG SCORE",
-            "detail": "100 records · correlation heatmaps",
+            "detail": "100 records \u00b7 correlation heatmaps",
+            "rarity": "uncommon",
         },
     ],
-
-    # Deliberately excluded: phone number and email. This SVG is meant to sit
-    # in a public README, and a hardcoded phone number there is spam-bait.
-    # Add a "contact" field here if you'd rather show a LinkedIn/GitHub link.
 }
 
 USERNAME = PROFILE["github_username"]
-TOKEN = os.environ.get("GH_TOKEN")
 GOAL = PROFILE["goal"]
-W, H = 1660, 1373
-
-
-HEADERS = {
-    "Authorization": f"Bearer {TOKEN}",
-    "Content-Type": "application/json",
-}
+W = 800
 
 QUERY = """
 query($login:String!) {
@@ -92,73 +122,81 @@ query($login:String!) {
           }
         }
       }
-      restrictedContributionsCount
-      totalCommitContributions
-      totalIssueContributions
-      totalPullRequestContributions
-      totalPullRequestReviewContributions
     }
   }
 }
 """
 
 # --------------------------------------------------------------------------
-# Theme — carbon-fibre HUD, not generic dark+red
+# Design tokens
 # --------------------------------------------------------------------------
 
-COLOR = {
-    "bg": "#090B0F",
-    "panel": "#12151C",
-    "panel_alt": "#0D1015",
-    "border": "#242832",
-    "grid": "#1B1F27",
-    "text": "#F2F4F8",
-    "text_dim": "#848B9C",
-    "text_faint": "#4B505C",
-    "red": "#E8121C",
-    "red_dark": "#5C0910",
-    "gold": "#C6A15B",
-    "silver": "#9CA3AF",
-    "bronze": "#B0754A",
-    "platinum": "#7FE7D8",
-    "cyan": "#2FD3E0",
-    "purple": "#9D6BFF",
-    "green": "#28C76F",
-    "amber": "#F2A93B",
+C = {
+    "bg": "#101211",
+    "panel": "#1B1D1C",
+    "panel_alt": "#222523",
+    "black": "#050605",
+    "bevel_hi": "#3E433F",
+    "bevel_lo": "#0C0D0C",
+    "text": "#F1F1EA",
+    "dim": "#9AA09A",
+    "faint": "#5C625D",
+    "grass": "#5B8731",
+    "leaf": "#3F6B22",
+    "dirt": "#7A5230",
+    "wood": "#9C6B3A",
+    "stone": "#7F8580",
+    "emerald": "#17DD62",
+    "diamond": "#5DECEC",
+    "gold": "#FAC846",
+    "redstone": "#D1342A",
+    "amethyst": "#8B3FD9",
+    "iron": "#D8DBD8",
+    "xp": "#7CFC3A",
 }
 
-FONT_DISPLAY = "'Segoe UI', Arial, sans-serif"
-FONT_MONO = "'SF Mono', 'Consolas', 'Courier New', monospace"
+RARITY = {
+    "common": C["dim"],
+    "uncommon": C["emerald"],
+    "rare": C["diamond"],
+    "epic": C["amethyst"],
+    "legendary": C["gold"],
+}
 
-# heat scale for the sector map (contribution calendar) — cool -> hot,
-# like a tyre-temperature readout, instead of the generic GitHub green
-HEAT_SCALE = ["#161A22", "#1B3A57", "#1C6E8C", "#2FD3E0", "#F2A93B", "#E8121C"]
+# Contribution "ore" scale for the chunk map, low -> high.
+CHUNK_SCALE = ["#2A2D2B", C["dirt"], C["grass"], C["emerald"], C["diamond"]]
+CHUNK_NAMES = ["EMPTY", "DIRT", "GRASS", "EMERALD", "DIAMOND"]
+
+# Milestone tiers, mirroring the pickaxe tiers used in the game.
+TIERS = [("STONE", "#9AA09A"), ("IRON", "#D8DBD8"), ("GOLD", C["gold"]), ("DIAMOND", C["diamond"])]
+
+FONT_UI = "'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+FONT_MONO = "'SF Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace"
 
 
 def esc(text):
     return str(text).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def polar(cx, cy, r, angle_deg):
-    rad = math.radians(angle_deg)
-    return cx + r * math.cos(rad), cy + r * math.sin(rad)
-
-
 # --------------------------------------------------------------------------
 # Data fetch
 # --------------------------------------------------------------------------
 
-def fetch_user():
+def fetch_user(token):
+    if not token:
+        print("ERROR: GH_TOKEN is not set. Add it to .env locally or as the GH_TOKEN Actions secret.")
+        sys.exit(1)
+    headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
     try:
         resp = requests.post(
             "https://api.github.com/graphql",
             json={"query": QUERY, "variables": {"login": USERNAME}},
-            headers=HEADERS,
+            headers=headers,
             timeout=30,
         )
         resp.raise_for_status()
         data = resp.json()
-    except Exception as e:
+    except Exception as e:  # network / HTTP errors
         print(f"ERROR: API request failed: {e}")
         sys.exit(1)
 
@@ -166,693 +204,577 @@ def fetch_user():
         print("ERROR: GitHub API returned unexpected response:")
         print(data)
         sys.exit(1)
-
     return data["data"]["user"]
+
+
+def _calendar(weeks_of_counts, today):
+    """Build a GraphQL-shaped contribution calendar ending at `today`."""
+    sunday = today - datetime.timedelta(days=(today.weekday() + 1) % 7)
+    weeks = []
+    for w in range(len(weeks_of_counts)):
+        start = sunday - datetime.timedelta(weeks=len(weeks_of_counts) - 1 - w)
+        days = []
+        for d in range(7):
+            date = start + datetime.timedelta(days=d)
+            if date > today:
+                continue
+            days.append({"contributionCount": weeks_of_counts[w][d], "date": date.isoformat(), "weekday": d})
+        weeks.append({"contributionDays": days})
+    return weeks
+
+
+def placeholder_user():
+    """Empty world: used for the committed 'first sync pending' asset."""
+    today = datetime.date.today()
+    return {
+        "followers": {"totalCount": 0},
+        "repositories": {"totalCount": 0, "nodes": []},
+        "contributionsCollection": {"contributionCalendar": {
+            "totalContributions": 0,
+            "weeks": _calendar([[0] * 7 for _ in range(53)], today),
+        }},
+    }
+
+
+def demo_user():
+    """Synthetic data for visual QA ONLY. Never committed as the live asset."""
+    rng = random.Random(7)
+    today = datetime.date.today()
+    counts = [[(rng.choice([0, 0, 1, 2, 3, 5, 8]) if rng.random() > 0.35 else 0) for _ in range(7)] for _ in range(53)]
+    langs = [("Python", "#3572A5", 520), ("Jupyter Notebook", "#DA5B0B", 300), ("JavaScript", "#F1E05A", 180),
+             ("HTML", "#E34C26", 90), ("CSS", "#563D7C", 40), ("Shell", "#89E051", 10), ("Batchfile", "#C1F12E", 5)]
+    return {
+        "followers": {"totalCount": 12},
+        "repositories": {"totalCount": 14, "nodes": [{"languages": {"edges": [
+            {"size": s, "node": {"name": n, "color": c}} for n, c, s in langs]}}]},
+        "contributionsCollection": {"contributionCalendar": {
+            "totalContributions": sum(map(sum, counts)),
+            "weeks": _calendar(counts, today),
+        }},
+    }
 
 
 # --------------------------------------------------------------------------
 # Stat computation
 # --------------------------------------------------------------------------
 
-def compute_stats(user):
+MONTHS_FULL = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST",
+               "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"]
+MONTHS_ABBR = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+
+
+def compute_stats(user, last_updated=None):
     today = datetime.date.today()
-    current_year = today.year
-    current_month = today.month
-    month_names_full = [
-        "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
-        "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER",
-    ]
+    year, month = today.year, today.month
 
     followers = user["followers"]["totalCount"] or 0
     repos = user["repositories"]["totalCount"] or 0
-    calendar = user["contributionsCollection"]["contributionCalendar"]
-    weeks = calendar["weeks"]
+    weeks = user["contributionsCollection"]["contributionCalendar"]["weeks"]
 
-    all_days = []
-    for w in weeks:
-        for d in w["contributionDays"]:
-            all_days.append((d["date"], d["contributionCount"], d["weekday"]))
-    all_days.sort(key=lambda x: x[0])
+    all_days = sorted(
+        ((d["date"], d["contributionCount"], d["weekday"]) for w in weeks for d in w["contributionDays"]),
+        key=lambda t: t[0],
+    )
+    dated = [(datetime.date.fromisoformat(s), c) for s, c, _ in all_days]
 
-    current_year_commits = 0
-    current_month_commits = 0
-    for dstr, c, _ in all_days:
-        try:
-            day_date = datetime.date.fromisoformat(dstr)
-        except ValueError:
-            continue
-        if day_date.year == current_year:
-            current_year_commits += c
-            if day_date.month == current_month:
-                current_month_commits += c
+    # XP = contributions (commits + issues + PRs + reviews) in the current year
+    xp = sum(c for d, c in dated if d.year == year)
+    xp_month = sum(c for d, c in dated if d.year == year and d.month == month)
+    active_days = sum(1 for d, c in dated if d.year == year and c > 0)
+    avg_per_day = round(xp / max(active_days, 1), 1)
+    best_day = max((c for d, c in dated if d.year == year), default=0)
 
-    commits = current_year_commits
-
-    # longest streak (all-time within window) + current live streak
-    longest_streak = 0
-    cur = 0
-    for _, c, _ in all_days:
-        if c > 0:
-            cur += 1
-            longest_streak = max(longest_streak, cur)
-        else:
-            cur = 0
+    longest, run = 0, 0
+    for _, c in dated:
+        run = run + 1 if c > 0 else 0
+        longest = max(longest, run)
 
     current_streak = 0
-    for dstr, c, _ in reversed(all_days):
-        d = datetime.date.fromisoformat(dstr)
+    for d, c in reversed(dated):
         if d > today:
             continue
         if c > 0:
             current_streak += 1
+        elif d == today:
+            continue  # today may legitimately still be at 0
         else:
-            if d == today:
-                continue  # today may legitimately still be at 0
             break
 
     week_start = today - datetime.timedelta(days=today.weekday())
-    this_week = sum(c for dstr, c, _ in all_days if datetime.date.fromisoformat(dstr) >= week_start)
+    this_week = sum(c for d, c in dated if d >= week_start)
 
-    active_days = sum(
-        1 for dstr, c, _ in all_days
-        if datetime.date.fromisoformat(dstr).year == current_year and c > 0
-    )
-    avg_per_day = round(commits / max(active_days, 1), 1)
+    monthly = {m: 0 for m in range(1, month + 1)}
+    for d, c in dated:
+        if d.year == year and d.month <= month:
+            monthly[d.month] += c
+    month_vals = [monthly[m] for m in range(1, month + 1)]
 
-    fastest_lap = max((c for dstr, c, _ in all_days
-                        if datetime.date.fromisoformat(dstr).year == current_year), default=0)
-
-    # last 12 completed weeks, total commits per week — "race pace"
-    week_totals = []
-    for w in weeks[-12:]:
-        week_totals.append(sum(d["contributionCount"] for d in w["contributionDays"]))
-
-    # monthly totals for the current year up to current month
-    monthly = {}
-    for dstr, c, _ in all_days:
-        d = datetime.date.fromisoformat(dstr)
-        if d.year == current_year and d.month <= current_month:
-            key = (d.year, d.month)
-            monthly[key] = monthly.get(key, 0) + c
-    month_keys = [(current_year, m) for m in range(1, current_month + 1)]
-    for k in month_keys:
-        monthly.setdefault(k, 0)
-    month_vals = [monthly[k] for k in month_keys]
-
-    # languages
     lang_totals, lang_colors = {}, {}
     for repo in user["repositories"]["nodes"]:
         if repo and repo.get("languages"):
             for edge in repo["languages"]["edges"]:
                 name = edge["node"]["name"]
-                color = edge["node"].get("color") or "#888888"
                 lang_totals[name] = lang_totals.get(name, 0) + edge["size"]
-                lang_colors[name] = color
-
-    total_lang = sum(lang_totals.values()) if lang_totals else 1
-    sorted_langs = sorted(lang_totals.items(), key=lambda x: x[1], reverse=True)
-    top_langs = sorted_langs[:5]
-    others = sum(v for _, v in sorted_langs[5:])
-    lang_list = [(name, size / total_lang * 100, lang_colors.get(name, "#888"))
-                 for name, size in top_langs]
-    if others > 0:
-        lang_list.append(("Others", others / total_lang * 100, "#4B505C"))
-    if not lang_list:
-        lang_list = [("No Data", 100, "#4B505C")]
-
-    top_language = top_langs[0][0] if top_langs else "N/A"
-
-    progress = min(commits / max(GOAL, 1), 1)
+                lang_colors[name] = edge["node"].get("color") or "#888888"
+    total_lang = sum(lang_totals.values()) or 1
+    ranked = sorted(lang_totals.items(), key=lambda kv: kv[1], reverse=True)
+    lang_list = [(n, s / total_lang * 100, lang_colors[n]) for n, s in ranked[:5]]
+    rest = sum(s for _, s in ranked[5:])
+    if rest > 0:
+        lang_list.append(("Others", rest / total_lang * 100, C["faint"]))
+    top_language = ranked[0][0] if ranked else "N/A"
 
     ist = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
-    last_updated = datetime.datetime.now(ist).strftime("%b %d, %Y  %I:%M %p IST")
+    stamp = last_updated or datetime.datetime.now(ist).strftime("%b %d, %Y  %I:%M %p IST")
 
     return dict(
-        today=today, current_year=current_year, current_month=current_month,
-        current_month_name=month_names_full[current_month - 1],
-        followers=followers, repos=repos, weeks=weeks, all_days=all_days,
-        commits=commits, current_month_commits=current_month_commits,
-        longest_streak=longest_streak, current_streak=current_streak,
-        this_week=this_week, active_days=active_days, avg_per_day=avg_per_day,
-        fastest_lap=fastest_lap, week_totals=week_totals,
-        month_keys=month_keys, month_vals=month_vals,
-        lang_list=lang_list, top_language=top_language,
-        progress=progress, last_updated=last_updated,
+        today=today, year=year, month=month, month_name=MONTHS_FULL[month - 1],
+        followers=followers, repos=repos, weeks=weeks,
+        xp=xp, xp_month=xp_month, active_days=active_days, avg_per_day=avg_per_day,
+        best_day=best_day, longest_streak=longest, current_streak=current_streak,
+        this_week=this_week, month_vals=month_vals, lang_list=lang_list,
+        top_language=top_language, progress=min(xp / max(GOAL, 1), 1.0), last_updated=stamp,
     )
-
-
-def tier_for(value, thresholds):
-    """thresholds = [(label, color, min_value)] ordered ascending."""
-    reached = None
-    for label, color, min_value in thresholds:
-        if value >= min_value:
-            reached = (label, color, min_value)
-    return reached
 
 
 # --------------------------------------------------------------------------
 # Drawing helpers
 # --------------------------------------------------------------------------
 
-def panel(x, y, w, h, rx=14, fill=None):
-    return (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" '
-            f'fill="{fill or COLOR["panel"]}" stroke="{COLOR["border"]}" stroke-width="1.5"/>')
+def notch(x, y, w, h, n):
+    return (f"M{x + n} {y}H{x + w - n}V{y + n}H{x + w}V{y + h - n}H{x + w - n}V{y + h}"
+            f"H{x + n}V{y + h - n}H{x}V{y + n}H{x + n}Z")
 
 
-def panel_title(x, y, text, size=15):
-    return (f'<text x="{x}" y="{y}" font-family="{FONT_DISPLAY}" font-size="{size}" '
-            f'font-weight="700" fill="{COLOR["text"]}" letter-spacing="2">{esc(text)}</text>')
+def panel(x, y, w, h, fill=None):
+    """Pixel-bevelled UI panel with notched corners."""
+    fill = fill or C["panel"]
+    return (
+        f'<path d="{notch(x, y, w, h, 4)}" fill="{C["black"]}"/>'
+        f'<path d="{notch(x + 3, y + 3, w - 6, h - 6, 3)}" fill="{fill}"/>'
+        f'<rect x="{x + 6}" y="{y + 3}" width="{w - 12}" height="2" fill="{C["bevel_hi"]}"/>'
+        f'<rect x="{x + 3}" y="{y + 6}" width="2" height="{h - 12}" fill="{C["bevel_hi"]}"/>'
+        f'<rect x="{x + 6}" y="{y + h - 5}" width="{w - 12}" height="2" fill="{C["bevel_lo"]}"/>'
+        f'<rect x="{x + w - 5}" y="{y + 6}" width="2" height="{h - 12}" fill="{C["bevel_lo"]}"/>'
+    )
 
 
-def eyebrow(x, y, text, color=None):
-    return (f'<text x="{x}" y="{y}" font-family="{FONT_MONO}" font-size="10.5" '
-            f'font-weight="700" fill="{color or COLOR["text_dim"]}" letter-spacing="1.5">{esc(text)}</text>')
+def slot(x, y, size, border=None):
+    """Inventory slot: dark top-left edge, light bottom-right edge."""
+    b = border or C["bevel_hi"]
+    return (
+        f'<rect x="{x}" y="{y}" width="{size}" height="{size}" fill="#0B0C0B"/>'
+        f'<rect x="{x + 2}" y="{y + 2}" width="{size - 4}" height="{size - 4}" fill="#171918"/>'
+        f'<rect x="{x}" y="{y + size - 2}" width="{size}" height="2" fill="{b}"/>'
+        f'<rect x="{x + size - 2}" y="{y}" width="2" height="{size}" fill="{b}"/>'
+    )
 
 
-def carbon_texture(x, y, w, h, uid):
-    """Subtle diagonal carbon-fibre hatch, clipped to a panel."""
-    parts = [
-        f'<pattern id="carbon{uid}" width="8" height="8" patternTransform="rotate(45)" '
-        f'patternUnits="userSpaceOnUse">'
-        f'<rect width="8" height="8" fill="{COLOR["panel"]}"/>'
-        f'<line x1="0" y1="0" x2="0" y2="8" stroke="#1A1E27" stroke-width="4"/>'
-        f'</pattern>'
-    ]
-    return "".join(parts)
+def text(x, y, value, size=13, fill=None, weight=400, anchor="start", family=None, spacing=0):
+    sp = f' letter-spacing="{spacing}"' if spacing else ""
+    return (f'<text x="{x:g}" y="{y:g}" font-family="{family or FONT_UI}" font-size="{size}" '
+            f'font-weight="{weight}" fill="{fill or C["text"]}" text-anchor="{anchor}"{sp}>{esc(value)}</text>')
 
 
-def draw_header(stats):
-    s = []
-    # checkered flag mark
-    cell = 7
-    for r in range(4):
-        for c in range(6):
-            if (r + c) % 2 == 0:
-                s.append(f'<rect x="{40 + c*cell}" y="{26 + r*cell}" width="{cell}" height="{cell}" fill="#fff"/>')
-            else:
-                s.append(f'<rect x="{40 + c*cell}" y="{26 + r*cell}" width="{cell}" height="{cell}" fill="#0a0a0a"/>')
-    s.append(f'<rect x="40" y="26" width="{6*cell}" height="{4*cell}" fill="none" '
-              f'stroke="{COLOR["border"]}" stroke-width="1"/>')
+def mono(x, y, value, size=12, fill=None, weight=400, anchor="start"):
+    return text(x, y, value, size, fill or C["dim"], weight, anchor, FONT_MONO)
 
-    name_words = PROFILE["name"].upper().split()
-    first_name = " ".join(name_words[:-1]) if len(name_words) > 1 else name_words[0]
-    last_name = name_words[-1] if len(name_words) > 1 else ""
-    s.append(f'<text x="112" y="52" font-family="{FONT_DISPLAY}" font-size="42" font-weight="800" '
-              f'fill="{COLOR["text"]}">{esc(first_name)} <tspan fill="{COLOR["red"]}">{esc(last_name)}</tspan></text>')
-    s.append(f'<text x="112" y="76" font-family="{FONT_MONO}" font-size="13" letter-spacing="2" '
-              f'fill="{COLOR["text_dim"]}">{esc(PROFILE["tagline"].upper())}</text>')
 
-    # last updated + goal, styled like a dash readout
-    for i, (label, value, x) in enumerate([
-        ("LAST UPDATED", stats["last_updated"], 1085),
-        ("SEASON TARGET", f"{GOAL:,} COMMITS", 1430),
-    ]):
-        pw = 220 if i == 1 else 335
-        s.append(panel(x, 20, pw, 62, rx=10))
-        s.append(eyebrow(x + 18, 42, label))
-        s.append(f'<text x="{x + 18}" y="66" font-family="{FONT_MONO}" font-size="15" '
-                  f'font-weight="700" fill="{COLOR["text"]}">{esc(value)}</text>')
+def section_title(x, y, label, sub=None):
+    s = [f'<rect x="{x}" y="{y + 3}" width="8" height="8" fill="{C["emerald"]}"/>',
+         px.pixel_text(x + 16, y, label, 2, C["text"])]
+    if sub:
+        s.append(mono(x + 16 + px.text_width(label, 2) + 14, y + 12, sub, 12, C["dim"]))
     return "".join(s)
 
 
-def draw_gauge_panel(stats, x, y, w, h):
-    s = [panel(x, y, w, h), panel_title(x + 25, y + 35, "SEASON PROGRESS")]
-    s.append(eyebrow(x + 25, y + 55, f"YEAR {stats['current_year']}"))
+def seam_overlay(x, y, w, h):
+    return f'<rect x="{x:g}" y="{y:g}" width="{w:g}" height="{h:g}" fill="url(#seam)"/>'
 
-    cx, cy, R = x + w * 0.36, y + 178, 100
-    start, sweep = 135, 270
-    end = start + sweep
 
-    # background track
-    x1, y1 = polar(cx, cy, R, start)
-    x2, y2 = polar(cx, cy, R, end)
-    s.append(f'<path d="M {x1:.1f} {y1:.1f} A {R} {R} 0 1 1 {x2:.1f} {y2:.1f}" '
-              f'fill="none" stroke="{COLOR["grid"]}" stroke-width="15" stroke-linecap="round"/>')
+def block_bar(x, y, w, h, color):
+    """Solid bar with block seams and a lit top edge (reads as stacked blocks)."""
+    w = max(w, 2)
+    return (f'<rect x="{x:g}" y="{y:g}" width="{w:g}" height="{h:g}" fill="{color}"/>'
+            f'<rect x="{x:g}" y="{y:g}" width="{w:g}" height="2" fill="{px.shade(color, 1.45)}"/>'
+            f'{seam_overlay(x, y, w, h)}')
 
-    # progress arc
-    prog_end = start + sweep * stats["progress"]
-    px1, py1 = polar(cx, cy, R, start)
-    px2, py2 = polar(cx, cy, R, prog_end)
-    large = 1 if (prog_end - start) > 180 else 0
-    if stats["progress"] > 0.002:
-        s.append(f'<path d="M {px1:.1f} {py1:.1f} A {R} {R} 0 {large} 1 {px2:.1f} {py2:.1f}" '
-                  f'fill="none" stroke="{COLOR["red"]}" stroke-width="15" stroke-linecap="round"/>')
 
-    # small tick marks only, no radial labels (avoids collisions with the panel title)
-    checkpoints = [0, 0.25, 0.5, 0.75, 1.0]
-    for frac in checkpoints:
-        ang = start + sweep * frac
-        ix, iy = polar(cx, cy, R - 18, ang)
-        ox, oy = polar(cx, cy, R + 18, ang)
-        tick_color = COLOR["red"] if frac <= stats["progress"] else COLOR["text_faint"]
-        s.append(f'<line x1="{ix:.1f}" y1="{iy:.1f}" x2="{ox:.1f}" y2="{oy:.1f}" '
-                  f'stroke="{tick_color}" stroke-width="2"/>')
+# --------------------------------------------------------------------------
+# Sections
+# --------------------------------------------------------------------------
 
-    # needle
-    needle_ang = start + sweep * stats["progress"]
-    nx, ny = polar(cx, cy, R - 24, needle_ang)
-    bx1, by1 = polar(cx, cy, 7, needle_ang + 90)
-    bx2, by2 = polar(cx, cy, 7, needle_ang - 90)
-    s.append(f'<polygon points="{nx:.1f},{ny:.1f} {bx1:.1f},{by1:.1f} {bx2:.1f},{by2:.1f}" '
-              f'fill="{COLOR["gold"]}"/>')
-    s.append(f'<circle cx="{cx:.1f}" cy="{cy}" r="10" fill="{COLOR["panel_alt"]}" stroke="{COLOR["gold"]}" stroke-width="2.5"/>')
-
-    # digital LCD readout in the open gap at the bottom of the gauge
-    s.append(f'<text x="{cx:.1f}" y="{cy + 55}" font-family="{FONT_MONO}" font-size="34" '
-              f'font-weight="700" fill="{COLOR["text"]}" text-anchor="middle">{int(stats["progress"]*100)}%</text>')
-    s.append(f'<text x="{cx:.1f}" y="{cy + 76}" font-family="{FONT_MONO}" font-size="12" '
-              f'text-anchor="middle"><tspan fill="{COLOR["red"]}" font-weight="700">{stats["commits"]:,}</tspan>'
-              f'<tspan fill="{COLOR["text_dim"]}"> / {GOAL:,}</tspan></text>')
-
-    # checkpoint legend as a vertical strip to the right of the gauge —
-    # avoids radial-label collisions and doubles as a lap-board readout
-    lx = x + w * 0.62
-    ly0 = y + 82
-    checkpoint_rows = [("START", 0), ("750", 0.25), ("1,500", 0.5), ("2,250", 0.75), (f"{GOAL:,}", 1.0)]
-    for i, (label, frac) in enumerate(checkpoint_rows):
-        ry = ly0 + i * 30
-        reached = frac <= stats["progress"]
-        dot_col = COLOR["red"] if reached else COLOR["text_faint"]
-        s.append(f'<circle cx="{lx:.1f}" cy="{ry-4:.1f}" r="5" fill="{dot_col}"/>')
-        txt_col = COLOR["text"] if reached else COLOR["text_dim"]
-        s.append(f'<text x="{lx+16:.1f}" y="{ry:.1f}" font-family="{FONT_MONO}" font-size="12.5" '
-                  f'font-weight="700" fill="{txt_col}">{esc(label)}</text>')
-
+def draw_header(stats, x, y, w, h):
+    s = [panel(x, y, w, h)]
+    # grass-and-dirt strip along the top edge
+    i, bx = 0, x + 6
+    while bx < x + w - 6:
+        bw = min(10, x + w - 6 - bx)
+        s.append(f'<rect x="{bx}" y="{y + 4}" width="{bw}" height="6" fill="{C["grass"] if i % 3 else C["leaf"]}"/>')
+        drip = 4 + (i * 5 % 3) * 3
+        s.append(f'<rect x="{bx}" y="{y + 10}" width="{bw}" height="{drip}" fill="{C["dirt"]}"/>')
+        bx += 10
+        i += 1
+    s.append(px.grass_sprite(x + 24, y + 40, 6))
+    s.append(px.pixel_text(x + 86, y + 42, "WORLD ACTIVITY", 4, C["text"]))
+    s.append(px.pixel_text(x + 86, y + 78, PROFILE["name"].upper(), 2, C["emerald"]))
+    s.append(mono(x + 86, y + 110, PROFILE["tagline"].upper(), 12, C["dim"]))
+    rx = x + w - 214
+    s.append(px.pixel_text(rx, y + 44, "LAST SYNC", 2, C["dim"]))
+    s.append(mono(rx, y + 76, stats["last_updated"], 12, C["text"], 700))
     return "".join(s)
 
 
-def draw_pace_strip(stats, x, y, w, h):
-    s = [panel(x, y, w, h, rx=10)]
-    s.append(eyebrow(x + 22, y + 22, "RACE PACE // COMMITS PER WEEK, LAST 12 WEEKS"))
-
-    spx, spy = x + 22, y + 30
-    spw, sph = w - 44, h - 42
-    wt = stats["week_totals"] or [0]
-    mx = max(max(wt), 1)
-    n = max(len(wt), 1)
-    bw = spw / n
-    for i, v in enumerate(wt):
-        bh = (v / mx) * sph
-        bx = spx + i * bw
-        by = spy + sph - bh
-        col = COLOR["red"] if i == len(wt) - 1 else COLOR["cyan"]
-        op = 0.5 + 0.5 * (i / max(n - 1, 1))
-        s.append(f'<rect x="{bx + 1.5:.1f}" y="{by:.1f}" width="{bw - 3:.1f}" height="{max(bh, 2):.1f}" '
-                  f'rx="2" fill="{col}" opacity="{op:.2f}"/>')
+def draw_xp(stats, x, y, w, h):
+    s = [panel(x, y, w, h)]
+    bx, bw, by, bh = x + 24, w - 48, y + 52, 16
+    s.append(px.pixel_text(x + 24, y + 20, f"XP {stats['year']}", 2, C["dim"]))
+    s.append(px.pixel_text(x + w - 24, y + 20, f"TARGET {GOAL:,}", 2, C["dim"], anchor="end"))
+    s.append(px.pixel_text(x + w / 2, y + 16, f"{stats['xp']:,}", 3, C["xp"], anchor="middle"))
+    # track + segmented fill, like the in-game XP bar
+    s.append(f'<rect x="{bx - 2}" y="{by - 2}" width="{bw + 4}" height="{bh + 4}" fill="{C["black"]}"/>')
+    s.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" fill="#2E322F"/>')
+    fill_w = round(bw * stats["progress"])
+    if fill_w > 0:
+        s.append(f'<rect x="{bx}" y="{by}" width="{fill_w}" height="{bh}" fill="{C["xp"]}"/>')
+        s.append(f'<rect x="{bx}" y="{by}" width="{fill_w}" height="4" fill="{px.shade(C["xp"], 1.5)}"/>')
+    seg = bw / 20
+    for i in range(1, 20):
+        s.append(f'<rect x="{bx + i * seg - 1:.1f}" y="{by}" width="2" height="{bh}" fill="{C["black"]}" opacity="0.55"/>')
+    for frac in (0.25, 0.5, 0.75):
+        tx = bx + bw * frac
+        s.append(mono(tx, by + bh + 17, f"{round(GOAL * frac):,}", 11, C["faint"], anchor="middle"))
+    pct = int(stats["progress"] * 100)
+    s.append(mono(bx, by + bh + 17, f"{pct}%", 11, C["dim"]))
+    s.append(mono(bx + bw, by + bh + 17, "personal yearly target", 11, C["faint"], anchor="end"))
     return "".join(s)
 
 
-def draw_quick_stats(stats, x, y, w, h):
-    s = [panel(x, y, w, h), panel_title(x + 25, y + 35, "TIMING SCREEN")]
-
+def draw_stat_cards(stats, x, y, w):
+    gap, cols, ch = 10, 4, 76
+    cw = (w - gap * (cols - 1)) / cols
     cards = [
-        ("TOTAL COMMITS", f"{stats['commits']:,}", "This season", COLOR["red"]),
-        ("FASTEST LAP", str(stats["fastest_lap"]), "Best single day", COLOR["amber"]),
-        ("CURRENT STREAK", f"{stats['current_streak']}d", "Live", COLOR["green"]),
-        ("BEST STREAK", f"{stats['longest_streak']}d", "Personal best", COLOR["purple"]),
-        ("REPOSITORIES", str(stats["repos"]), "Active", COLOR["cyan"]),
-        ("FOLLOWERS", str(stats["followers"]), "People", COLOR["silver"]),
-        ("AVG / DAY", str(stats["avg_per_day"]), "Commits", COLOR["cyan"]),
-        ("THIS WEEK", str(stats["this_week"]), "Commits", COLOR["green"]),
+        ("XP EARNED", f"{stats['xp']:,}", f"contributions in {stats['year']}", C["emerald"], "gem"),
+        ("BEST DAY", str(stats["best_day"]), "most in a single day", C["diamond"], "gem"),
+        ("STREAK", str(stats["current_streak"]), "days in a row, live", C["gold"], "block"),
+        ("BEST RUN", str(stats["longest_streak"]), "longest streak, days", C["amethyst"], "block"),
+        ("BUILDS", str(stats["repos"]), "owned repositories", C["leaf"], "grass"),
+        ("PARTY", str(stats["followers"]), "followers", C["redstone"], "heart"),
+        ("AVG/DAY", str(stats["avg_per_day"]), "per active day", C["stone"], "block"),
+        ("THIS WEEK", str(stats["this_week"]), "contributions", C["wood"], "block"),
     ]
-    cols = 4
-    gap = 10
-    cw = (w - 50 - gap * (cols - 1)) / cols
-    ch = 92
-    for i, (title, val, sub, col) in enumerate(cards):
-        cx = x + 25 + (i % cols) * (cw + gap)
-        cy = y + 50 + (i // cols) * (ch + gap)
-        s.append(f'<rect x="{cx:.1f}" y="{cy}" width="{cw:.1f}" height="{ch}" rx="10" '
-                  f'fill="{COLOR["panel_alt"]}" stroke="{COLOR["border"]}"/>')
-        s.append(f'<rect x="{cx:.1f}" y="{cy}" width="3" height="{ch}" rx="1.5" fill="{col}"/>')
-        s.append(eyebrow(cx + 16, cy + 24, title))
-        s.append(f'<text x="{cx + 16:.1f}" y="{cy + 55}" font-family="{FONT_MONO}" font-size="24" '
-                  f'font-weight="700" fill="{col}">{esc(val)}</text>')
-        s.append(f'<text x="{cx + 16:.1f}" y="{cy + 76}" font-family="{FONT_DISPLAY}" font-size="11" '
-                  f'fill="{COLOR["text_dim"]}">{esc(sub)}</text>')
-    return "".join(s)
+    out = []
+    for i, (label, value, sub, col, icon) in enumerate(cards):
+        cx = x + (i % cols) * (cw + gap)
+        cy = y + (i // cols) * (ch + gap)
+        out.append(panel(cx, cy, cw, ch, C["panel_alt"]))
+        out.append(slot(cx + 12, cy + 14, 48))
+        ix, iy = cx + 12 + 8, cy + 14 + 8
+        if icon == "gem":
+            out.append(px.gem_sprite(col, ix, iy, 4))
+        elif icon == "heart":
+            out.append(px.heart_sprite(col, ix, iy, 4))
+        elif icon == "grass":
+            out.append(px.grass_sprite(ix, iy, 4))
+        else:
+            out.append(px.block_sprite(col, ix, iy, 4))
+        out.append(px.pixel_text(cx + 70, cy + 12, label, 2, C["dim"]))
+        vcol = col if col not in (C["leaf"], C["stone"], C["wood"]) else C["text"]
+        out.append(px.pixel_text(cx + 70, cy + 31, value, 3, vcol))
+        out.append(text(cx + 70, cy + 68, sub, 11, C["faint"]))
+    return "".join(out)
 
 
-def draw_sector_map(stats, x, y, w, h):
-    s = [panel(x, y, w, h), panel_title(x + 25, y + 35, "SECTOR MAP")]
-    s.append(eyebrow(x + 25, y + 54, "CONTRIBUTION HEAT, LAST 52 WEEKS"))
+def draw_chunk_map(stats, x, y, w, h):
+    s = [panel(x, y, w, h), section_title(x + 24, y + 22, "CHUNK MAP")]
+    s.append(mono(x + 24, y + 58, "contributions per day, last 52 weeks (commits, issues, PRs, reviews)", 12, C["dim"]))
 
-    cell, gap = 7, 2
-    gx, gy = x + 30, y + 72
-    all_days = stats["all_days"]
-    max_val = max((c for _, c, _ in all_days), default=1) or 1
-
-    def heat(count):
-        if count == 0:
-            return HEAT_SCALE[0]
-        r = count / max_val
-        idx = min(int(r * (len(HEAT_SCALE) - 1)) + 1, len(HEAT_SCALE) - 1)
-        return HEAT_SCALE[idx]
-
+    cell, gap = 10, 2
+    step = cell + gap
     weeks = stats["weeks"][-52:]
+    gx, gy = x + 58, y + 96
+    max_val = max((d["contributionCount"] for wk in weeks for d in wk["contributionDays"]), default=0)
+
+    def level(count):
+        if count <= 0 or max_val <= 0:
+            return 0
+        r = count / max_val
+        return 1 if r <= 0.25 else 2 if r <= 0.5 else 3 if r <= 0.75 else 4
+
+    # month labels, placed where a new month's first week begins
+    last_month, last_x = None, -99
     for wi, wk in enumerate(weeks):
+        if not wk["contributionDays"]:
+            continue
+        d = datetime.date.fromisoformat(wk["contributionDays"][0]["date"])
+        if d.month != last_month:
+            if wi * step - last_x >= 36:
+                s.append(mono(gx + wi * step, gy - 8, MONTHS_ABBR[d.month - 1], 11, C["dim"]))
+                last_x = wi * step
+            last_month = d.month
+
+    for row, lbl in ((1, "MON"), (3, "WED"), (5, "FRI")):
+        s.append(mono(gx - 10, gy + row * step + 9, lbl, 11, C["faint"], anchor="end"))
+
+    for wi, wk in enumerate(weeks):
+        col = [f'<g class="col" style="animation-delay:{wi * 0.035:.3f}s">']
         for d in wk["contributionDays"]:
-            wd = d["weekday"]
-            px = gx + wi * (cell + gap)
-            py = gy + wd * (cell + gap)
-            s.append(f'<rect x="{px}" y="{py}" width="{cell}" height="{cell}" rx="1.5" '
-                      f'fill="{heat(d["contributionCount"])}"/>')
+            col.append(f'<use href="#c{level(d["contributionCount"])}" '
+                       f'x="{gx + wi * step}" y="{gy + d["weekday"] * step}"/>')
+        col.append("</g>")
+        s.append("".join(col))
 
-    ly = gy + 7 * (cell + gap) + 16
-    s.append(f'<text x="{gx}" y="{ly + 8}" font-family="{FONT_MONO}" font-size="10.5" '
-              f'fill="{COLOR["text_dim"]}">COLD</text>')
-    for i, col in enumerate(HEAT_SCALE):
-        s.append(f'<rect x="{gx + 45 + i*14}" y="{ly}" width="{cell}" height="{cell}" rx="1.5" fill="{col}"/>')
-    s.append(f'<text x="{gx + 45 + len(HEAT_SCALE)*14 + 8}" y="{ly + 8}" font-family="{FONT_MONO}" '
-              f'font-size="10.5" fill="{COLOR["text_dim"]}">HOT</text>')
-
-    mt_y = y + h - 100
-    s.append(eyebrow(x + 25, mt_y, "SESSION METRICS"))
-    metrics = [
-        ("ACTIVE DAYS", str(stats["active_days"]), COLOR["text"]),
-        ("AVG / DAY", str(stats["avg_per_day"]), COLOR["cyan"]),
-        ("THIS WEEK", str(stats["this_week"]), COLOR["green"]),
-    ]
-    mw = (w - 50 - 16) / 3
-    for i, (title, val, col) in enumerate(metrics):
-        mx = x + 25 + i * (mw + 8)
-        my = mt_y + 15
-        s.append(f'<rect x="{mx:.1f}" y="{my}" width="{mw:.1f}" height="66" rx="10" '
-                  f'fill="{COLOR["panel_alt"]}" stroke="{COLOR["border"]}"/>')
-        s.append(eyebrow(mx + 14, my + 22, title))
-        s.append(f'<text x="{mx + 14:.1f}" y="{my + 48}" font-family="{FONT_MONO}" font-size="20" '
-                  f'font-weight="700" fill="{col}">{esc(val)}</text>')
+    ly = gy + 7 * step + 16
+    s.append(mono(gx, ly + 9, "LESS", 11, C["faint"]))
+    for i in range(5):
+        s.append(f'<use href="#c{i}" x="{gx + 40 + i * 14}" y="{ly}"/>')
+    s.append(mono(gx + 40 + 5 * 14 + 6, ly + 9, "MORE", 11, C["faint"]))
+    s.append(mono(x + w - 24, ly + 9, f"ACTIVE DAYS {stats['active_days']}", 11, C["dim"], anchor="end"))
     return "".join(s)
 
 
-def draw_pace_chart(stats, x, y, w, h):
-    s = [panel(x, y, w, h), panel_title(x + 25, y + 35, "COMMITS OVER TIME")]
-    s.append(eyebrow(x + 25, y + 54, "MONTHLY LAP CHART"))
+def draw_month_chart(stats, x, y, w, h):
+    s = [panel(x, y, w, h), section_title(x + 24, y + 22, "XP BY MONTH")]
+    s.append(mono(x + 24, y + 58, f"contributions, {stats['year']}", 12, C["dim"]))
 
-    gx, gy = x + 55, y + 74
-    gw, gh = w - 85, 165
-    vals = stats["month_vals"] or [0]
-    mxv = max(max(vals), 1)
-
-    # alternating sector background stripes
-    n = len(vals)
-    for i in range(n):
-        if i % 2 == 0:
-            bx = gx + gw * i / n
-            bw2 = gw / n
-            s.append(f'<rect x="{bx:.1f}" y="{gy}" width="{bw2:.1f}" height="{gh}" fill="{COLOR["panel_alt"]}"/>')
+    vals = stats["month_vals"]
+    n = max(len(vals), 1)
+    mxv = max(max(vals, default=0), 1)
+    gx, gy, gw, gh = x + 52, y + 84, w - 52 - 24, 150
 
     for i in range(5):
         yy = gy + gh - gh * i / 4
-        s.append(f'<line x1="{gx}" y1="{yy:.1f}" x2="{gx+gw}" y2="{yy:.1f}" stroke="{COLOR["grid"]}" stroke-width="1"/>')
-        s.append(f'<text x="{gx-10}" y="{yy+4:.1f}" font-family="{FONT_MONO}" font-size="10" '
-                  f'fill="{COLOR["text_dim"]}" text-anchor="end">{int(mxv*i/4)}</text>')
+        s.append(f'<rect x="{gx}" y="{yy:.1f}" width="{gw}" height="1" fill="#2B2F2C"/>')
+        s.append(mono(gx - 8, yy + 4, f"{int(mxv * i / 4)}", 11, C["faint"], anchor="end"))
 
-    # bars
-    bw = gw / n * 0.5
-    pts = []
+    bw = min(gw / n * 0.62, 26)
     for i, v in enumerate(vals):
         cx = gx + gw * (i + 0.5) / n
         bh = (v / mxv) * gh
-        s.append(f'<rect x="{cx - bw/2:.1f}" y="{gy + gh - bh:.1f}" width="{bw:.1f}" height="{max(bh,1):.1f}" '
-                  f'rx="3" fill="{COLOR["red"]}" opacity="0.28"/>')
-        pts.append((cx, gy + gh - bh))
+        col = C["diamond"] if i == len(vals) - 1 else C["emerald"]
+        if v > 0:
+            s.append(block_bar(round(cx - bw / 2), round(gy + gh - bh), round(bw), max(round(bh), 3), col))
+        s.append(mono(cx, gy + gh + 17, MONTHS_ABBR[i].title(), 11, C["dim"], anchor="middle"))
 
-    if len(pts) > 1:
-        line = "M " + " L ".join(f"{px:.1f} {py:.1f}" for px, py in pts)
-        s.append(f'<path d="{line}" fill="none" stroke="{COLOR["red"]}" stroke-width="2.5"/>')
-    for px, py in pts:
-        s.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="3.5" fill="{COLOR["gold"]}"/>')
-
-    month_names = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-    for i, k in enumerate(stats["month_keys"]):
-        cx = gx + gw * (i + 0.5) / n
-        lbl = f"{month_names[k[1]-1]} '{str(k[0])[2:]}"
-        s.append(f'<text x="{cx:.1f}" y="{gy+gh+20}" font-family="{FONT_MONO}" font-size="10" '
-                  f'fill="{COLOR["text_dim"]}" text-anchor="middle">{esc(lbl)}</text>')
-
-    s.append(f'<rect x="{x+25}" y="{y+h-58}" width="{w-50}" height="42" rx="10" '
-              f'fill="{COLOR["panel_alt"]}" stroke="{COLOR["border"]}"/>')
-    s.append(f'<text x="{x+w/2:.1f}" y="{y+h-32}" font-family="{FONT_MONO}" font-size="13" '
-              f'text-anchor="middle" fill="{COLOR["text"]}">{esc(stats["current_month_name"])} TOTAL: '
-              f'<tspan fill="{COLOR["red"]}" font-weight="700">{stats["current_month_commits"]}</tspan></text>')
+    s.append(f'<rect x="{x + 24}" y="{y + h - 52}" width="{w - 48}" height="30" fill="#141615"/>')
+    s.append(px.pixel_text(x + w / 2, y + h - 44, f"{stats['month_name']} XP: {stats['xp_month']}", 2, C["text"], anchor="middle"))
     return "".join(s)
 
 
-def draw_compound_board(stats, x, y, w, h):
-    """Language breakdown styled as tyre-compound strips."""
-    s = [panel(x, y, w, h), panel_title(x + 25, y + 35, "COMPOUND BOARD")]
-    s.append(eyebrow(x + 25, y + 54, "LANGUAGES BY REPO SIZE"))
+def draw_languages(stats, x, y, w, h):
+    s = [panel(x, y, w, h), section_title(x + 24, y + 22, "LANGUAGE VEINS")]
+    s.append(mono(x + 24, y + 58, "share of repository code by size", 12, C["dim"]))
 
-    bx, by = x + 25, y + 78
-    bw = w - 50
-    bh = 30
-    gap = 12
+    bx, by, bw, bh, gap = x + 24, y + 80, w - 48, 24, 8
     for i, (name, pct, color) in enumerate(stats["lang_list"]):
         ry = by + i * (bh + gap)
         fill_w = max((pct / 100) * bw, 4)
-        s.append(f'<rect x="{bx}" y="{ry}" width="{bw}" height="{bh}" rx="7" fill="{COLOR["panel_alt"]}" stroke="{COLOR["border"]}"/>')
-        s.append(f'<rect x="{bx}" y="{ry}" width="{fill_w:.1f}" height="{bh}" rx="7" fill="{color}"/>')
-        # tread marks for the tyre motif
-        for t in range(int(fill_w // 10)):
-            tx = bx + 8 + t * 10
-            if tx > bx + fill_w - 6:
-                break
-            s.append(f'<line x1="{tx:.1f}" y1="{ry+5}" x2="{tx:.1f}" y2="{ry+bh-5}" '
-                      f'stroke="#000" stroke-opacity="0.18" stroke-width="2"/>')
-        # label placed to the right of the fill if it fits inside, else outside
-        label_color = "#0A0A0A" if fill_w > 90 else COLOR["text"]
-        label_x = bx + 12 if fill_w > 90 else bx + fill_w + 10
-        s.append(f'<text x="{label_x:.1f}" y="{ry+bh/2+4:.1f}" font-family="{FONT_DISPLAY}" font-size="12.5" '
-                  f'font-weight="700" fill="{label_color}">{esc(name)}</text>')
-        s.append(f'<text x="{bx+bw-10}" y="{ry+bh/2+4:.1f}" font-family="{FONT_MONO}" font-size="12.5" '
-                  f'font-weight="700" fill="{COLOR["text_dim"]}" text-anchor="end">{pct:.1f}%</text>')
+        s.append(f'<rect x="{bx}" y="{ry}" width="{bw}" height="{bh}" fill="#141615"/>')
+        s.append(block_bar(bx, ry, round(fill_w), bh, color))
+        inside = fill_w > 120
+        s.append(text(bx + 8 if inside else bx + fill_w + 8, ry + bh / 2 + 4.5, name, 12.5, "#0A0A0A" if inside else C["text"], 700))
+        s.append(mono(bx + bw - 8, ry + bh / 2 + 4.5, f"{pct:.1f}%", 12, C["dim"], anchor="end"))
 
-    top_y = by + len(stats["lang_list"]) * (bh + gap) + 14
-    s.append(eyebrow(bx, top_y, "TOP COMPOUND"))
-    s.append(f'<text x="{bx}" y="{top_y+26}" font-family="{FONT_DISPLAY}" font-size="18" '
-              f'font-weight="800" fill="{COLOR["text"]}">{esc(stats["top_language"])}</text>')
+    if stats["lang_list"] and stats["top_language"] != "N/A":
+        s.append(px.pixel_text(bx, y + h - 46, "MAIN VEIN", 2, C["dim"]))
+        s.append(text(bx + px.text_width("MAIN VEIN", 2) + 14, y + h - 32, stats["top_language"], 16, C["text"], 800))
+    else:
+        s.append(mono(bx, y + 110, "no repository languages yet", 12, C["faint"]))
     return "".join(s)
 
 
-def draw_chip_row(items, x, y, max_w, color, font_size=11.5, chip_h=24, gap=6, line_gap=8):
-    """Wraps a list of skill strings into pill chips, wrapping to a new line
-    when max_w is exceeded. Returns (svg_string, y_after_last_row)."""
-    parts = []
-    cx, cy = x, y
-    for text in items:
-        label = text.upper()
-        chip_w = len(label) * font_size * 0.62 + 24
-        if cx + chip_w > x + max_w and cx > x:
-            cx = x
-            cy += chip_h + line_gap
-        parts.append(f'<rect x="{cx:.1f}" y="{cy:.1f}" width="{chip_w:.1f}" height="{chip_h}" '
-                      f'rx="{chip_h/2:.1f}" fill="{COLOR["panel_alt"]}" stroke="{color}" stroke-width="1.3"/>')
-        parts.append(f'<text x="{cx+chip_w/2:.1f}" y="{cy+chip_h/2+4:.1f}" font-family="{FONT_MONO}" '
-                      f'font-size="{font_size}" font-weight="700" fill="{color}" '
-                      f'text-anchor="middle">{esc(label)}</text>')
-        cx += chip_w + gap
-    return "".join(parts), cy + chip_h
-
-
-def estimate_chip_lines(items, max_w, font_size=11.5, gap=6):
-    """How many wrapped lines draw_chip_row will produce for this item list."""
-    cx, lines = 0, 1
-    for text in items:
-        chip_w = len(text.upper()) * font_size * 0.62 + 24
-        if cx + chip_w > max_w and cx > 0:
-            lines += 1
-            cx = 0
-        cx += chip_w + gap
-    return lines
-
-
-def draw_garage(x, y, w, h):
-    """Skill tags grouped by category, styled as a pit-crew equipment board."""
-    s = [panel(x, y, w, h), panel_title(x + 25, y + 35, "GARAGE"), eyebrow(x + 25, y + 54, "SKILL SET")]
-
-    cat_colors = [COLOR["red"], COLOR["cyan"], COLOR["gold"], COLOR["green"], COLOR["purple"]]
-    categories = list(PROFILE["skills"].items())
-    col_w = (w - 50 - 24) / 2
-    col1_x, col2_x = x + 25, x + 25 + col_w + 24
-
-    # Greedily balance categories across the two columns by estimated wrapped
-    # height (label + N chip lines), rather than a blind positional split —
-    # keeps this correct even as skills are added/removed in PROFILE later.
-    weighted = [(i, cat, items, estimate_chip_lines(items, col_w) + 0.6)
-                for i, (cat, items) in enumerate(categories)]
-    weighted.sort(key=lambda t: -t[3])
-    col1, col2, w1, w2 = [], [], 0.0, 0.0
-    for i, cat, items, weight in weighted:
-        if w1 <= w2:
-            col1.append((i, cat, items))
-            w1 += weight
-        else:
-            col2.append((i, cat, items))
-            w2 += weight
-    col1.sort(key=lambda t: t[0])  # restore original reading order within each column
-    col2.sort(key=lambda t: t[0])
-
-    for col_x, cats in [(col1_x, col1), (col2_x, col2)]:
-        cy = y + 78
-        for i, cat, items in cats:
-            color = cat_colors[i % len(cat_colors)]
-            s.append(eyebrow(col_x, cy, cat, color))
-            chips_svg, end_y = draw_chip_row(items, col_x, cy + 10, col_w, color)
-            s.append(chips_svg)
-            cy = end_y + 20
-    return "".join(s)
-
-
-def draw_highlights(x, y, w, h):
-    """Top projects rendered as race-result rows: P1 / P2 / P3."""
-    s = [panel(x, y, w, h), panel_title(x + 25, y + 35, "CAREER HIGHLIGHTS")]
-    s.append(eyebrow(x + 25, y + 54, "SELECTED RACE RESULTS"))
-
-    items = PROFILE["highlights"]
-    pos_colors = [COLOR["gold"], COLOR["silver"], COLOR["bronze"]]
-    top = y + 70
-    gap = 10
-    row_h = (h - 70 - 20 - gap * (len(items) - 1)) / max(len(items), 1)
-
-    for i, proj in enumerate(items):
-        ry = top + i * (row_h + gap)
-        pos_color = pos_colors[i] if i < len(pos_colors) else COLOR["text_dim"]
-        s.append(f'<rect x="{x+25}" y="{ry:.1f}" width="{w-50}" height="{row_h:.1f}" rx="10" '
-                  f'fill="{COLOR["panel_alt"]}" stroke="{COLOR["border"]}"/>')
-        s.append(f'<rect x="{x+25}" y="{ry:.1f}" width="4" height="{row_h:.1f}" rx="2" fill="{pos_color}"/>')
-        s.append(f'<text x="{x+46}" y="{ry+20:.1f}" font-family="{FONT_MONO}" font-size="11" '
-                  f'font-weight="700" fill="{pos_color}">P{i+1}</text>')
-        s.append(f'<text x="{x+46}" y="{ry+row_h/2+8:.1f}" font-family="{FONT_DISPLAY}" font-size="15" '
-                  f'font-weight="700" fill="{COLOR["text"]}">{esc(proj["title"])}</text>')
-        s.append(f'<text x="{x+46}" y="{ry+row_h-12:.1f}" font-family="{FONT_MONO}" font-size="10.5" '
-                  f'fill="{COLOR["text_dim"]}">{esc(proj["stack"])} — {esc(proj["detail"])}</text>')
-        s.append(f'<text x="{x+w-40}" y="{ry+row_h/2:.1f}" font-family="{FONT_MONO}" font-size="24" '
-                  f'font-weight="700" fill="{pos_color}" text-anchor="end">{esc(proj["stat_value"])}</text>')
-        s.append(f'<text x="{x+w-40}" y="{ry+row_h/2+20:.1f}" font-family="{FONT_MONO}" font-size="9.5" '
-                  f'fill="{COLOR["text_dim"]}" text-anchor="end">{esc(proj["stat_label"])}</text>')
-    return "".join(s)
-
-
-def draw_podium(stats, x, y, w, h):
-    s = [panel(x, y, w, h), panel_title(x + 25, y + 35, "PODIUM PROGRESS")]
-
-    tiers = [
-        ("BRONZE", COLOR["bronze"]),
-        ("SILVER", COLOR["silver"]),
-        ("GOLD", COLOR["gold"]),
-        ("PLATINUM", COLOR["platinum"]),
-    ]
-
-    achievements = [
-        ("COMMITS", stats["commits"], [100, 750, 1500, GOAL]),
-        ("BEST STREAK", stats["longest_streak"], [3, 7, 14, 30]),
-        ("REPOSITORIES", stats["repos"], [5, 10, 20, 40]),
-        ("FASTEST LAP", stats["fastest_lap"], [5, 10, 20, 40]),
+def draw_advancements(stats, x, y, w, h):
+    s = [panel(x, y, w, h), section_title(x + 24, y + 22, "ADVANCEMENTS", "next tier shown on each bar")]
+    goals = [
+        ("XP EARNED", stats["xp"], [100, 750, 1500, GOAL]),
+        ("BEST RUN", stats["longest_streak"], [3, 7, 14, 30]),
+        ("BUILDS", stats["repos"], [5, 10, 20, 40]),
+        ("BEST DAY", stats["best_day"], [5, 10, 20, 40]),
         ("ACTIVE DAYS", stats["active_days"], [30, 90, 180, 300]),
     ]
-
-    aw = (w - 50 - 12 * (len(achievements) - 1)) / len(achievements)
-    card_h = h - 68
-    for i, (title, value, thresholds) in enumerate(achievements):
-        ax = x + 25 + i * (aw + 12)
-        ay = y + 52
-        reached_idx = -1
+    gap = 10
+    cw = (w - 48 - gap * (len(goals) - 1)) / len(goals)
+    for i, (title, value, thresholds) in enumerate(goals):
+        cx, cy = x + 24 + i * (cw + gap), y + 56
+        reached = -1
         for ti, t in enumerate(thresholds):
             if value >= t:
-                reached_idx = ti
-        has_tier = reached_idx >= 0
-        tier_label, tier_color = (tiers[reached_idx] if has_tier else ("UNRANKED", COLOR["text_faint"]))
-        next_target = thresholds[reached_idx + 1] if reached_idx + 1 < len(thresholds) else None
+                reached = ti
+        has = reached >= 0
+        tier, color = TIERS[reached] if has else ("LOCKED", C["faint"])
+        nxt = thresholds[reached + 1] if reached + 1 < len(thresholds) else None
 
-        s.append(f'<rect x="{ax:.1f}" y="{ay}" width="{aw:.1f}" height="{card_h}" rx="10" '
-                  f'fill="{COLOR["panel_alt"]}" stroke="{tier_color}" stroke-width="1.5" '
-                  f'opacity="{1.0 if has_tier else 0.55}"/>')
-        s.append(f'<circle cx="{ax+26:.1f}" cy="{ay+26}" r="14" fill="{tier_color}" fill-opacity="0.18" stroke="{tier_color}" stroke-width="2"/>')
-        s.append(f'<circle cx="{ax+26:.1f}" cy="{ay+26}" r="5.5" fill="{tier_color}"/>')
-        s.append(f'<text x="{ax+50:.1f}" y="{ay+18}" font-family="{FONT_MONO}" font-size="9.5" '
-                  f'font-weight="700" fill="{tier_color}">{esc(tier_label)}</text>')
-        s.append(f'<text x="{ax+50:.1f}" y="{ay+34}" font-family="{FONT_DISPLAY}" font-size="12" '
-                  f'font-weight="700" fill="{COLOR["text"]}">{esc(title)}</text>')
+        s.append(panel(cx, cy, cw, h - 80, C["panel_alt"]))
+        s.append(slot(cx + 10, cy + 12, 36))
+        icon = px.block_sprite(color, cx + 10 + 6, cy + 12 + 6, 3) if has else px.block_sprite("#3A3E3B", cx + 16, cy + 18, 3)
+        s.append(icon)
+        s.append(px.pixel_text(cx + 54, cy + 14, tier, 2, color))
+        s.append(text(cx + 54, cy + 42, title, 11.5, C["text"] if has else C["faint"], 700))
 
-        # progress bar toward next tier (or full if maxed)
-        bar_x, bar_y, bar_w, bar_h = ax + 14, ay + 46, aw - 28, 7
-        s.append(f'<rect x="{bar_x:.1f}" y="{bar_y}" width="{bar_w:.1f}" height="{bar_h}" rx="3.5" fill="{COLOR["grid"]}"/>')
-        if next_target:
-            lo = thresholds[reached_idx] if reached_idx >= 0 else 0
-            frac = min(max((value - lo) / (next_target - lo), 0), 1)
+        bx, by, bw = cx + 12, cy + 62, cw - 24
+        s.append(f'<rect x="{bx:.1f}" y="{by}" width="{bw:.1f}" height="8" fill="#0B0C0B"/>')
+        if nxt:
+            lo = thresholds[reached] if has else 0
+            frac = min(max((value - lo) / (nxt - lo), 0), 1)
         else:
             frac = 1.0
-        s.append(f'<rect x="{bar_x:.1f}" y="{bar_y}" width="{bar_w*frac:.1f}" height="{bar_h}" rx="3.5" fill="{tier_color}"/>')
-        caption = f"{value} / {next_target}" if next_target else f"{value} — MAXED"
-        s.append(f'<text x="{bar_x:.1f}" y="{bar_y+19}" font-family="{FONT_MONO}" font-size="9.5" '
-                  f'fill="{COLOR["text_dim"]}">{esc(caption)}</text>')
+        if frac > 0:
+            s.append(block_bar(round(bx), by, round(bw * frac), 8, color))
+        caption = f"{value:,} / {nxt:,}" if nxt else f"{value:,} \u2014 MAX"
+        s.append(mono(bx, by + 24, caption, 11, C["dim"]))
     return "".join(s)
 
 
-def draw_quote(x, y, w, h):
-    s = [panel(x, y, w, h)]
-    s.append(f'<text x="{x+30}" y="{y+55}" font-family="{FONT_DISPLAY}" font-size="46" '
-              f'fill="{COLOR["red"]}" font-weight="800">&quot;</text>')
-    s.append(f'<text x="{x+70}" y="{y+70}" font-family="{FONT_DISPLAY}" font-size="16" '
-              f'font-style="italic" fill="{COLOR["text"]}">You need to keep pushing,</text>')
-    s.append(f'<text x="{x+70}" y="{y+95}" font-family="{FONT_DISPLAY}" font-size="16" '
-              f'font-style="italic" fill="{COLOR["text"]}">never give up. Smooth Operator.</text>')
-    s.append(f'<text x="{x+w-30}" y="{y+130}" font-family="{FONT_MONO}" font-size="13" '
-              f'fill="{COLOR["red"]}" text-anchor="end">— CARLOS SAINZ</text>')
+SKILL_COLORS = {
+    "LANGUAGES": C["emerald"], "DATA ANALYTICS": C["diamond"], "BI TOOLS": C["diamond"],
+    "DATABASES": C["gold"], "DEV TOOLS": C["stone"],
+}
+
+
+def inventory_layout(w):
+    """Wrap skill chips into rows; returns (blocks, total_height)."""
+    label_w, chip_h, row_gap, avail = 168, 28, 8, w - 48 - 168
+    blocks, total = [], 0
+    for cat, items in PROFILE["skills"].items():
+        rows, cur, cur_w = [], [], 0
+        for it in items:
+            cw = round(len(it) * 7.6 + 28)
+            if cur and cur_w + cw + 8 > avail:
+                rows.append(cur)
+                cur, cur_w = [], 0
+            cur.append((it, cw))
+            cur_w += cw + 8
+        if cur:
+            rows.append(cur)
+        bh = len(rows) * chip_h + (len(rows) - 1) * row_gap + 14
+        blocks.append((cat, rows, bh))
+        total += bh
+    return blocks, 56 + total + 10
+
+
+def draw_inventory(x, y, w, h, blocks):
+    s = [panel(x, y, w, h), section_title(x + 24, y + 22, "PLAYER INVENTORY", "every skill, by category")]
+    cy = y + 56
+    for cat, rows, bh in blocks:
+        col = SKILL_COLORS.get(cat, C["stone"])
+        s.append(px.pixel_text(x + 24, cy + 8, cat, 2, col))
+        for ri, row in enumerate(rows):
+            cx = x + 24 + 168
+            ry = cy + ri * 36
+            for name, cw in row:
+                s.append(slot(cx, ry, 28))  # corner bevel base
+                s.append(f'<rect x="{cx}" y="{ry}" width="{cw}" height="28" fill="#0B0C0B"/>'
+                         f'<rect x="{cx + 2}" y="{ry + 2}" width="{cw - 4}" height="24" fill="#171918"/>'
+                         f'<rect x="{cx}" y="{ry + 26}" width="{cw}" height="2" fill="{C["bevel_hi"]}"/>'
+                         f'<rect x="{cx + cw - 2}" y="{ry}" width="2" height="28" fill="{C["bevel_hi"]}"/>'
+                         f'<rect x="{cx + 2}" y="{ry + 2}" width="4" height="24" fill="{col}"/>')
+                s.append(text(cx + 14, ry + 19, name, 12.5, C["text"], 700))
+                cx += cw + 8
+        cy += bh
     return "".join(s)
+
+
+def draw_builds(x, y, w, h):
+    s = [panel(x, y, w, h), section_title(x + 24, y + 22, "MAJOR BUILDS", "featured projects")]
+    items = PROFILE["highlights"]
+    gap = 12
+    cw = (w - 48 - gap * (len(items) - 1)) / len(items)
+    for i, b in enumerate(items):
+        cx, cy = x + 24 + i * (cw + gap), y + 56
+        col = RARITY[b["rarity"]]
+        s.append(panel(cx, cy, cw, h - 80, C["panel_alt"]))
+        s.append(f'<rect x="{cx + 6}" y="{cy + 3}" width="{cw - 12:.1f}" height="3" fill="{col}"/>')
+        s.append(px.pixel_text(cx + 14, cy + 18, f"BUILD {i + 1:02d}", 2, col))
+        s.append(px.pixel_text(cx + cw - 14, cy + 18, b["rarity"].upper(), 1, col, anchor="end", shadow_offset=1))
+        s.append(text(cx + 14, cy + 54, b["title"], 12.5, C["text"], 700))
+        s.append(mono(cx + 14, cy + 72, b["stack"], 11, C["dim"]))
+        s.append(px.pixel_text(cx + 14, cy + 82, b["stat_value"], 3, col))
+        s.append(px.pixel_text(cx + 14, cy + 107, b["stat_label"], 1, C["dim"], shadow_offset=1))
+        s.append(text(cx + 14, cy + h - 80 - 8, b["detail"], 11, C["dim"]))
+    return "".join(s)
+
+
+def draw_footer(x, y, w, h):
+    return (panel(x, y, w, h)
+            + px.pixel_text(x + w / 2, y + 14, "WORLD AUTOSAVED", 2, C["emerald"], anchor="middle")
+            + text(x + w / 2, y + 44, "Data: GitHub GraphQL API \u00b7 contributions include commits, issues, PRs and reviews",
+                   11, C["faint"], anchor="middle"))
 
 
 # --------------------------------------------------------------------------
 # Assembly
 # --------------------------------------------------------------------------
 
+def defs():
+    cells = []
+    for i, col in enumerate(CHUNK_SCALE):
+        cells.append(
+            f'<g id="c{i}"><rect width="10" height="10" fill="{col}"/>'
+            f'<rect width="10" height="1" fill="#fff" opacity="0.22"/><rect width="1" height="10" fill="#fff" opacity="0.14"/>'
+            f'<rect y="9" width="10" height="1" fill="#000" opacity="0.35"/><rect x="9" width="1" height="10" fill="#000" opacity="0.28"/></g>')
+    return (
+        "<defs>"
+        '<pattern id="seam" width="8" height="8" patternUnits="userSpaceOnUse">'
+        '<path d="M0 7.5H8M7.5 0V8" stroke="#000" stroke-opacity="0.28" stroke-width="1"/></pattern>'
+        + "".join(cells)
+        + "</defs>"
+        "<style>"
+        "@keyframes reveal{from{opacity:0}to{opacity:1}}"
+        "@media (prefers-reduced-motion:no-preference){.col{animation:reveal .35s ease-out backwards}}"
+        "</style>"
+    )
+
+
 def render(stats):
-    parts = [f'<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
-             f'xmlns="http://www.w3.org/2000/svg" font-family="{FONT_DISPLAY}">']
-    parts.append('<defs>')
-    parts.append(f'<linearGradient id="edge" x1="0" x2="1">'
-                  f'<stop offset="0%" stop-color="{COLOR["red"]}"/>'
-                  f'<stop offset="100%" stop-color="{COLOR["red_dark"]}"/></linearGradient>')
-    parts.append('</defs>')
-    parts.append(f'<rect width="{W}" height="{H}" fill="{COLOR["bg"]}"/>')
-    parts.append(f'<rect x="0" y="0" width="{W}" height="4" fill="url(#edge)"/>')
+    y = 16
+    body = []
+    body.append(draw_header(stats, 20, y, 760, 124)); y += 124 + 16
+    body.append(draw_xp(stats, 20, y, 760, 92)); y += 92 + 18
+    body.append(section_title(24, y, "PLAYER STATS")); y += 24
+    body.append(draw_stat_cards(stats, 20, y, 760)); y += 76 * 2 + 10 + 20
+    body.append(draw_chunk_map(stats, 20, y, 760, 214)); y += 214 + 16
+    body.append(draw_month_chart(stats, 20, y, 374, 330))
+    body.append(draw_languages(stats, 406, y, 374, 330)); y += 330 + 16
+    inv_blocks, inv_h = inventory_layout(760)
+    body.append(draw_inventory(20, y, 760, inv_h, inv_blocks)); y += inv_h + 16
+    body.append(draw_advancements(stats, 20, y, 760, 170)); y += 170 + 16
+    body.append(draw_builds(20, y, 760, 216)); y += 216 + 16
+    body.append(draw_footer(20, y, 760, 64)); y += 64 + 16
+    height = y
 
-    parts.append(draw_header(stats))
-    parts.append(draw_pace_strip(stats, 20, 100, 1620, 66))
-
-    parts.append(draw_gauge_panel(stats, 20, 182, 560, 300))
-    parts.append(draw_quick_stats(stats, 600, 182, 1040, 300))
-
-    parts.append(draw_sector_map(stats, 20, 498, 545, 365))
-    parts.append(draw_pace_chart(stats, 580, 498, 510, 365))
-    parts.append(draw_compound_board(stats, 1105, 498, 535, 365))
-
-    parts.append(draw_garage(20, 883, 700, 300))
-    parts.append(draw_highlights(740, 883, 900, 300))
-
-    parts.append(draw_podium(stats, 20, 1203, 1190, 150))
-    parts.append(draw_quote(1225, 1203, 415, 150))
-
-    parts.append('</svg>')
-    return "\n".join(parts)
+    head = (f'<svg width="{W}" height="{height}" viewBox="0 0 {W} {height}" xmlns="http://www.w3.org/2000/svg" '
+            f'role="img" aria-labelledby="t d" font-family="{FONT_UI}" shape-rendering="crispEdges">'
+            f'<title id="t">World Activity \u2014 {esc(PROFILE["name"])}</title>'
+            f'<desc id="d">Minecraft-style GitHub activity dashboard: XP, streaks, contribution chunk map, '
+            f'monthly XP, language veins, inventory, advancements and major builds.</desc>')
+    return head + defs() + f'<rect width="{W}" height="{height}" fill="{C["bg"]}"/>' + "".join(body) + "</svg>\n"
 
 
 def main():
-    user = fetch_user()
-    stats = compute_stats(user)
-    svg = render(stats)
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    mode = ap.add_mutually_exclusive_group()
+    mode.add_argument("--placeholder", action="store_true", help="render an empty 'first sync pending' world (no API call)")
+    mode.add_argument("--demo", action="store_true", help="render synthetic data for design QA (no API call)")
+    ap.add_argument("--out", default=OUTPUT_PATH, help=f"output path (default: {OUTPUT_PATH})")
+    args = ap.parse_args()
 
-    os.makedirs("assets", exist_ok=True)
-    out_path = os.path.join("assets", "f1-dashboard.svg")
-    with open(out_path, "w", encoding="utf-8") as f:
+    if args.placeholder:
+        stats = compute_stats(placeholder_user(), last_updated="PENDING FIRST SYNC")
+    elif args.demo:
+        stats = compute_stats(demo_user(), last_updated="DEMO DATA")
+    else:
+        stats = compute_stats(fetch_user(os.environ.get("GH_TOKEN")))
+
+    svg = render(stats)
+    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
+    with open(args.out, "w", encoding="utf-8", newline="\n") as f:
         f.write(svg)
 
-    print("Dashboard generated successfully!")
-    print(f"  Commits: {stats['commits']} | Repos: {stats['repos']} | Followers: {stats['followers']}")
-    print(f"  Progress: {int(stats['progress']*100)}% | Streak: {stats['longest_streak']} "
-          f"(live {stats['current_streak']}) | Top lang: {stats['top_language']}")
-    print(f"  Fastest lap: {stats['fastest_lap']} | {stats['current_month_name']} commits: {stats['current_month_commits']}")
+    print(f"World activity generated: {args.out}")
+    print(f"  XP: {stats['xp']} | Builds: {stats['repos']} | Party: {stats['followers']}")
+    print(f"  Target progress: {int(stats['progress'] * 100)}% | Best run: {stats['longest_streak']} "
+          f"(live {stats['current_streak']}) | Main vein: {stats['top_language']}")
+    print(f"  Best day: {stats['best_day']} | {stats['month_name']} XP: {stats['xp_month']}")
 
 
 if __name__ == "__main__":

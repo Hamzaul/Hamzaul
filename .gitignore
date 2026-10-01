@@ -13,3 +13,10 @@ env/
 
 # VS Code (optional)
 .vscode/
+# Local secrets (keep .env.example, ignore everything else)
+.env.*
+!.env.example
+
+# Generated previews
+preview*.svg
+preview*.png

@@ -1,4 +1,4 @@
-name: Generate F1 Dashboard
+name: Generate World Activity Dashboard
 
 on:
   schedule:
@@ -54,21 +54,21 @@ jobs:
               exit 1
             fi
 
-            echo "Generating F1 dashboard..."
+            echo "Generating world activity dashboard..."
 
             if ! python scripts/dashboard.py; then
               echo "Dashboard generation failed."
               exit 1
             fi
 
-            git add assets/f1-dashboard.svg
+            git add assets/world-activity.svg
 
             if git diff --staged --quiet; then
               echo "No dashboard changes."
               exit 0
             fi
 
-            git commit -m "Update F1 Dashboard"
+            git commit -m "Update World Activity dashboard"
 
             if git push origin HEAD:main; then
               echo "Dashboard successfully pushed."

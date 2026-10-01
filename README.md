@@ -1,774 +1,532 @@
 <div align="center">
-  <img src="assets/hero-banner.svg" alt="Hamzaul Rahman" width="100%" />
+  <img src="assets/minecraft-hero.svg" alt="Hamzaul Rahman — Data Analyst, AI &amp; Data Science" width="100%" />
 </div>
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=14&duration=3000&pause=1500&color=E8121C&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=45&lines=%F0%9F%8F%8E+SYSTEMS+CHECK+COMPLETE+%E2%80%94+ALL+TELEMETRY+NOMINAL;%F0%9F%94%B4+Currently+in+the+garage%3A+Advanced+DAX+%2B+ML+Fundamentals;%F0%9F%9F%A1+Next+deployment%3A+SQL+optimization+pipeline;%E2%9A%AA+Philosophy%3A+A+dashboard+should+answer+before+it+displays" alt="typing animation" />
+<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=15&duration=3000&pause=1200&color=17DD62&center=true&vCenter=true&width=620&height=30&lines=Mining+raw+data+into+decisions+worth+acting+on;Active+quest%3A+Advanced+Power+BI+%2B+DAX;Next+quest%3A+SQL+optimization+%2B+ML+fundamentals;Philosophy%3A+A+dashboard+should+answer+before+it+displays" alt="typing animation" />
 
-<br/>
-
-<a href="https://www.linkedin.com/in/hamzaul-rahman-40107b306/"><img src="https://img.shields.io/badge/%E2%96%B8_LINKEDIN-12151C?style=for-the-badge&logo=linkedin&logoColor=2FD3E0" /></a>&nbsp;
-<a href="https://hamzaul.github.io/portfolio"><img src="https://img.shields.io/badge/%E2%96%B8_PORTFOLIO-12151C?style=for-the-badge&logo=googlechrome&logoColor=C6A15B" /></a>&nbsp;
-<a href="mailto:hamzaulrahman436@gmail.com"><img src="https://img.shields.io/badge/%E2%96%B8_EMAIL-12151C?style=for-the-badge&logo=gmail&logoColor=E8121C" /></a>&nbsp;
-
-<br/><br/>
-
-<img src="https://komarev.com/ghpvc/?username=Hamzaul&label=LAP+COUNT&color=E8121C&style=flat-square&labelColor=12151C" alt="profile views" />
-&nbsp;&nbsp;
-<img src="https://img.shields.io/github/followers/Hamzaul?label=PIT+CREW&color=2FD3E0&style=flat-square&labelColor=12151C&logo=github" alt="followers" />
-&nbsp;&nbsp;
-<img src="https://img.shields.io/github/stars/Hamzaul?affiliations=OWNER&label=POLE+POSITIONS&color=C6A15B&style=flat-square&labelColor=12151C&logo=github" alt="stars" />
-
-</div>
-
-<br/>
-<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
-<br/>
-
-<!-- ═══════════════════════ 01 — DRIVER PROFILE ═══════════════════════ -->
-
-<h2 align="center">
-<img src="https://img.shields.io/badge/01-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;DRIVER PROFILE
-</h2>
-
-<br/>
-
-```python
-class HamzaulRahman:
-
-    name = "Hamzaul Rahman"
-
-    role = (
-        "Aspiring Data Analyst | AI & Data Science Student"
-    )
-
-    education = (
-        "B.Tech in Artificial Intelligence & Data Science "
-        "@ CGC University"
-    )
-
-    location = "India"
-
-    available_for = (
-        "Data Analytics Internships | Power BI Projects | "
-        "Python Development | Open Source Collaboration"
-    )
-
-    currently_learning = [
-        "Advanced Power BI & DAX",
-        "SQL Optimization",
-        "Machine Learning Fundamentals",
-        "Statistics for Data Analytics"
-    ]
-
-    projects = [
-
-        (
-            "PhonePe Transaction Analysis  ->  "
-            "Interactive Power BI dashboard analyzing "
-            "300K+ transactions with business insights "
-            "through KPI cards, drill-through pages, and "
-            "dynamic visualizations."
-        ),
-
-        (
-            "Student Performance Analysis  ->  "
-            "Python-based exploratory data analysis project "
-            "using Pandas, NumPy, Matplotlib, and Seaborn "
-            "to uncover academic performance trends."
-        ),
-
-        (
-            "Traffic Control System  ->  "
-            "Traffic management simulation demonstrating "
-            "automated signal control logic using "
-            "Python and JavaScript."
-        ),
-
-        (
-            "Authentication System  ->  "
-            "Secure user authentication application "
-            "implementing registration, login, and "
-            "session management."
-        ),
-
-        (
-            "Birthday Celebration Website  ->  "
-            "Creative front-end project featuring animations, "
-            "responsive layouts, and interactive UI."
-        ),
-    ]
-
-    interests = [
-        "Business Intelligence",
-        "Data Visualization",
-        "Data Analytics",
-        "Machine Learning",
-        "Problem Solving",
-        "Dashboard Design",
-        "Real-world Data Solutions"
-    ]
-
-    fun_fact = (
-        "When I'm not building dashboards or solving "
-        "coding problems, you'll probably find me "
-        "writing poetry or exploring creative ideas."
-    )
-
-    motto = (
-        "Turning raw data into decisions worth acting on."
-    )
+```
+ ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️      🍗🍗🍗🍗🍗🍗🍗🍗🍗🍗
+ QUEST XP  ████████░░░░░░░░░░░░  40%          LVL: YEAR 2
+ > Welcome to my world...
 ```
 
-<br/>
-<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
+<a href="#"><img src="https://img.shields.io/badge/RESUME-1B1B17?style=for-the-badge&logo=readdotcv&logoColor=FAC846" alt="Resume" /></a>
+<a href="https://www.linkedin.com/in/hamzaul-rahman-40107b306/"><img src="https://img.shields.io/badge/LINKEDIN-1B1B17?style=for-the-badge&logo=linkedin&logoColor=5DECEC" alt="LinkedIn" /></a>
+<a href="https://hamzaul.github.io/portfolio"><img src="https://img.shields.io/badge/PORTFOLIO-1B1B17?style=for-the-badge&logo=googlechrome&logoColor=17DD62" alt="Portfolio" /></a>
+<a href="mailto:hamzaulrahman436@gmail.com"><img src="https://img.shields.io/badge/EMAIL-1B1B17?style=for-the-badge&logo=gmail&logoColor=D1342A" alt="Email" /></a>
+
+<br/><br/>
+
+<img src="https://komarev.com/ghpvc/?username=Hamzaul&label=WORLD+VISITS&color=5B8731&style=flat-square&labelColor=1B1B17" alt="profile views" />
+&nbsp;
+<img src="https://img.shields.io/github/followers/Hamzaul?label=PARTY+MEMBERS&color=5DECEC&style=flat-square&labelColor=1B1B17&logo=github" alt="followers" />
+&nbsp;
+<img src="https://img.shields.io/github/stars/Hamzaul?affiliations=OWNER&label=DIAMONDS+FOUND&color=FAC846&style=flat-square&labelColor=1B1B17&logo=github" alt="stars" />
+
+</div>
+
+<img src="assets/pixel-divider.svg" width="100%" alt="" />
+
+<h2 align="center">🧍 PLAYER PROFILE</h2>
+
+<div align="center"><sub><code>player.dat — a decoded save file, same facts as a bio in a different format</code></sub></div>
+
 <br/>
 
-<!-- ═══════════════════════ 02 — LIVE GITHUB TELEMETRY DASHBOARD ═══════════════════════ -->
+```yaml
+# player.dat — decoded
+PlayerName: "Hamzaul Rahman"
+Class: "Aspiring Data Analyst | AI & Data Science Student"
+Spawned: "B.Tech in Artificial Intelligence & Data Science @ CGC University"
+CurrentYear: "Year 2 of 4 (2025-2028)"
+Biome: "India"
 
-<h2 align="center">
-<img src="https://img.shields.io/badge/02-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;LIVE GITHUB TELEMETRY DASHBOARD
-</h2>
+OpenToQuests:
+  - Data Analytics Internships
+  - Power BI Projects
+  - Python Development
+  - Open Source Collaboration
+
+Loadout: ["Power BI", "Python", "SQL"]
+
+ActiveQuest: "Advanced DAX, statistics, and cleaner data storytelling"
+CurrentlyLearning:
+  - Advanced Power BI & DAX
+  - SQL Optimization
+  - Machine Learning Fundamentals
+  - Statistics for Data Analytics
+
+Interests:
+  - Business Intelligence
+  - Data Visualization
+  - Data Analytics
+  - Machine Learning
+  - Problem Solving
+  - Dashboard Design
+  - Real-world Data Solutions
+
+SideQuest: "When I'm not building dashboards or solving coding problems, you'll probably find me writing poetry or exploring creative ideas."
+Motto: "Turning raw data into decisions worth acting on."
+Philosophy: "A dashboard should answer one question clearly"
+WorldsBuilt: 6
+```
+
+<img src="assets/pixel-divider.svg" width="100%" alt="" />
+
+<h2 align="center">🗺️ WORLD ACTIVITY</h2>
+
+<div align="center"><sub><code>Live GitHub data — XP, streaks, chunk map, languages · regenerated every 30 minutes</code></sub></div>
 
 <br/>
 
 <div align="center">
-<sub>
-<img src="https://img.shields.io/badge/%E2%97%8F-E8121C?style=flat-square&labelColor=E8121C" height="8" />&nbsp;
-<b>LIVE</b>&nbsp;&nbsp;·&nbsp;&nbsp;Auto-refreshed via GitHub Actions&nbsp;&nbsp;·&nbsp;&nbsp;Commits, streaks, languages, and activity are all in one place below
-</sub>
+  <img src="assets/world-activity.svg" alt="World Activity: Hamzaul's live GitHub dashboard showing XP, streaks, a contribution chunk map, monthly XP, languages, inventory and featured builds" width="100%" />
 </div>
 
-<br/>
+<div align="center"><sub>XP counts GitHub contributions (commits, issues, pull requests and reviews). The 3,000 bar is a personal yearly target, not a calculated figure.</sub></div>
 
-<div align="center">
-  <img src="assets/f1-dashboard.svg" alt="Hamzaul's F1 Telemetry Dashboard" width="100%" />
-</div>
+<img src="assets/pixel-divider.svg" width="100%" alt="" />
 
-<br/>
-<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
-<br/>
+<h2 align="center">🏗️ BUILDS</h2>
 
-<!-- ═══════════════════════ 03 — FEATURED PROJECTS ═══════════════════════ -->
-<h2 align="center">
-<img src="https://img.shields.io/badge/03-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;FEATURED PROJECTS
-</h2>
+<div align="center"><sub><code>6 structures, 6 independent data &amp; dev projects &nbsp;·&nbsp; Tier: ⚪ Common · 🟢 Uncommon · 🔷 Rare</code></sub></div>
 
 <br/>
-<div align="center"><sub>Six projects that show how I turn data into decisions and ideas into interfaces.</sub></div>
-<br/>
-
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!--                        ROW 1                                  -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
 
 <table>
 <tr>
 
-<!-- ── Project 1 ── -->
 <td width="50%" valign="top">
 
-<h3 align="center">🏎️&nbsp; PhonePe Transaction Analysis</h3>
+#### 🏗️ BUILD 01 &nbsp;·&nbsp; 🔷 RARE
 
-<br/>
+**PhonePe Transaction Analysis**
 
-<div align="center">
-<a href="https://github.com/Hamzaul/Power_Bi_PhonePay_Analysis_Dashboard">
-<img src="https://img.shields.io/badge/⬡_Power_BI_Dashboard-12151C?style=for-the-badge" />
-</a>
-</div>
+`300K+ TRANSACTIONS` `₹3.47bn VALUE` `108K USERS`
 
-<br/>
+Power BI dashboard analyzing 300K+ transactions worth ₹3.47bn across 108K users, with KPI cards, dynamic visualizations, and drill-through pages by service category.
 
-<p align="center">
-<em>Power BI dashboard analyzing <strong>300K+ transactions</strong> worth <strong>₹3.47 billion</strong> across 108K users with drill-through pages by service category.</em>
-</p>
+<img src="https://img.shields.io/badge/Power_BI-1B1B17?style=flat-square&logo=powerbi&logoColor=17DD62" alt="Power BI" /> <img src="https://img.shields.io/badge/DAX-1B1B17?style=flat-square&logoColor=17DD62" alt="DAX" /> <img src="https://img.shields.io/badge/Data_Modeling-1B1B17?style=flat-square&logoColor=17DD62" alt="Data Modeling" />
 
-<br/>
+**Status:** ✅ Completed<br/>
+**Impact:** Surfaced loans as the highest-value transaction segment · 96% success rate
 
-<div align="center">
-<img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=000" />
-<img src="https://img.shields.io/badge/DAX-CC2927?style=for-the-badge&logoColor=fff" />
-<img src="https://img.shields.io/badge/Data_Modeling-0078D4?style=for-the-badge&logoColor=fff" />
-</div>
-
-<br/>
-
-> 💡 **Impact:** Loans surfaced as the highest-value segment — a finding that would redirect marketing spend.
-
-<br/>
-
-<div align="center">
-<a href="https://github.com/Hamzaul/Power_Bi_PhonePay_Analysis_Dashboard">
-<img src="https://img.shields.io/badge/▸_VIEW_REPO-E8121C?style=for-the-badge&logo=github&logoColor=fff" />
-</a>
-</div>
-
-<br/>
+[View Build →](https://github.com/Hamzaul/Power_Bi_PhonePay_Analysis_Dashboard)
 
 </td>
 
-<!-- ── Project 2 ── -->
 <td width="50%" valign="top">
 
-<h3 align="center">🏎️&nbsp; Car Models Analysis</h3>
+#### 🏗️ BUILD 02 &nbsp;·&nbsp; 🟢 UNCOMMON
 
-<br/>
+**Car Models Analysis**
 
-<div align="center">
-<a href="https://github.com/Hamzaul/Power_Bi_Car_Models">
-<img src="https://img.shields.io/badge/⬡_Power_BI_Dashboard-12151C?style=for-the-badge" />
-</a>
-</div>
+`PRICE` `MILEAGE` `HORSEPOWER` `ENGINE SPECS` `337 HP` `~$58K AVG PRICE`
 
-<br/>
+Cross-filtering dashboard comparing price, mileage, horsepower, and engine specs across brands, transmissions, and fuel types.
 
-<p align="center">
-<em>Cross-filtering dashboard comparing <strong>price, mileage, horsepower & engine specs</strong> across brands, transmissions, and fuel types.</em>
-</p>
+<img src="https://img.shields.io/badge/Power_BI-1B1B17?style=flat-square&logo=powerbi&logoColor=17DD62" alt="Power BI" /> <img src="https://img.shields.io/badge/Cross_Filtering-1B1B17?style=flat-square&logoColor=17DD62" alt="Cross Filtering" /> <img src="https://img.shields.io/badge/Data_Viz-1B1B17?style=flat-square&logoColor=17DD62" alt="Data Viz" />
 
-<br/>
+**Status:** ✅ Completed<br/>
+**Impact:** One comparison view replacing scattered spec sheets
 
-<div align="center">
-<img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=000" />
-<img src="https://img.shields.io/badge/Cross_Filtering-00BCB4?style=for-the-badge&logoColor=fff" />
-<img src="https://img.shields.io/badge/Data_Viz-7B68EE?style=for-the-badge&logoColor=fff" />
-</div>
-
-<br/>
-
-> 💡 **Impact:** Multi-dimensional comparison across 4 key vehicle metrics for instant competitive positioning.
-
-<br/>
-
-<div align="center">
-<a href="https://github.com/Hamzaul/Power_Bi_Car_Models">
-<img src="https://img.shields.io/badge/▸_VIEW_REPO-E8121C?style=for-the-badge&logo=github&logoColor=fff" />
-</a>
-</div>
-
-<br/>
+[View Build →](https://github.com/Hamzaul/Power_Bi_Car_Models)
 
 </td>
 
 </tr>
-</table>
-
-<br/>
-
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!--                        ROW 2                                  -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-
-<table>
 <tr>
 
-<!-- ── Project 3 ── -->
 <td width="50%" valign="top">
 
-<h3 align="center">📊&nbsp; Student Performance Analysis</h3>
+#### 🏗️ BUILD 03 &nbsp;·&nbsp; 🟢 UNCOMMON
 
-<br/>
+**Student Performance Analysis**
 
-<div align="center">
-<a href="https://github.com/Hamzaul/Student_Performance_Analysis">
-<img src="https://img.shields.io/badge/⬡_Python_EDA-12151C?style=for-the-badge" />
-</a>
-</div>
+`100 STUDENT RECORDS` `3 SUBJECTS` `74.8 AVG SCORE`
 
-<br/>
+Python EDA on 100 student records — grading, descriptive statistics, and correlation heatmaps across three subjects, using Pandas, NumPy, Matplotlib, and Seaborn.
 
-<p align="center">
-<em>Exploratory analysis on <strong>100 student records</strong> — automated grading, descriptive statistics & correlation heatmaps across three subjects.</em>
-</p>
+<img src="https://img.shields.io/badge/Python-1B1B17?style=flat-square&logo=python&logoColor=17DD62" alt="Python" /> <img src="https://img.shields.io/badge/Pandas-1B1B17?style=flat-square&logo=pandas&logoColor=17DD62" alt="Pandas" /> <img src="https://img.shields.io/badge/NumPy-1B1B17?style=flat-square&logo=numpy&logoColor=17DD62" alt="NumPy" /> <img src="https://img.shields.io/badge/Matplotlib-1B1B17?style=flat-square&logoColor=17DD62" alt="Matplotlib" /> <img src="https://img.shields.io/badge/Seaborn-1B1B17?style=flat-square&logoColor=17DD62" alt="Seaborn" />
 
-<br/>
+**Status:** ✅ Completed<br/>
+**Impact:** Flagged a strong Maths–Physics correlation
 
-<div align="center">
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=fff" />
-<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=fff" />
-<img src="https://img.shields.io/badge/Seaborn-44A8B3?style=for-the-badge&logoColor=fff" />
-</div>
-
-<br/>
-
-> 💡 **Impact:** Correlation analysis surfaced which factors most influence academic outcomes.
-
-<br/>
-
-<div align="center">
-<a href="https://github.com/Hamzaul/Student_Performance_Analysis">
-<img src="https://img.shields.io/badge/▸_VIEW_REPO-E8121C?style=for-the-badge&logo=github&logoColor=fff" />
-</a>
-</div>
-
-<br/>
+[View Build →](https://github.com/Hamzaul/Student_Performance_Analysis)
 
 </td>
 
-<!-- ── Project 4 ── -->
 <td width="50%" valign="top">
 
-<h3 align="center">🔐&nbsp; Authentication System</h3>
+#### 🏗️ BUILD 04 &nbsp;·&nbsp; 🟢 UNCOMMON
 
-<br/>
+**Authentication System**
 
-<div align="center">
-<a href="https://github.com/Hamzaul/Authentication">
-<img src="https://img.shields.io/badge/⬡_Python_Backend-12151C?style=for-the-badge" />
-</a>
-</div>
+`REGISTRATION` `LOGIN` `SESSION MANAGEMENT`
 
-<br/>
+Secure user authentication app — registration, login, and session management, with a Python backend and a responsive JS frontend.
 
-<p align="center">
-<em>Full-featured <strong>registration, login & session management</strong> system with a Python backend — secure, clean, and modular.</em>
-</p>
+<img src="https://img.shields.io/badge/Python-1B1B17?style=flat-square&logo=python&logoColor=17DD62" alt="Python" /> <img src="https://img.shields.io/badge/JavaScript-1B1B17?style=flat-square&logo=javascript&logoColor=17DD62" alt="JavaScript" /> <img src="https://img.shields.io/badge/HTML-1B1B17?style=flat-square&logo=html5&logoColor=17DD62" alt="HTML" /> <img src="https://img.shields.io/badge/CSS-1B1B17?style=flat-square&logo=css3&logoColor=17DD62" alt="CSS" />
 
-<br/>
+**Status:** ✅ Completed<br/>
+**Impact:** End-to-end secure session handling, registration through login
 
-<div align="center">
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=fff" />
-<img src="https://img.shields.io/badge/Authentication-FF6F00?style=for-the-badge&logoColor=fff" />
-<img src="https://img.shields.io/badge/Session_Mgmt-6A1B9A?style=for-the-badge&logoColor=fff" />
-</div>
-
-<br/>
-
-> 💡 **Impact:** Production-ready auth flow demonstrating secure credential handling and session lifecycle.
-
-<br/>
-
-<div align="center">
-<a href="https://github.com/Hamzaul/Authentication">
-<img src="https://img.shields.io/badge/▸_VIEW_REPO-E8121C?style=for-the-badge&logo=github&logoColor=fff" />
-</a>
-</div>
-
-<br/>
+[View Build →](https://github.com/Hamzaul/Authentication)
 
 </td>
 
 </tr>
-</table>
-
-<br/>
-
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!--                        ROW 3                                  -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-
-<table>
 <tr>
 
-<!-- ── Project 5 ── -->
 <td width="50%" valign="top">
 
-<h3 align="center">🎂&nbsp; Birthday Celebration Website</h3>
+#### 🏗️ BUILD 05 &nbsp;·&nbsp; ⚪ COMMON
 
-<br/>
+**Birthday Celebration Website**
 
-<div align="center">
-<a href="https://birthday-gules-tau.vercel.app/">
-<img src="https://img.shields.io/badge/⬡_Live_Demo-12151C?style=for-the-badge" />
-</a>
-</div>
+`LIVE ON VERCEL`
 
-<br/>
+Interactive birthday site with animated visuals, smooth transitions, and a responsive UI.
 
-<p align="center">
-<em>Animated, interactive <strong>front-end celebration page</strong> with smooth transitions, confetti effects & responsive design — deployed on Vercel.</em>
-</p>
+<img src="https://img.shields.io/badge/HTML-1B1B17?style=flat-square&logo=html5&logoColor=17DD62" alt="HTML" /> <img src="https://img.shields.io/badge/CSS-1B1B17?style=flat-square&logo=css3&logoColor=17DD62" alt="CSS" /> <img src="https://img.shields.io/badge/JavaScript-1B1B17?style=flat-square&logo=javascript&logoColor=17DD62" alt="JavaScript" />
 
-<br/>
+**Status:** 🟢 Live<br/>
+**Impact:** Shipped and deployed live, not just a local demo
 
-<div align="center">
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=fff" />
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=fff" />
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
-</div>
-
-<br/>
-
-> 💡 **Impact:** Polished UI/UX craft showcasing animation chops and deployment workflow.
-
-<br/>
-
-<div align="center">
-<a href="https://github.com/Hamzaul/Birthday">
-<img src="https://img.shields.io/badge/▸_VIEW_REPO-E8121C?style=for-the-badge&logo=github&logoColor=fff" />
-</a>
-&nbsp;
-<a href="https://birthday-gules-tau.vercel.app/">
-<img src="https://img.shields.io/badge/▸_LIVE_SITE-00C853?style=for-the-badge&logo=vercel&logoColor=fff" />
-</a>
-</div>
-
-<br/>
+<a href="https://birthday-gules-tau.vercel.app/">🌐 Live Demo</a> &nbsp;|&nbsp; <a href="https://github.com/Hamzaul/Birthday">View Build →</a>
 
 </td>
 
-<!-- ── Project 6 ── -->
 <td width="50%" valign="top">
 
-<h3 align="center">🚦&nbsp; Traffic Control System</h3>
+#### 🏗️ BUILD 06 &nbsp;·&nbsp; 🟢 UNCOMMON
 
-<br/>
+**Traffic Control System**
 
-<div align="center">
-<a href="https://github.com/Hamzaul/Traffic-control-system">
-<img src="https://img.shields.io/badge/⬡_Simulation-12151C?style=for-the-badge" />
-</a>
-</div>
+`AUTOMATED SIGNAL MANAGEMENT`
 
-<br/>
+Simulates automated signal management to optimize vehicle flow and reduce congestion, demonstrating automated signal control logic.
 
-<p align="center">
-<em>Simulated <strong>automated signal management</strong> system designed to optimize vehicle flow at intersections with intelligent timing logic.</em>
-</p>
+<img src="https://img.shields.io/badge/Python-1B1B17?style=flat-square&logo=python&logoColor=17DD62" alt="Python" /> <img src="https://img.shields.io/badge/JavaScript-1B1B17?style=flat-square&logo=javascript&logoColor=17DD62" alt="JavaScript" /> <img src="https://img.shields.io/badge/Automation-1B1B17?style=flat-square&logoColor=17DD62" alt="Automation" /> <img src="https://img.shields.io/badge/Simulation-1B1B17?style=flat-square&logoColor=17DD62" alt="Simulation" /> <img src="https://img.shields.io/badge/Algorithms-1B1B17?style=flat-square&logoColor=17DD62" alt="Algorithms" />
 
-<br/>
+**Status:** ✅ Completed<br/>
+**Impact:** Models signal-timing logic as an alternative to static control
 
-<div align="center">
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=fff" />
-<img src="https://img.shields.io/badge/Simulation-E65100?style=for-the-badge&logoColor=fff" />
-<img src="https://img.shields.io/badge/Algorithms-1B5E20?style=for-the-badge&logoColor=fff" />
-</div>
-
-<br/>
-
-> 💡 **Impact:** Algorithmic approach to real-world traffic optimization, reducing simulated wait times.
-
-<br/>
-
-<div align="center">
-<a href="https://github.com/Hamzaul/Traffic-control-system">
-<img src="https://img.shields.io/badge/▸_VIEW_REPO-E8121C?style=for-the-badge&logo=github&logoColor=fff" />
-</a>
-</div>
-
-<br/>
+[View Build →](https://github.com/Hamzaul/Traffic-control-system)
 
 </td>
 
 </tr>
 </table>
 
-<br/>
-<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
-<br/>
+<img src="assets/pixel-divider.svg" width="100%" alt="" />
 
+<h2 align="center">⛏️ MINING EXPEDITION</h2>
 
-<!-- ═══════════════════════ 04 — TECH STACK ═══════════════════════ -->
-
-<h2 align="center">
-<img src="https://img.shields.io/badge/04-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;TECH STACK
-</h2>
-
-<br/>
-<div align="center"><sub>Shown once, here — demonstrated everywhere else through the projects and the live dashboard above.</sub></div>
-<br/>
-
----
+<div align="center"><sub><code>A small strategy game built with HTML · CSS · JavaScript — in this repo under pit-strategy/</code></sub></div>
 
 <br/>
 
-<!-- ══════════════════════════════════════════════════════ -->
-<!--                  ROW 1  ·  Programming & Web Dev      -->
-<!-- ══════════════════════════════════════════════════════ -->
+<div align="center">
+  <a href="pit-strategy/"><img src="assets/game-thumbnail.svg" alt="Mining Expedition: pick pickaxe tiers, dodge flooded tunnels and race five rival miners to the Deep Vein" width="100%" /></a>
+</div>
+
+<br/>
+
+Pick the right pickaxe tier, read the tunnels, and decide when to head back to the crafting table. Five rival miners are racing you down 50 blocks to the Deep Vein. Your best result is saved in your browser.
+
+**Live game:** *(add URL)* &nbsp;·&nbsp; **Source:** [`pit-strategy/`](pit-strategy/)
+
+<img src="assets/pixel-divider.svg" width="100%" alt="" />
+
+<h2 align="center">🎒 PLAYER INVENTORY</h2>
+
+<div align="center"><sub><code>8 chests · every item in the loadout</code></sub></div>
+
+<br/>
 
 <table align="center" width="92%">
 <tr>
 
-<!-- Programming -->
 <td width="50%" align="center" valign="top">
 
-<br/>
+**⚔️ Programming**
 
-**`{ }` &nbsp; Programming**
-
-<br/>
-
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=FFD43B" />
-&nbsp;
-<img src="https://img.shields.io/badge/SQL-E8121C?style=for-the-badge&logo=mysql&logoColor=fff" />
-&nbsp;
-<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=fff" />
-&nbsp;
-<img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=fff" />
-
-<br/><br/>
+<img src="https://img.shields.io/badge/Python-1B1B17?style=flat-square&logo=python&logoColor=17DD62" alt="Python" /> <img src="https://img.shields.io/badge/SQL-1B1B17?style=flat-square&logo=mysql&logoColor=17DD62" alt="SQL" /> <img src="https://img.shields.io/badge/Java-1B1B17?style=flat-square&logo=openjdk&logoColor=17DD62" alt="Java" /> <img src="https://img.shields.io/badge/C-1B1B17?style=flat-square&logo=c&logoColor=17DD62" alt="C" />
 
 </td>
 
-<!-- Web Development -->
 <td width="50%" align="center" valign="top">
 
-<br/>
+**🧱 Web Development**
 
-**`🌐` &nbsp; Web Development**
-
-<br/>
-
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=fff" />
-&nbsp;
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=fff" />
-&nbsp;
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000" />
-
-<br/><br/>
+<img src="https://img.shields.io/badge/HTML5-1B1B17?style=flat-square&logo=html5&logoColor=17DD62" alt="HTML5" /> <img src="https://img.shields.io/badge/CSS3-1B1B17?style=flat-square&logo=css3&logoColor=17DD62" alt="CSS3" /> <img src="https://img.shields.io/badge/JavaScript-1B1B17?style=flat-square&logo=javascript&logoColor=17DD62" alt="JavaScript" />
 
 </td>
+
 </tr>
-</table>
-
-<br/>
-
-<!-- ══════════════════════════════════════════════════════ -->
-<!--                ROW 2  ·  Analytics & Data Science     -->
-<!-- ══════════════════════════════════════════════════════ -->
-
-<table align="center" width="92%">
 <tr>
 
-<!-- Analytics -->
 <td width="50%" align="center" valign="top">
 
-<br/>
+**💎 Analytics**
 
-**`📊` &nbsp; Analytics**
-
-<br/>
-
-<img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=000" />
-&nbsp;
-<img src="https://img.shields.io/badge/DAX-CC2927?style=for-the-badge&logoColor=fff" />
-&nbsp;
-<img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=fff" />
-&nbsp;
-<img src="https://img.shields.io/badge/Pivot_Tables-0078D4?style=for-the-badge&logoColor=fff" />
-
-<br/><br/>
+<img src="https://img.shields.io/badge/Power_BI-1B1B17?style=flat-square&logo=powerbi&logoColor=5DECEC" alt="Power BI" /> <img src="https://img.shields.io/badge/DAX-1B1B17?style=flat-square&logoColor=5DECEC" alt="DAX" /> <img src="https://img.shields.io/badge/Excel-1B1B17?style=flat-square&logo=microsoftexcel&logoColor=5DECEC" alt="Excel" /> <img src="https://img.shields.io/badge/Pivot_Tables-1B1B17?style=flat-square&logoColor=5DECEC" alt="Pivot Tables" /> <img src="https://img.shields.io/badge/XLOOKUP-1B1B17?style=flat-square&logoColor=5DECEC" alt="XLOOKUP" />
 
 </td>
 
-<!-- Data Science -->
 <td width="50%" align="center" valign="top">
 
-<br/>
+**🔬 Data Science**
 
-**`🔬` &nbsp; Data Science**
-
-<br/>
-
-<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=fff" />
-&nbsp;
-<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=4DABCF" />
-&nbsp;
-<img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=fff" />
-
-<br/><br/>
+<img src="https://img.shields.io/badge/Pandas-1B1B17?style=flat-square&logo=pandas&logoColor=5DECEC" alt="Pandas" /> <img src="https://img.shields.io/badge/NumPy-1B1B17?style=flat-square&logo=numpy&logoColor=5DECEC" alt="NumPy" /> <img src="https://img.shields.io/badge/Scikit--Learn-1B1B17?style=flat-square&logo=scikit-learn&logoColor=5DECEC" alt="Scikit-Learn" /> <img src="https://img.shields.io/badge/EDA-1B1B17?style=flat-square&logoColor=5DECEC" alt="EDA" /> <img src="https://img.shields.io/badge/Regression-1B1B17?style=flat-square&logoColor=5DECEC" alt="Regression" /> <img src="https://img.shields.io/badge/Statistics-1B1B17?style=flat-square&logoColor=5DECEC" alt="Statistics" />
 
 </td>
+
 </tr>
-</table>
-
-<br/>
-
-<!-- ══════════════════════════════════════════════════════ -->
-<!--              ROW 3  ·  Visualization & Databases      -->
-<!-- ══════════════════════════════════════════════════════ -->
-
-<table align="center" width="92%">
 <tr>
 
-<!-- Visualization -->
 <td width="50%" align="center" valign="top">
 
-<br/>
+**📈 Visualization**
 
-**`📈` &nbsp; Visualization**
-
-<br/>
-
-<img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logoColor=fff" />
-&nbsp;
-<img src="https://img.shields.io/badge/Seaborn-44A8B3?style=for-the-badge&logoColor=fff" />
-&nbsp;
-<img src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=fff" />
-
-<br/><br/>
+<img src="https://img.shields.io/badge/Matplotlib-1B1B17?style=flat-square&logoColor=5DECEC" alt="Matplotlib" /> <img src="https://img.shields.io/badge/Seaborn-1B1B17?style=flat-square&logoColor=5DECEC" alt="Seaborn" /> <img src="https://img.shields.io/badge/Plotly-1B1B17?style=flat-square&logo=plotly&logoColor=5DECEC" alt="Plotly" />
 
 </td>
 
-<!-- Databases -->
 <td width="50%" align="center" valign="top">
 
-<br/>
+**📦 Databases**
 
-**`🗄️` &nbsp; Databases**
-
-<br/>
-
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=fff" />
-&nbsp;
-<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=fff" />
-
-<br/><br/>
+<img src="https://img.shields.io/badge/MySQL-1B1B17?style=flat-square&logo=mysql&logoColor=FAC846" alt="MySQL" /> <img src="https://img.shields.io/badge/MongoDB-1B1B17?style=flat-square&logo=mongodb&logoColor=FAC846" alt="MongoDB" />
 
 </td>
+
 </tr>
-</table>
-
-<br/>
-
-<!-- ══════════════════════════════════════════════════════ -->
-<!--              ROW 4  ·  Development & Learning         -->
-<!-- ══════════════════════════════════════════════════════ -->
-
-<table align="center" width="92%">
 <tr>
 
-<!-- Development -->
 <td width="50%" align="center" valign="top">
 
-<br/>
+**🛠️ Tools**
 
-**`🛠️` &nbsp; Development**
-
-<br/>
-
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=fff" />
-&nbsp;
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=fff" />
-&nbsp;
-<img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=fff" />
-
-<br/><br/>
+<img src="https://img.shields.io/badge/Git-1B1B17?style=flat-square&logo=git&logoColor=A0A0A0" alt="Git" /> <img src="https://img.shields.io/badge/GitHub-1B1B17?style=flat-square&logo=github&logoColor=A0A0A0" alt="GitHub" /> <img src="https://img.shields.io/badge/VS_Code-1B1B17?style=flat-square&logo=visualstudiocode&logoColor=A0A0A0" alt="VS Code" />
 
 </td>
 
-<!-- Currently Learning -->
 <td width="50%" align="center" valign="top">
 
-<br/>
+**✨ Enchanting Table (Currently Learning)**
 
-**`🚀` &nbsp; Currently Learning**
-
-<br/>
-
-<img src="https://img.shields.io/badge/SQL_Optimization-12151C?style=for-the-badge&logo=mysql&logoColor=2FD3E0" />
-&nbsp;
-<img src="https://img.shields.io/badge/Machine_Learning-12151C?style=for-the-badge&logo=tensorflow&logoColor=FF6F00" />
-&nbsp;
-<img src="https://img.shields.io/badge/Statistics-12151C?style=for-the-badge&logo=r&logoColor=276DC3" />
-&nbsp;
-<img src="https://img.shields.io/badge/Deep_Learning-12151C?style=for-the-badge&logo=pytorch&logoColor=EE4C2C" />
-
-<br/><br/>
+<img src="https://img.shields.io/badge/SQL_Optimization-1B1B17?style=flat-square&logo=mysql&logoColor=8B3FD9" alt="SQL Optimization" /> <img src="https://img.shields.io/badge/Machine_Learning-1B1B17?style=flat-square&logo=tensorflow&logoColor=8B3FD9" alt="Machine Learning" /> <img src="https://img.shields.io/badge/Statistics-1B1B17?style=flat-square&logo=r&logoColor=8B3FD9" alt="Statistics" /> <img src="https://img.shields.io/badge/Deep_Learning-1B1B17?style=flat-square&logo=pytorch&logoColor=8B3FD9" alt="Deep Learning" />
 
 </td>
+
 </tr>
 </table>
 
-<br/>
+<div align="center"><sub><code>Chest colors: 🟢 code · 🔷 analytics &amp; data · 🟡 storage · ⚪ tools · 🟣 still being enchanted</code></sub></div>
 
----
+<img src="assets/pixel-divider.svg" width="100%" alt="" />
 
-<br/>
-<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
-<br/>
+<h2 align="center">📜 QUEST LOG</h2>
 
-<!-- ═══════════════════════ 05 — CURRENT MISSION ═══════════════════════ -->
-
-<h2 align="center">
-<img src="https://img.shields.io/badge/05-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;CURRENT MISSION
-</h2>
+<div align="center"><sub><code>Current learning roadmap</code></sub></div>
 
 <br/>
 
 <div align="center">
 <table>
-<tr><td width="480">
+<tr><td width="560">
 
-**CURRENT BUILD**
-Advanced Power BI dashboards with production-grade DAX measures
+**▶ ACTIVE QUEST — Advanced Power BI dashboards with production-grade DAX measures**
 
-**Status**
-🟥🟥🟥🟥⬛⬛⬛⬛⬛⬛ 40%
+```
+PROGRESS  🟩🟩🟩🟩⬛⬛⬛⬛⬛⬛  40%
+```
 
-**Learning**
-SQL Optimization · Machine Learning Fundamentals · Statistical Inference
+| Status | Quest |
+| :---: | :--- |
+| 🟢 ACTIVE | Advanced Power BI & DAX |
+| 🟢 ACTIVE | SQL Optimization |
+| 🟢 ACTIVE | Machine Learning Fundamentals |
+| 🟢 ACTIVE | Statistics for Data Analytics (statistical inference) |
+| 🟢 ACTIVE | Deep Learning |
+| 🔁 ONGOING | Cleaner data storytelling |
 
-**Next Goal**
-Ship the first production-quality BI case study
+**🔒 LOCKED QUEST (next biome):** Ship the first production-quality BI case study
 
 </td></tr>
 </table>
 </div>
 
+<img src="assets/pixel-divider.svg" width="100%" alt="" />
+
+<h2 align="center">🏆 ADVANCEMENTS</h2>
+
+<div align="center"><sub><code>Milestones, training, and certifications</code></sub></div>
+
 <br/>
-<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
-<br/>
 
-<!-- ═══════════════════════ 06 — INTERACTIVE GAME ═══════════════════════ -->
+<table>
+<tr>
 
-<!-- ═══════════════════════ 07 — GITHUB ACTIVITY ═══════════════════════ -->
+<td width="50%" valign="top">
 
-<h2 align="center">
-<img src="https://img.shields.io/badge/07-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;GITHUB ACTIVITY
-</h2>
+🏆 🟡 **LEGENDARY** — **Data Explorer**<br/>
+Year: *(add)*<br/>
+6 independent data projects delivered — 3 Power BI dashboards, 3 Python EDA workflows.
+
+</td>
+
+<td width="50%" valign="top">
+
+🏆 🟣 **EPIC** — **Enchanted**<br/>
+Year: *(add)*<br/>
+Google Cloud's 3-part series: Generative AI, LLMs, and Responsible AI.
+
+</td>
+
+</tr>
+<tr>
+
+<td width="50%" valign="top">
+
+🏆 🟢 **UNCOMMON** — **Power Up**<br/>
+Year: *(add)* &nbsp;·&nbsp; Certificate awaited<br/>
+Summer training — Python, Excel, Power BI.
+
+</td>
+
+<td width="50%" valign="top">
+
+🏆 🟢 **UNCOMMON** — **Certified**<br/>
+Year: *(add)*<br/>
+PCAP — Programming Essentials in Python.
+
+</td>
+
+</tr>
+<tr>
+
+<td width="50%" valign="top">
+
+🏆 ⚪ **COMMON** — **Dungeon Cleared**<br/>
+Year: *(add)*<br/>
+International DSA Bootcamp — DeepTech track.
+
+</td>
+
+<td width="50%" valign="top">
+
+🏆 ⚪ **COMMON** — **Raid Participant**<br/>
+Year: *(add)*<br/>
+Smart India Hackathon — HackSTROM, internal round.
+
+</td>
+
+</tr>
+</table>
+
+<img src="assets/pixel-divider.svg" width="100%" alt="" />
+
+<h2 align="center">🌐 MULTIPLAYER HUB</h2>
+
+<div align="center"><sub><code>Join the server</code></sub></div>
 
 <br/>
 
 <div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Hamzaul/Hamzaul/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Hamzaul/Hamzaul/output/github-snake.svg" />
-  <img alt="Snake animation" src="https://raw.githubusercontent.com/Hamzaul/Hamzaul/output/github-snake-dark.svg" width="100%" />
-</picture>
+
+<a href="https://github.com/Hamzaul"><img src="https://img.shields.io/badge/GitHub-1B1B17?style=for-the-badge&logo=github&logoColor=5DECEC" alt="GitHub" /></a>
+<a href="https://www.linkedin.com/in/hamzaul-rahman-40107b306/"><img src="https://img.shields.io/badge/LinkedIn-1B1B17?style=for-the-badge&logo=linkedin&logoColor=5DECEC" alt="LinkedIn" /></a>
+<a href="https://kaggle.com/hamzaulrahman"><img src="https://img.shields.io/badge/Kaggle-1B1B17?style=for-the-badge&logo=kaggle&logoColor=FAC846" alt="Kaggle" /></a>
+<a href="https://leetcode.com/u6sme0wz24"><img src="https://img.shields.io/badge/LeetCode-1B1B17?style=for-the-badge&logo=leetcode&logoColor=17DD62" alt="LeetCode" /></a>
+<a href="https://www.hackerrank.com/@_2501103006"><img src="https://img.shields.io/badge/HackerRank-1B1B17?style=for-the-badge&logo=hackerrank&logoColor=17DD62" alt="HackerRank" /></a>
+<a href="mailto:hamzaulrahman436@gmail.com"><img src="https://img.shields.io/badge/Email-1B1B17?style=for-the-badge&logo=gmail&logoColor=D1342A" alt="Email" /></a>
+<a href="https://hamzaul.github.io/portfolio"><img src="https://img.shields.io/badge/Portfolio-1B1B17?style=for-the-badge&logo=googlechrome&logoColor=17DD62" alt="Portfolio" /></a>
+<a href="#"><img src="https://img.shields.io/badge/Resume-1B1B17?style=for-the-badge&logo=readdotcv&logoColor=FAC846" alt="Resume" /></a>
+
 </div>
 
-<br/>
-<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
+<img src="assets/pixel-divider.svg" width="100%" alt="" />
+
+<details>
+<summary><b>⚙️ UNDER THE HOOD — how this repository works</b></summary>
+
 <br/>
 
-<!-- ═══════════════════════ 08 — CONNECT ═══════════════════════ -->
+This repository is both my GitHub profile README and a small automation project. Everything visual is original pixel art generated from code, with no game screenshots or textures and no third-party fonts.
 
-<h2 align="center">
-<img src="https://img.shields.io/badge/08-12151C?style=flat-square&labelColor=E8121C" />&nbsp;&nbsp;CONNECT
-</h2>
+### Architecture
+
+```
+GitHub GraphQL API ──► scripts/dashboard.py ──► assets/world-activity.svg ──► README.md
+        ▲                       │
+   GH_TOKEN secret     .github/workflows/minecraft-dashboard.yml  (every 30 min, commits the SVG)
+
+scripts/pixelfont.py ──► scripts/build_assets.py ──► assets/*.svg, pit-strategy/assets/*
+                    └──► scripts/build_font.py   ──► pit-strategy/assets/fonts/blockpix.woff
+```
+
+- **World Activity dashboard** (`assets/world-activity.svg`) is generated, so never edit it by hand. It replaces the older snake animation: the chunk map draws the same contribution calendar and also shows daily counts.
+- **Static artwork** (hero, divider, game thumbnail, social preview, favicons) is generated by `scripts/build_assets.py`.
+- **Mining Expedition** (`pit-strategy/`) is a dependency-free browser game. The folder name is kept so existing links to the deployed game keep working.
+
+### Project structure
+
+```
+.github/workflows/minecraft-dashboard.yml   scheduled dashboard refresh
+assets/                                      README artwork + generated dashboard
+pit-strategy/                                Mining Expedition game
+  index.html  css/style.css  js/{tools,flooding,miners,hud,expedition}.js
+  assets/    social-preview.png/.svg, favicon set, fonts/blockpix.woff
+scripts/                                     dashboard + asset + font generators
+requirements.txt  .env.example
+```
+
+### Setup
+
+```bash
+python -m venv venv && source venv/bin/activate      # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+cp .env.example .env                                  # then put your token in GH_TOKEN
+python scripts/dashboard.py                           # writes assets/world-activity.svg
+```
+
+Handy variations:
+
+```bash
+python scripts/dashboard.py --placeholder             # empty world, no token needed
+python scripts/dashboard.py --demo --out preview.svg  # synthetic data for design checks
+pip install cairosvg fonttools && python scripts/build_assets.py && python scripts/build_font.py
+```
+
+### Environment variables
+
+| Name | Where | Purpose |
+| :--- | :--- | :--- |
+| `GH_TOKEN` | local `.env` and the repo's **Actions secret** of the same name | Authenticates the GitHub GraphQL API. Use a read-only token. Never commit it. |
+
+`.env` is git-ignored; `.env.example` is the template.
+
+### GitHub Actions
+
+`minecraft-dashboard.yml` runs on a 30-minute schedule and on manual dispatch. It installs `requirements.txt`, runs `scripts/dashboard.py` with `GH_TOKEN`, then commits `assets/world-activity.svg` with up to 3 push retries. It needs `contents: write` permission.
+
+### Playing the game locally
+
+Open `pit-strategy/index.html` in a browser, or serve the repo folder with `python -m http.server`.
+
+</details>
 
 <br/>
 
 <div align="center">
-<a href="https://www.linkedin.com/in/hamzaul-rahman-40107b306/"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=2FD3E0" /></a>
-<a href="https://github.com/Hamzaul"><img src="https://img.shields.io/badge/GitHub-0D1117?style=for-the-badge&logo=github&logoColor=E8121C" /></a>
-<a href="https://www.hackerrank.com/@_2501103006"><img src="https://img.shields.io/badge/HackerRank-0D1117?style=for-the-badge&logo=hackerrank&logoColor=E8121C" /></a>
-<a href="mailto:hamzaulrahman436@gmail.com"><img src="https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=C6A15B" /></a>
-</div>
 
-<br/>
-<div align="center"><img src="assets/divider.svg" width="70%" height="4" /></div>
-<br/>
+> *"Data is the new oil."* — widely attributed to mathematician Clive Humby
 
-<div align="center">
-
-```
-╔══════════════════════════════════════════════════════════╗
-║                                                            ║
-║   "Data is the new oil.                                   ║
-║    But oil is useless until it's refined."                ║
-║                                                            ║
-║                          — Hamzaul Rahman                 ║
-║                                                            ║
-╚══════════════════════════════════════════════════════════╝
-```
-
-<sub>Engineered with precision. Deployed with intent. Updated on schedule.</sub>
-
-<br/>
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0D1117&height=2&section=footer" width="100%" />
+<sub><code>&gt; World autosaved. Turning raw data into decisions worth acting on, one build at a time.</code></sub>
 
 </div>

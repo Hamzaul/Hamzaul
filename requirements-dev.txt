@@ -1,0 +1,3 @@
+# Only needed to regenerate artwork / the pixel font (not used by the workflow)
+cairosvg
+fonttools

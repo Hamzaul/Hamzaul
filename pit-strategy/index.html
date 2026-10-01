@@ -3,132 +3,153 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pit Strategy Simulator</title>
-<meta name="description" content="An F1 pit strategy game — choose tyre compounds, react to weather, and race 5 AI rivals to the checkered flag." />
-<meta property="og:title" content="Pit Strategy Simulator" />
-<meta property="og:description" content="You're the race strategist. The data is your telemetry. Make the call." />
-<meta property="og:image" content="assets/social-preview.svg" />
-<link rel="icon" type="image/svg+xml" href="assets/social-preview.svg" />
+<title>Mining Expedition</title>
+<meta name="description" content="A Minecraft-inspired mining strategy game: choose pickaxe tiers, react to flooded tunnels, and race 5 rival miners to the Deep Vein." />
+<meta name="theme-color" content="#0E0D14" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Mining Expedition" />
+<meta property="og:description" content="You are the expedition lead. Pick your tools, read the tunnels, make the call." />
+<meta property="og:image" content="assets/social-preview.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Hamzaul Rahman, Data Analyst, AI and Data Science, in a pixel-art Minecraft-inspired scene" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preload" href="assets/fonts/blockpix.woff" as="font" type="font/woff" crossorigin />
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<svg class="sprites" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="i-pick" viewBox="0 0 8 8" shape-rendering="crispEdges"><rect x="2" y="0" width="5" height="1" fill="currentColor" fill-opacity="0.55"/><rect x="1" y="1" width="1" height="1" fill="currentColor" fill-opacity="0.55"/><rect x="2" y="1" width="5" height="1" fill="currentColor"/><rect x="7" y="1" width="1" height="1" fill="currentColor" fill-opacity="0.55"/><rect x="0" y="2" width="1" height="1" fill="currentColor" fill-opacity="0.55"/><rect x="1" y="2" width="2" height="1" fill="currentColor"/><rect x="5" y="2" width="1" height="1" fill="#7A5230"/><rect x="6" y="2" width="2" height="1" fill="currentColor"/><rect x="0" y="3" width="1" height="1" fill="currentColor" fill-opacity="0.55"/><rect x="1" y="3" width="1" height="1" fill="currentColor"/><rect x="4" y="3" width="2" height="1" fill="#7A5230"/><rect x="7" y="3" width="1" height="1" fill="currentColor"/><rect x="3" y="4" width="2" height="1" fill="#7A5230"/><rect x="2" y="5" width="2" height="1" fill="#7A5230"/><rect x="1" y="6" width="2" height="1" fill="#7A5230"/><rect x="0" y="7" width="2" height="1" fill="#7A5230"/></symbol><symbol id="i-table" viewBox="0 0 8 8" shape-rendering="crispEdges"><rect x="0" y="0" width="8" height="1" fill="#5E3E22"/><rect x="0" y="1" width="1" height="1" fill="#5E3E22"/><rect x="1" y="1" width="6" height="1" fill="#9C6B3A"/><rect x="7" y="1" width="1" height="1" fill="#5E3E22"/><rect x="0" y="2" width="1" height="1" fill="#5E3E22"/><rect x="1" y="2" width="1" height="1" fill="#9C6B3A"/><rect x="2" y="2" width="1" height="1" fill="#7A5230"/><rect x="3" y="2" width="2" height="1" fill="#9C6B3A"/><rect x="5" y="2" width="1" height="1" fill="#7A5230"/><rect x="6" y="2" width="1" height="1" fill="#9C6B3A"/><rect x="7" y="2" width="1" height="1" fill="#5E3E22"/><rect x="0" y="3" width="1" height="1" fill="#5E3E22"/><rect x="1" y="3" width="6" height="1" fill="#9C6B3A"/><rect x="7" y="3" width="1" height="1" fill="#5E3E22"/><rect x="0" y="4" width="1" height="1" fill="#5E3E22"/><rect x="1" y="4" width="1" height="1" fill="#9C6B3A"/><rect x="2" y="4" width="1" height="1" fill="#7A5230"/><rect x="3" y="4" width="2" height="1" fill="#9C6B3A"/><rect x="5" y="4" width="1" height="1" fill="#7A5230"/><rect x="6" y="4" width="1" height="1" fill="#9C6B3A"/><rect x="7" y="4" width="1" height="1" fill="#5E3E22"/><rect x="0" y="5" width="1" height="1" fill="#5E3E22"/><rect x="1" y="5" width="6" height="1" fill="#9C6B3A"/><rect x="7" y="5" width="1" height="1" fill="#5E3E22"/><rect x="0" y="6" width="1" height="1" fill="#5E3E22"/><rect x="1" y="6" width="6" height="1" fill="#9C6B3A"/><rect x="7" y="6" width="1" height="1" fill="#5E3E22"/><rect x="0" y="7" width="8" height="1" fill="#5E3E22"/></symbol><symbol id="i-drop" viewBox="0 0 8 8" shape-rendering="crispEdges"><rect x="3" y="0" width="2" height="1" fill="#245FB8"/><rect x="2" y="1" width="1" height="1" fill="#245FB8"/><rect x="3" y="1" width="2" height="1" fill="#3C8DFF"/><rect x="5" y="1" width="1" height="1" fill="#245FB8"/><rect x="2" y="2" width="1" height="1" fill="#245FB8"/><rect x="3" y="2" width="2" height="1" fill="#3C8DFF"/><rect x="5" y="2" width="1" height="1" fill="#245FB8"/><rect x="1" y="3" width="1" height="1" fill="#245FB8"/><rect x="2" y="3" width="4" height="1" fill="#3C8DFF"/><rect x="6" y="3" width="1" height="1" fill="#245FB8"/><rect x="0" y="4" width="1" height="1" fill="#245FB8"/><rect x="1" y="4" width="5" height="1" fill="#3C8DFF"/><rect x="6" y="4" width="1" height="1" fill="#9CC8FF"/><rect x="7" y="4" width="1" height="1" fill="#245FB8"/><rect x="0" y="5" width="1" height="1" fill="#245FB8"/><rect x="1" y="5" width="5" height="1" fill="#3C8DFF"/><rect x="6" y="5" width="1" height="1" fill="#9CC8FF"/><rect x="7" y="5" width="1" height="1" fill="#245FB8"/><rect x="1" y="6" width="1" height="1" fill="#245FB8"/><rect x="2" y="6" width="3" height="1" fill="#3C8DFF"/><rect x="5" y="6" width="1" height="1" fill="#9CC8FF"/><rect x="6" y="6" width="1" height="1" fill="#245FB8"/><rect x="2" y="7" width="4" height="1" fill="#245FB8"/></symbol><symbol id="i-gem" viewBox="0 0 8 8" shape-rendering="crispEdges"><rect x="2" y="0" width="4" height="1" fill="#0F7A38"/><rect x="1" y="1" width="1" height="1" fill="#0F7A38"/><rect x="2" y="1" width="4" height="1" fill="#17DD62"/><rect x="6" y="1" width="1" height="1" fill="#0F7A38"/><rect x="0" y="2" width="1" height="1" fill="#0F7A38"/><rect x="1" y="2" width="5" height="1" fill="#17DD62"/><rect x="6" y="2" width="1" height="1" fill="#8CF5B4"/><rect x="7" y="2" width="1" height="1" fill="#0F7A38"/><rect x="0" y="3" width="1" height="1" fill="#0F7A38"/><rect x="1" y="3" width="5" height="1" fill="#17DD62"/><rect x="6" y="3" width="1" height="1" fill="#8CF5B4"/><rect x="7" y="3" width="1" height="1" fill="#0F7A38"/><rect x="1" y="4" width="1" height="1" fill="#0F7A38"/><rect x="2" y="4" width="3" height="1" fill="#17DD62"/><rect x="5" y="4" width="1" height="1" fill="#8CF5B4"/><rect x="6" y="4" width="1" height="1" fill="#0F7A38"/><rect x="2" y="5" width="1" height="1" fill="#0F7A38"/><rect x="3" y="5" width="1" height="1" fill="#17DD62"/><rect x="4" y="5" width="1" height="1" fill="#8CF5B4"/><rect x="5" y="5" width="1" height="1" fill="#0F7A38"/><rect x="3" y="6" width="2" height="1" fill="#0F7A38"/></symbol></svg>
+<a class="skip" href="#actions">Skip to actions</a>
 
-<div class="wrap">
+<div id="app" class="wrap">
 
   <header class="top">
-    <h1>PIT STRATEGY <span>SIMULATOR</span></h1>
-    <p>YOU ARE THE RACE STRATEGIST · MAKE THE CALL</p>
+    <h1>MINING <span>EXPEDITION</span></h1>
+    <p>YOU ARE THE EXPEDITION LEAD · MAKE THE CALL</p>
   </header>
 
   <!-- HUD -->
-  <section class="panel">
-    <p class="panel-title">LIVE TELEMETRY</p>
+  <section class="panel" aria-labelledby="hud-title">
+    <h2 class="panel-title" id="hud-title">PLAYER HUD</h2>
     <div class="hud-grid">
-      <div class="hud-cell">
-        <div class="label">LAP</div>
-        <div class="value" id="hud-lap">0 / 50</div>
+      <div class="slot">
+        <div class="label">DEPTH (BLOCKS)</div>
+        <div class="value" id="hud-depth">0 / 50</div>
       </div>
-      <div class="hud-cell">
-        <div class="label">POSITION</div>
-        <div class="value" id="hud-position">P4</div>
+      <div class="slot">
+        <div class="label">RANK</div>
+        <div class="value" id="hud-rank">#4</div>
       </div>
-      <div class="hud-cell">
+      <div class="slot">
         <div class="label">GAP TO LEADER</div>
         <div class="value" id="hud-gap">—</div>
       </div>
-      <div class="hud-cell">
-        <div class="label">PIT STOPS</div>
-        <div class="value" id="hud-pitstops">0</div>
+      <div class="slot">
+        <div class="label">CRAFT TRIPS</div>
+        <div class="value" id="hud-crafts">0</div>
       </div>
 
-      <div class="hud-cell" style="grid-column: span 2;">
-        <div class="label">TYRE</div>
-        <div class="tyre-row">
-          <div class="tyre-badge" id="hud-tyre-badge">M</div>
-          <div style="flex:1;">
-            <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-dim); margin-bottom:4px;">
-              <span id="hud-tyre-name">MEDIUM</span>
-              <span id="hud-wear-pct">0%</span>
-            </div>
-            <div class="wear-bar-track"><div class="wear-bar" id="hud-wear-bar"></div></div>
+      <div class="slot span-2">
+        <div class="label">TOOL</div>
+        <div class="tool-row">
+          <div class="tool-badge" id="hud-tool-badge"><svg class="ico ico-lg" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><use href="#i-pick"/></svg></div>
+          <div class="tool-meter">
+            <div class="meter-head"><span id="hud-tool-name">IRON PICKAXE</span><span id="hud-wear-pct">0%</span></div>
+            <div class="wear-track" id="hud-wear-track" role="progressbar" aria-label="Tool wear" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="wear-bar" id="hud-wear-bar"></div></div>
           </div>
         </div>
       </div>
 
-      <div class="hud-cell" style="grid-column: span 2;">
-        <div class="label">WEATHER</div>
-        <div class="value" id="hud-weather" style="font-size:14px;">0% rain risk</div>
+      <div class="slot span-2 water-cell" id="hud-water-cell">
+        <div class="label">TUNNEL WATER</div>
+        <div class="value value-sm"><span id="hud-water">0% flood risk</span></div>
       </div>
 
-      <div class="hud-cell" style="grid-column: span 4;">
+      <div class="slot span-4">
         <div class="label">RIVAL INTEL</div>
-        <div class="value" id="hud-rival-window" style="font-size:13px;">—</div>
+        <div class="value value-sm" id="hud-rival-window">—</div>
       </div>
     </div>
   </section>
 
   <!-- Actions -->
-  <div class="actions">
-    <button class="btn btn-primary" id="btn-pit">🔧 PIT NOW</button>
-    <button class="btn" id="btn-stay">🏎️ STAY OUT</button>
+  <div class="actions" id="actions">
+    <button class="btn btn-primary" id="btn-craft" type="button"><svg class="ico" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><use href="#i-table"/></svg><span>BACK TO CRAFTING TABLE</span></button>
+    <button class="btn" id="btn-dig" type="button"><svg class="ico" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><use href="#i-pick"/></svg><span>KEEP DIGGING</span></button>
   </div>
 
   <!-- Standings -->
-  <section class="panel">
-    <p class="panel-title">STANDINGS</p>
+  <section class="panel" aria-labelledby="stand-title">
+    <h2 class="panel-title" id="stand-title">LEADERBOARD</h2>
     <table class="standings">
+      <caption class="sr-only">Current ranking of you and the rival miners by total time</caption>
       <thead>
-        <tr><th>POS</th><th>DRIVER</th><th>TYRE</th><th>GAP</th></tr>
+        <tr><th scope="col">RANK</th><th scope="col">MINER</th><th scope="col">TOOL</th><th scope="col">GAP</th></tr>
       </thead>
       <tbody id="standings-body"></tbody>
     </table>
   </section>
 
-  <!-- Race Log -->
-  <section class="panel">
-    <p class="panel-title">RACE CONTROL LOG</p>
-    <div class="log-box" id="race-log"></div>
+  <!-- Log -->
+  <section class="panel" aria-labelledby="log-title">
+    <h2 class="panel-title" id="log-title">EXPEDITION LOG</h2>
+    <div class="log-box" id="expedition-log" role="log" aria-live="polite" aria-relevant="additions" aria-label="Expedition log, newest first" tabindex="0"></div>
   </section>
 
   <footer class="foot">
-    Built with HTML · CSS · JavaScript &nbsp;|&nbsp; No dependencies &nbsp;|&nbsp; High score saved locally
+    Built with HTML · CSS · JavaScript &nbsp;|&nbsp; No dependencies &nbsp;|&nbsp; Best result saved locally
   </footer>
 
 </div>
 
-<!-- Compound selection modal -->
-<div class="modal-overlay hidden" id="compound-modal">
-  <div class="modal">
-    <h3>SELECT COMPOUND</h3>
-    <p class="sub">Choose your tyres for the next stint.</p>
-    <p id="wet-hint" class="hidden">🌧 Track is wet — slicks will cost you badly.</p>
-    <div class="compound-grid">
-      <button class="compound-btn" data-compound="soft" style="color:#E8121C;">SOFT<br/><small style="font-weight:400;">fast · short life</small></button>
-      <button class="compound-btn" data-compound="medium" style="color:#C6A15B;">MEDIUM<br/><small style="font-weight:400;">balanced</small></button>
-      <button class="compound-btn" data-compound="hard" style="color:#848B9C;">HARD<br/><small style="font-weight:400;">slow · long life</small></button>
-      <button class="compound-btn" data-compound="wet" style="color:#2FD3E0;">WET<br/><small style="font-weight:400;">for rain only</small></button>
+<!-- Crafting dialog -->
+<div class="overlay hidden" id="tool-dialog" data-dismissible="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="tool-title" aria-describedby="tool-sub">
+    <h2 id="tool-title" class="modal-title">CRAFTING TABLE</h2>
+    <p class="sub" id="tool-sub">Choose the pickaxe for your next stretch of tunnel.</p>
+    <p id="flood-hint" class="hint hidden"><svg class="ico" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><use href="#i-drop"/></svg><span>The tunnel is flooded — any pick but Aqua will cost you badly.</span></p>
+    <div class="tool-grid">
+      <button class="tool-btn" type="button" data-tool="gold">
+        <svg class="ico ico-lg" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><use href="#i-pick"/></svg>
+        <span class="tool-text"><span class="tool-name">GOLD</span><span class="tool-blurb">fast · brittle</span><span class="tool-stats"></span></span>
+      </button>
+      <button class="tool-btn" type="button" data-tool="iron">
+        <svg class="ico ico-lg" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><use href="#i-pick"/></svg>
+        <span class="tool-text"><span class="tool-name">IRON</span><span class="tool-blurb">balanced</span><span class="tool-stats"></span></span>
+      </button>
+      <button class="tool-btn" type="button" data-tool="diamond">
+        <svg class="ico ico-lg" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><use href="#i-pick"/></svg>
+        <span class="tool-text"><span class="tool-name">DIAMOND</span><span class="tool-blurb">steady · long life</span><span class="tool-stats"></span></span>
+      </button>
+      <button class="tool-btn" type="button" data-tool="aqua">
+        <svg class="ico ico-lg" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><use href="#i-pick"/></svg>
+        <span class="tool-text"><span class="tool-name">AQUA</span><span class="tool-blurb">for flooded tunnels</span><span class="tool-stats"></span></span>
+      </button>
     </div>
-    <button class="link-btn" id="compound-cancel">CANCEL</button>
+    <button class="link-btn" id="tool-cancel" type="button">CANCEL</button>
   </div>
 </div>
 
-<!-- Results overlay -->
-<div class="modal-overlay hidden" id="results-overlay">
-  <div class="modal results-panel">
-    <p class="panel-title" style="justify-content:center;">🏁 CHECKERED FLAG</p>
-    <div class="position" id="results-position">P—</div>
-    <div class="points" id="results-points">0 PTS</div>
-    <div class="badge" id="results-badge"></div>
-    <div class="highscore" id="results-highscore">BEST: —</div>
-    <br/>
-    <button class="btn btn-primary" id="btn-play-again" style="width:100%;">▸ RACE AGAIN</button>
+<!-- Results dialog -->
+<div class="overlay hidden" id="results-dialog">
+  <div class="modal results" role="dialog" aria-modal="true" aria-labelledby="results-title">
+    <span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span><span class="orb o3" aria-hidden="true"></span>
+    <h2 class="modal-title" id="results-title"><svg class="ico" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><use href="#i-gem"/></svg> DEEP VEIN REACHED</h2>
+    <div class="rank" id="results-rank">#—</div>
+    <div class="points" id="results-points">0 XP</div>
+    <p class="advancement hidden" id="results-badge"><span class="adv-head">ADVANCEMENT MADE!</span><span class="adv-body">New best result</span></p>
+    <div class="best" id="results-best">BEST: —</div>
+    <button class="btn btn-primary btn-block" id="btn-play-again" type="button"><svg class="ico" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><use href="#i-pick"/></svg><span>DESCEND AGAIN</span></button>
   </div>
 </div>
 
-<script src="js/strategy.js"></script>
-<script src="js/weather.js"></script>
-<script src="js/rivals.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/game.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/flooding.js"></script>
+<script src="js/miners.js"></script>
+<script src="js/hud.js"></script>
+<script src="js/expedition.js"></script>
 </body>
 </html>
